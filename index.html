@@ -557,6 +557,106 @@
             gap: 12px;
         }
 
+        /* Books Section */
+        .books-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .book-card {
+            background: linear-gradient(145deg, var(--dark-card), #0f0f1a);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.5s, box-shadow 0.5s;
+            border: 1px solid var(--dark-border);
+            position: relative;
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(108, 99, 255, 0.2);
+        }
+
+        .book-image-container {
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(0, 212, 170, 0.1));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-image {
+            max-width: 100%;
+            max-height: 170px;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s;
+        }
+
+        .book-card:hover .book-image {
+            transform: scale(1.05);
+        }
+
+        .book-info {
+            padding: 30px;
+        }
+
+        .book-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .book-meta {
+            color: var(--primary-light);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .book-info p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .book-genres {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .genre-tag {
+            background: rgba(0, 212, 170, 0.1);
+            color: var(--secondary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .book-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .book-link:hover {
+            color: var(--primary-light);
+            gap: 12px;
+        }
+
         /* Social Links */
         .social-links {
             display: grid;
@@ -738,7 +838,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .projects-container {
+            .projects-container,
+            .books-container {
                 grid-template-columns: 1fr;
             }
 
@@ -791,6 +892,15 @@
             .social-links {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .book-image-container {
+                height: 200px;
+                padding: 30px;
+            }
+
+            .book-image {
+                max-height: 140px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -834,6 +944,15 @@
             .footer-links {
                 gap: 20px;
             }
+
+            .book-image-container {
+                height: 180px;
+                padding: 25px;
+            }
+
+            .book-image {
+                max-height: 130px;
+            }
         }
     </style>
 </head>
@@ -848,6 +967,7 @@
                     <a href="#about">About</a>
                     <a href="#skills">Skills</a>
                     <a href="#projects">Projects</a>
+                    <a href="#books">Books</a>
                     <a href="#social">Connect</a>
                     <a href="#contact">Contact</a>
                 </div>
@@ -973,7 +1093,7 @@
                 <!-- Tic Tac Toe Game -->
                 <div class="project-card">
                     <div class="project-logo">
-                        <img src="https://cdn-icons-png.flaticon.com/512/217/217853.png" alt="Tic Tac Toe Logo">
+                        <a href="https://ibb.co.com/NdZK7b47"><img src="https://i.ibb.co.com/YFphbwrb/Gemini-Generated-Image-w0swddw0swddw0sw.png" alt="Gemini-Generated-Image-w0swddw0swddw0sw" border="0"></a>
                     </div>
                     <div class="project-info">
                         <h3>Tic Tac Toe Game</h3>
@@ -996,11 +1116,11 @@
                 <!-- BarqIQ Tester -->
                 <div class="project-card">
                     <div class="project-logo">
-                        <img src="https://cdn-icons-png.flaticon.com/512/3208/3208720.png" alt="BarqIQ Tester Logo">
+                        <a href="https://imgbb.com/"><img src="https://i.ibb.co.com/21KwSPwW/Barq-IQ-Tester.png" alt="Barq IQ Tester" border="0"></a>
                     </div>
                     <div class="project-info">
                         <h3>BarqIQ Tester</h3>
-                        <p>An interactive quiz application designed to test knowledge on various topics. Features multiple question types, timer functionality, and result analytics. Built with clean, modern UI and smooth animations.</p>
+                        <p>An WI-Fi tester. best for testing dwonlding speed.</p>
                         
                         <div class="project-tech">
                             <span class="tech-tag">HTML</span>
@@ -1035,6 +1155,72 @@
                         <a href="#contact" class="project-link">
                             <i class="fas fa-info-circle"></i>
                             Learn More About My Business
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    <section id="books">
+        <div class="container">
+            <h2 class="section-title">Books I've Written</h2>
+            <p class="section-subtitle">Exploring ideas through writing – sharing knowledge and insights from my entrepreneurial journey.</p>
+            
+            <div class="books-container">
+                <!-- Book 1 -->
+                <div class="book-card">
+                    <div class="book-image-container">
+                        <a href="https://ibb.co.com/7xRcWzDJ"><img src="https://i.ibb.co.com/Ngmhj3q6/Red-Black-White-Modern-Motivation-Ebook-Cover-2.png" alt="Red Black White Modern Motivation Ebook Cover (2)" border="0"></a>
+                    </div>
+                    <div class="book-info">
+                        <h3>HUKMQALBI : NAVIGATING MODERN LIFE WITH PROPHETIC DISCIPLINE (ENGLISH)</h3>
+                        <div class="book-meta">Published: 2025 | Pages: 14</div>
+                        <p>This is about creating an e-book for young, practicing Muslims who feel torn between their faith and their ambitions. The book, "The Productive Believer," offers a solution by showing how Islamic rituals like prayer are not obstacles to success, but the very foundation for a focused and purposeful life. It translates Prophetic teachings into a practical framework for modern productivity, helping readers achieve their goals without compromising their values.</p>
+                        
+                     
+                        
+                        <a href="https://saalimzayed.github.io/HUKMQALBI/" class="book-link">
+                            <i class="fas fa-book"></i>
+                            visit the book web
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Book 2 -->
+                <div class="book-card">
+                    <div class="book-image-container">
+                        <a href="https://ibb.co.com/HLgRcgbr"><img src="https://i.ibb.co.com/sp3cT3NF/Red-Black-White-Modern-Motivation-Ebook-Cover-3.png" alt="Red Black White Modern Motivation Ebook Cover (3)" border="0"></a>
+                    </div>
+                    <div class="book-info">
+                        <h3>HUKMQALBI : NAVIGATING MODERN LIFE WITH PROPHETIC DISCIPLINE (BANGLA)</h3>
+                        <div class="book-meta">Published: 2025 | Pages: 14 </div>
+                        <p>This is about creating an e-book for young, practicing Muslims who feel torn between their faith and their ambitions. The book, "The Productive Believer," offers a solution by showing how Islamic rituals like prayer are not obstacles to success, but the very foundation for a focused and purposeful life. It translates Prophetic teachings into a practical framework for modern productivity, helping readers achieve their goals without compromising their values.FOR THOSE WHO ARE BANGALI</p>
+                        
+                        
+                        <a href="https://saalimzayed.github.io/HUKMQALBI/" class="book-link">
+                            <i class="fas fa-book"></i>
+                            visit the book web
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Book 3 -->
+                <div class="book-card">
+                    <div class="book-image-container">
+                        <a href="https://ibb.co.com/PzfDxNBq"><img src="https://i.ibb.co.com/NnHTxswc/Red-Black-White-Modern-Motivation-Ebook-Cover-4.png" alt="Red Black White Modern Motivation Ebook Cover (4)" border="0"></a><br /><a target='_blank' href='https://usefulwebtool.com/convert-lower-upper-case'>uppercase</a><br />
+                    </div>
+                    <div class="book-info">
+                        <h3>HUKMQALBI : NAVIGATING MODERN LIFE WITH PROPHETIC DISCIPLINE (ARABIC)</h3>
+                        <div class="book-meta">Published: 2025 | Pages: 220</div>
+                        <p>This is about creating an e-book for young, practicing Muslims who feel torn between their faith and their ambitions. The book, "The Productive Believer," offers a solution by showing how Islamic rituals like prayer are not obstacles to success, but the very foundation for a focused and purposeful life. It translates Prophetic teachings into a practical framework for modern productivity, helping readers achieve their goals without compromising their values. fOR THOSE WHO ARE ARABIAN</p>
+                        
+                    
+                        
+                        <a href="https://saalimzayed.github.io/HUKMQALBI/" class="book-link">
+                            <i class="fas fa-book"></i>
+                            visit the book web
                         </a>
                     </div>
                 </div>
@@ -1107,11 +1293,12 @@
                         </div>
                     </div>
                     
+                    
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-book"></i>
                         <div>
-                            <h4>Location</h4>
-                            <p>Dhaka, Bangladesh</p>
+                            <h4>Books Published</h4>
+                            <p>3 Books (Entrepreneurship & Ethics)</p>
                         </div>
                     </div>
                     
@@ -1132,9 +1319,10 @@
                         <li style="margin-bottom: 10px; line-height: 1.7;"><strong>Customer Focus:</strong> Prioritizing value creation and satisfaction above short-term gains.</li>
                         <li style="margin-bottom: 10px; line-height: 1.7;"><strong>Continuous Innovation:</strong> Leveraging technology to improve services and operations.</li>
                         <li style="margin-bottom: 10px; line-height: 1.7;"><strong>Social Responsibility:</strong> Ensuring business activities contribute positively to community wellbeing.</li>
+                        <li style="margin-bottom: 10px; line-height: 1.7;"><strong>Knowledge Sharing:</strong> Writing books to share insights and help other young entrepreneurs succeed.</li>
                     </ul>
                     
-                    <p style="margin-top: 20px; line-height: 1.7;">For business inquiries, collaboration proposals, or mentorship opportunities, please connect with me via my social platforms or use the contact form.</p>
+                    <p style="margin-top: 20px; line-height: 1.7;">For business inquiries, collaboration proposals, book inquiries, or mentorship opportunities, please connect with me via my social platforms or use the contact form.</p>
                     
                     <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap;">
                         <a href="mailto:raqeemzayed@gmail.com" class="btn" style="flex: 1; min-width: 200px;">
@@ -1161,12 +1349,13 @@
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
+                <a href="#books">Books</a>
                 <a href="#social">Connect</a>
                 <a href="#contact">Contact</a>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2025 Saalim Zayed | Entrepreneur, Developer, CEO at NeoTrendzMart</p>
+                <p>&copy; 2025 Saalim Zayed | Entrepreneur, Developer, Author, CEO at NeoTrendzMart</p>
                 <p style="margin-top: 10px; font-size: 0.85rem;">Operating with Islamic Business Ethics | Developed by Saalim Zayed</p>
             </div>
         </div>
@@ -1262,7 +1451,7 @@
         }, observerOptions);
         
         // Observe elements for animation
-        document.querySelectorAll('.skill-card, .project-card, .about-text, .contact-info, .social-icon, .detail-item').forEach(el => {
+        document.querySelectorAll('.skill-card, .project-card, .book-card, .about-text, .contact-info, .social-icon, .detail-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.5s, transform 0.5s';
