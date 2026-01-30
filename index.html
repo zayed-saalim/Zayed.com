@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saalim Zayed |13 Entrepreneur /title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6057ff;
+            --primary-dark: #554fd8;
+            --primary-light: #8a85ff;
+            --secondary: #00D4AA;
+            --dark-bg: #0A0A0F;
+            --dark-card: #13131F;
+            --dark-border: #252535;
+            --text-primary: #F0F0F0;
+            --text-secondary: #B0B0C0;
+            --accent: #ffffff;
+            --gradient: linear-gradient(135deg, #6C63FF 0%, #00D4AA 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(10, 10, 15, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--dark-border);
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 70%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(108, 99, 255, 0.15) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-right: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero h1 .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: var(--primary);
+            opacity: 0.2;
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            max-width: 600px;
+            font-weight: 300;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .profile-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            background: var(--gradient);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 20px 40px rgba(108, 99, 255, 0.3);
+            animation: float 6s ease-in-out infinite, morph 8s ease-in-out infinite;
+            overflow: hidden;
+        }
+
+        .profile-img::before {
+            content: '';
+            position: absolute;
+            width: 92%;
+            height: 92%;
+            border-radius: 28% 72% 72% 28% / 28% 28% 72% 72%;
+            background-color: var(--dark-card);
+            background-image: url('https://ibb.co.com/nGWmTrq'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            transition: all 0.5s ease;
+        }
+
+        .profile-img:hover::before {
+            transform: scale(1.05);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(1deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        @keyframes morph {
+            0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
+            50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
+            75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(108, 99, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.5px;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(108, 99, 255, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background: rgba(108, 99, 255, 0.1);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            margin-left: 15px;
+        }
+
+        .btn-secondary:hover {
+            background: #00c29c;
+        }
+
+        .btn i {
+            font-size: 1rem;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .about-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .detail-item {
+            background: linear-gradient(145deg, var(--dark-card), #0f0f1a);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .detail-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(108, 99, 255, 0.15);
+        }
+
+        .detail-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .detail-item p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .skill-card {
+            background: linear-gradient(145deg, var(--dark-card), #0f0f1a);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s, box-shadow 0.5s;
+            border: 1px solid var(--dark-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-card i {
+            font-size: 2.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .skill-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Projects Section */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .project-card {
+            background: linear-gradient(145deg, var(--dark-card), #0f0f1a);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.5s, box-shadow 0.5s;
+            border: 1px solid var(--dark-border);
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(108, 99, 255, 0.2);
+        }
+
+        .project-logo {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(0, 212, 170, 0.1));
+            padding: 30px;
+        }
+
+        .project-logo img {
+            max-width: 100%;
+            max-height: 120px;
+            object-fit: contain;
+        }
+
+        .project-info {
+            padding: 30px;
+        }
+
+        .project-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .project-info p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .tech-tag {
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--primary-light);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .project-link:hover {
+            color: var(--primary-light);
+            gap: 12px;
+        }
+
+        /* Books Section */
+        .books-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .book-card {
+            background: linear-gradient(145deg, var(--dark-card), #0f0f1a);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.5s, box-shadow 0.5s;
+            border: 1px solid var(--dark-border);
+            position: relative;
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(108, 99, 255, 0.2);
+        }
+
+        .book-image-container {
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(0, 212, 170, 0.1));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-image {
+            max-width: 100%;
+            max-height: 170px;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s;
+        }
+
+        .book-card:hover .book-image {
+            transform: scale(1.05);
+        }
+
+        .book-info {
+            padding: 30px;
+        }
+
+        .book-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .book-meta {
+            color: var(--primary-light);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .book-info p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .book-genres {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .genre-tag {
+            background: rgba(0, 212, 170, 0.1);
+            color: var(--secondary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .book-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .book-link:hover {
+            color: var(--primary-light);
+            gap: 12px;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .social-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: all 0.3s;
+            padding: 20px;
+            background: linear-gradient(145deg, var(--dark-card), #0f0f1a);
+            border-radius: 12px;
+            border: 1px solid var(--dark-border);
+        }
+
+        .social-icon:hover {
+            color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(108, 99, 255, 0.15);
+            border-color: var(--primary);
+        }
+
+        .social-icon i {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .social-icon span {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .contact-info {
+            background: linear-gradient(145deg, var(--dark-card), #0f0f1a);
+            border-radius: 15px;
+            padding: 40px;
+            border: 1px solid var(--dark-border);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-right: 15px;
+            width: 30px;
+        }
+
+        .contact-form-btn {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(180deg, var(--dark-bg) 0%, #08080C 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-top: 1px solid var(--dark-border);
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--gradient);
+        }
+
+        .footer-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .profile-container {
+                width: 350px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 150px;
+            }
+
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 60px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-container,
+            .books-container {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-container {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: rgba(10, 10, 15, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: left 0.5s;
+                gap: 40px;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-toggle {
+                display: block;
+                z-index: 1001;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.95rem;
+            }
+
+            .social-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .book-image-container {
+                height: 200px;
+                padding: 30px;
+            }
+
+            .book-image {
+                max-height: 140px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .btn-outline, .btn-secondary {
+                margin-left: 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .profile-container {
+                width: 250px;
+                height: 250px;
+            }
+
+            .social-links {
+                grid-template-columns: 1fr;
+            }
+
+            .about-details {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                gap: 20px;
+            }
+
+            .book-image-container {
+                height: 180px;
+                padding: 25px;
+            }
+
+            .book-image {
+                max-height: 130px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">SaalimZayed</div>
+                <div class="nav-links">
+                    <a href="#home" class="active">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#books">Books</a>
+                    <a href="#social">Connect</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight">Saalim Zayed</span><br>Entrepreneur & Developer</h1>
+                <p>A dedicated Muslim entrepreneur, currently studying at 
+                    <a href="https://baseerahinternationalschool.org/">Baseerah International School, Dhaka</a>
+                    , Dhaka. I'm a entrepreneur, operating with Islamic business ethics at the core of my ventures.</p>
+                <div>
+                    <a href="#about" class="btn">
+                        <i class="fas fa-code"></i>
+                        About Me
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-envelope"></i>
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-container">
+                    <div class="profile-img"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Student, Entrepreneur – Blending education with innovation and ethical business practices.</p>
+            
+            <div class="about-content">
+                <div class="about-text">
+                  <h3>My Journey & Vision</h3>
+                  <p>Born in 2012, I am a young entrepreneur driven by a passion for technology, business, and innovation. As a practicing Muslim, my faith guides every step I take, ensuring that my work aligns with Islamic principles of honesty, fairness, and social responsibility.</p>
+                  <p>Currently studying at Baseerah International School, Dhaka (BISD), I balance academic growth with entrepreneurial ambition. I actively build and manage e-commerce ventures, focusing on ethical business practices while exploring global markets through dropshipping and digital solutions.</p>
+                  <p>With intermediate-level development skills and a strong interest in technology, I create tools and systems that serve both business and community needs, blending creativity, practicality, and faith-driven purpose.</p>
+
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <h4>Education</h4>
+                            <p>Baseerah International School, Dhaka (BISD)</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Role</h4>
+                            <p>CEO & Founder at NeoTrendzMart</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Business Model</h4>
+                            <p>E-commerce & Dropshipping</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Ethical Framework</h4>
+                            <p>Islamic Business Ethics</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <h3>Core Principles</h3>
+                    <p><strong>Ethical Entrepreneurship:</strong> I believe that business success should never come at the expense of integrity. My operations prioritize fair dealings, honest marketing, and customer satisfaction above all.</p>
+
+                    <p><strong>Continuous Learning:</strong> Balancing school with entrepreneurship has taught me the value of lifelong learning. I'm constantly improving both my business strategies and technical development skills.</p>
+
+                    <p><strong>Tech-Driven Solutions:</strong> As a developer, I leverage technology to create efficient, user-friendly solutions that enhance the customer experience and streamline business operations.</p>
+
+                    <p><strong>Community Impact:</strong> I measure success not just by profit, but by positive impact—creating value for customers, supporting ethical supply chains, and inspiring other young entrepreneurs.</p>
+
+                    <p><strong>Challenging Conventional Education:</strong> I believe traditional schools often focus more on training students to follow orders than to think critically or innovate. My approach emphasizes self-directed learning, practical skills, and developing real-world problem-solving abilities that prepare me for entrepreneurship and technological innovation.</p>
+
+                    
+                    <a href="https://forms.gle/qQkxfRiwaS4Csg9X6" target="_blank" class="btn" style="margin-top: 20px;">
+                        <i class="fas fa-paper-plane"></i>
+                        Contact Form
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <p class="section-subtitle">Combining technical expertise with entrepreneurial vision to create innovative solutions.</p>
+            
+            <div class="skills-container">
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                <div class="skill-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>E-commerce Strategy</h3>
+                    <p>Expertise in dropshipping models, market analysis, customer acquisition, conversion optimization, and digital marketing for online retail success.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Ethical Business Management</h3>
+                    <p>Implementing Islamic business ethics in modern e-commerce: transparency, fair pricing, honest marketing, social responsibility, and sustainable practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">My Successful Projects</h2>
+            <p class="section-subtitle">A showcase of my web development projects, demonstrating technical skills and creative problem-solving.</p>
+            
+            <div class="projects-container">
+                <!-- Tic Tac Toe Game -->
+                <div class="project-card">
+                    <div class="project-logo">
+                        <a href="https://ibb.co.com/NdZK7b47"><img src="https://i.ibb.co.com/YFphbwrb/Gemini-Generated-Image-w0swddw0swddw0sw.png" alt="Gemini-Generated-Image-w0swddw0swddw0sw" border="0"></a>
+                    </div>
+                    <div class="project-info">
+                        <h3>Tic Tac Toe Game</h3>
+                        <p>A classic Tic Tac Toe game built with HTML, CSS, and JavaScript. Features an intuitive interface, score tracking, and responsive design for all devices. Perfect demonstration of DOM manipulation and game logic implementation.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Game Development</span>
+                        </div>
+                        
+                        <a href="https://zayed-saalim.github.io/ZAYTIK/" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit Live Website
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- BarqIQ Tester -->
+                <div class="project-card">
+                    <div class="project-logo">
+                        <a href="https://imgbb.com/"><img src="https://i.ibb.co.com/21KwSPwW/Barq-IQ-Tester.png" alt="Barq IQ Tester" border="0"></a>
+                    </div>
+                    <div class="project-info">
+                        <h3>BarqIQ Tester</h3>
+                        <p>An WI-Fi tester. best for testing dwonlding speed.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Interactive Design</span>
+                        </div>
+                        
+                        <a href="https://zayed-saalim.github.io/BarqIQ/" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit Live Website
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- NeoTrendzMart -->
+                <div class="project-card">
+                    <div class="project-logo">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3082/3082383.png" alt="E-commerce Logo">
+                    </div>
+                    <div class="project-info">
+                        <h3>NeoTrendzMart</h3>
+                        <p>My flagship e-commerce venture built on ethical business principles. A dropshipping business with a focus on trendy products, customer satisfaction, and transparent operations. Demonstrates my entrepreneurial and technical skills.</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">E-commerce</span>
+                            <span class="tech-tag">Dropshipping</span>
+                            <span class="tech-tag">Business Strategy</span>
+                            <span class="tech-tag">Digital Marketing</span>
+                        </div>
+                        
+                        <a href="#contact" class="project-link">
+                            <i class="fas fa-info-circle"></i>
+                            Learn More About My Business
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    <section id="books">
+        <div class="container">
+            <h2 class="section-title">Books I've Written</h2>
+            <p class="section-subtitle">Exploring ideas through writing – sharing knowledge and insights from my entrepreneurial journey.</p>
+            
+            <div class="books-container">
+                <!-- Book 1 -->
+                <div class="book-card">
+                    <div class="book-image-container">
+                        <a href="https://ibb.co.com/7xRcWzDJ"><img src="https://i.ibb.co.com/Ngmhj3q6/Red-Black-White-Modern-Motivation-Ebook-Cover-2.png" alt="Red Black White Modern Motivation Ebook Cover (2)" border="0"></a>
+                    </div>
+                    <div class="book-info">
+                        <h3>HUKMQALBI : NAVIGATING MODERN LIFE WITH PROPHETIC DISCIPLINE (ENGLISH)</h3>
+                        <div class="book-meta">Published: 2025 | Pages: 14</div>
+                        <p>This is about creating an e-book for young, practicing Muslims who feel torn between their faith and their ambitions. The book, "The Productive Believer," offers a solution by showing how Islamic rituals like prayer are not obstacles to success, but the very foundation for a focused and purposeful life. It translates Prophetic teachings into a practical framework for modern productivity, helping readers achieve their goals without compromising their values.</p>
+                        
+                     
+                        
+                        <a href="https://saalimzayed.github.io/HUKMQALBI/" class="book-link">
+                            <i class="fas fa-book"></i>
+                            visit the book web
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Book 2 -->
+                <div class="book-card">
+                    <div class="book-image-container">
+                        <a href="https://ibb.co.com/HLgRcgbr"><img src="https://i.ibb.co.com/sp3cT3NF/Red-Black-White-Modern-Motivation-Ebook-Cover-3.png" alt="Red Black White Modern Motivation Ebook Cover (3)" border="0"></a>
+                    </div>
+                    <div class="book-info">
+                        <h3>HUKMQALBI : NAVIGATING MODERN LIFE WITH PROPHETIC DISCIPLINE (BANGLA)</h3>
+                        <div class="book-meta">Published: 2025 | Pages: 14 </div>
+                        <p>This is about creating an e-book for young, practicing Muslims who feel torn between their faith and their ambitions. The book, "The Productive Believer," offers a solution by showing how Islamic rituals like prayer are not obstacles to success, but the very foundation for a focused and purposeful life. It translates Prophetic teachings into a practical framework for modern productivity, helping readers achieve their goals without compromising their values.FOR THOSE WHO ARE BANGALI</p>
+                        
+                        
+                        <a href="https://saalimzayed.github.io/HUKMQALBI/" class="book-link">
+                            <i class="fas fa-book"></i>
+                            visit the book web
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Book 3 -->
+                <div class="book-card">
+                    <div class="book-image-container">
+                        <a href="https://ibb.co.com/PzfDxNBq"><img src="https://i.ibb.co.com/NnHTxswc/Red-Black-White-Modern-Motivation-Ebook-Cover-4.png" alt="Red Black White Modern Motivation Ebook Cover (4)" border="0"></a><br /><a target='_blank' href='https://usefulwebtool.com/convert-lower-upper-case'>uppercase</a><br />
+                    </div>
+                    <div class="book-info">
+                        <h3>HUKMQALBI : NAVIGATING MODERN LIFE WITH PROPHETIC DISCIPLINE (ARABIC)</h3>
+                        <div class="book-meta">Published: 2025 | Pages: 220</div>
+                        <p>This is about creating an e-book for young, practicing Muslims who feel torn between their faith and their ambitions. The book, "The Productive Believer," offers a solution by showing how Islamic rituals like prayer are not obstacles to success, but the very foundation for a focused and purposeful life. It translates Prophetic teachings into a practical framework for modern productivity, helping readers achieve their goals without compromising their values. fOR THOSE WHO ARE ARABIAN</p>
+                        
+                    
+                        
+                        <a href="https://saalimzayed.github.io/HUKMQALBI/" class="book-link">
+                            <i class="fas fa-book"></i>
+                            visit the book web
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Links Section -->
+    <section id="social">
+        <div class="container">
+            <h2 class="section-title">Connect With Me</h2>
+            <p class="section-subtitle">Stay updated with my entrepreneurial journey, projects, and insights across platforms.</p>
+            
+            <div class="social-links">
+                <a href="https://www.facebook.com/saalim.zayed" target="_blank" class="social-icon">
+                    <i class="fab fa-facebook"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://www.instagram.com/saalimzayedofficial/" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://bd.linkedin.com/in/saalimzay" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://x.com/SaalimZaye7" target="_blank" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter</span>
+                </a>
+                <a href="https://www.tiktok.com/@saalimzayedofficial" target="_blank" class="social-icon">
+                    <i class="fab fa-tiktok"></i>
+                    <span>TikTok</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Interested in collaboration, mentorship, or just want to connect? Feel free to reach out.</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-user"></i>
+                        <div>
+                            <h4>Full Name</h4>
+                            <p>Saalim Zayed</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div>
+                            <h4>Education</h4>
+                            <p>Baseerah International School, Dhaka (BISD)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-briefcase"></i>
+                        <div>
+                            <h4>Business</h4>
+                            <p>Owner/Manager/CEO</p>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-book"></i>
+                        <div>
+                            <h4>Books Published</h4>
+                            <p>3 Books (Entrepreneurship & Ethics)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-btn">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYMDzSfHwOsWlVprbLuTew9A1197bJTbecGZT8UV4G4JXP_Q/viewform?usp=publish-editor" target="_blank" class="btn btn-secondary">
+                            <i class="fas fa-form"></i>
+                            Open Contact Form
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>My Business Philosophy</h3>
+                    <p>As a young entrepreneur guided by Islamic principles, I believe that business should be a force for good. My approach combines:</p>
+                    
+                    <ul style="margin-left: 20px; margin-top: 15px; color: var(--text-secondary);">
+                        <li style="margin-bottom: 10px; line-height: 1.7;"><strong>Ethical Transparency:</strong> Clear communication and honest dealings with all stakeholders.</li>
+                        <li style="margin-bottom: 10px; line-height: 1.7;"><strong>Customer Focus:</strong> Prioritizing value creation and satisfaction above short-term gains.</li>
+                        <li style="margin-bottom: 10px; line-height: 1.7;"><strong>Continuous Innovation:</strong> Leveraging technology to improve services and operations.</li>
+                        <li style="margin-bottom: 10px; line-height: 1.7;"><strong>Social Responsibility:</strong> Ensuring business activities contribute positively to community wellbeing.</li>
+                        <li style="margin-bottom: 10px; line-height: 1.7;"><strong>Knowledge Sharing:</strong> Writing books to share insights and help other young entrepreneurs succeed.</li>
+                    </ul>
+                    
+                    <p style="margin-top: 20px; line-height: 1.7;">For business inquiries, collaboration proposals, book inquiries, or mentorship opportunities, please connect with me via my social platforms or use the contact form.</p>
+                    
+                    <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap;">
+                        <a href="mailto:raqeemzayed@gmail.com" class="btn" style="flex: 1; min-width: 200px;">
+                            <i class="fas fa-envelope"></i>
+                            Email Me
+                        </a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYMDzSfHwOsWlVprbLuTew9A1197bJTbecGZT8UV4G4JXP_Q/viewform?usp=publish-editor" target="_blank" class="btn btn-outline" style="flex: 1; min-width: 200px;">
+                            <i class="fas fa-edit"></i>
+                            Fill Contact Form
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">SaalimZayed</div>
+            
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#books">Books</a>
+                <a href="#social">Connect</a>
+                <a href="#contact">Contact</a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Saalim Zayed | Entrepreneur, Developer, Author, CEO at NeoTrendzMart</p>
+                <p style="margin-top: 10px; font-size: 0.85rem;">Operating with Islamic Business Ethics | Developed by Saalim Zayed</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileToggle.querySelector('i').classList.toggle('fa-bars');
+            mobileToggle.querySelector('i').classList.toggle('fa-times');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileToggle.querySelector('i').classList.add('fa-bars');
+                mobileToggle.querySelector('i').classList.remove('fa-times');
+            });
+        });
+        
+        // Active navigation link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.backgroundColor = 'rgba(10, 10, 15, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.backgroundColor = 'rgba(10, 10, 15, 0.98)';
+                header.style.boxShadow = 'none';
+            }
+        });
+        
+        // Animation on scroll with Intersection Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.querySelectorAll('.skill-card, .project-card, .book-card, .about-text, .contact-info, .social-icon, .detail-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s, transform 0.5s';
+            observer.observe(el);
+        });
+        
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+        
+        // Form button confirmation
+        document.querySelectorAll('a[href*="docs.google.com/forms"]').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if(!this.getAttribute('target')) {
+                    e.preventDefault();
+                    window.open(this.href, '_blank');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
