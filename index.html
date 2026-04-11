@@ -3,9 +3,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Saalim Zayed — Entrepreneur, Investor, & Author </title>
-    <meta name="description" content="Saalim Zayed is an Muslim entrepreneur, investor, Founder of many E-commers Store's">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>Saalim Zayed · Young Entrepreneur & Author</title>
+    <meta name="description" content="Saalim Zayed is a young entrepreneur, founder of ecom Brands, author of HUKM QALBI.">
     <meta name="author" content="Saalim Zayed">
     <link rel="canonical" href="https://saalimzayed.com/">
     
@@ -27,19 +27,20 @@
             color: #ffffff;
             overflow-x: hidden;
             scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
         }
         /* Premium Scrollbar */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #0a0a0a; }
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 12px; }
 
-        /* ===== ENHANCED GLASSMORPHIC NAVBAR (Desktop + Mobile) ===== */
+        /* ===== ENHANCED GLASS NAVBAR ===== */
         .glass-nav {
             position: fixed;
-            top: 24px;
+            top: 18px;
             left: 50%;
             transform: translateX(-50%);
-            width: calc(100% - 40px);
+            width: calc(100% - 32px);
             max-width: 1280px;
             z-index: 1200;
             backdrop-filter: blur(20px) saturate(200%);
@@ -49,10 +50,10 @@
             border: 0.8px solid rgba(255, 255, 255, 0.12);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 0 0.5px rgba(255, 255, 255, 0.05) inset;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            padding: 0.7rem 2rem;
+            padding: 0.7rem 1.8rem;
         }
         .glass-nav.scrolled {
-            top: 12px;
+            top: 10px;
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(28px);
             box-shadow: 0 24px 48px -12px rgba(0,0,0,0.8);
@@ -87,11 +88,12 @@
             transition: 0.2s;
             letter-spacing: -0.01em;
             position: relative;
+            padding: 0.5rem 0;
         }
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -6px;
+            bottom: -2px;
             left: 0;
             width: 0%;
             height: 1.5px;
@@ -105,16 +107,16 @@
             width: 100%;
         }
 
-        /* Mobile menu toggle button (hidden on desktop) */
+        /* Mobile menu toggle */
         .mobile-menu-toggle {
             display: none;
             background: transparent;
             border: none;
             color: #fff;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             cursor: pointer;
-            width: 44px;
-            height: 44px;
+            width: 48px;
+            height: 48px;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
@@ -122,12 +124,14 @@
             background: rgba(255,255,255,0.05);
             border: 0.5px solid rgba(255,255,255,0.15);
             transition: all 0.2s;
+            -webkit-tap-highlight-color: transparent;
         }
-        .mobile-menu-toggle:hover {
-            background: rgba(255,255,255,0.15);
+        .mobile-menu-toggle:active {
+            background: rgba(255,255,255,0.2);
+            transform: scale(0.94);
         }
 
-        /* Fullscreen glass mobile menu overlay */
+        /* Fullscreen glass mobile overlay */
         .mobile-menu-overlay {
             position: fixed;
             top: 0;
@@ -137,14 +141,14 @@
             z-index: 1150;
             backdrop-filter: blur(40px) saturate(180%);
             -webkit-backdrop-filter: blur(40px) saturate(180%);
-            background: rgba(0, 0, 0, 0.75);
+            background: rgba(0, 0, 0, 0.8);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.5s ease, visibility 0.5s;
+            transition: opacity 0.4s ease, visibility 0.4s;
             padding: 2rem;
         }
         .mobile-menu-overlay.active {
@@ -153,8 +157,8 @@
         }
         .mobile-menu-overlay .close-btn {
             position: absolute;
-            top: 32px;
-            right: 32px;
+            top: 24px;
+            right: 24px;
             background: rgba(255,255,255,0.05);
             border: 0.5px solid rgba(255,255,255,0.2);
             color: white;
@@ -168,15 +172,16 @@
             backdrop-filter: blur(12px);
             cursor: pointer;
             transition: 0.2s;
+            -webkit-tap-highlight-color: transparent;
         }
-        .mobile-menu-overlay .close-btn:hover {
-            background: rgba(255,255,255,0.2);
-            transform: scale(0.95);
+        .mobile-menu-overlay .close-btn:active {
+            background: rgba(255,255,255,0.25);
+            transform: scale(0.92);
         }
         .mobile-nav-links {
             display: flex;
             flex-direction: column;
-            gap: 2.5rem;
+            gap: 2.2rem;
             text-align: center;
         }
         .mobile-nav-links a {
@@ -186,39 +191,23 @@
             text-decoration: none;
             letter-spacing: -0.03em;
             transition: 0.2s;
-            opacity: 0.8;
+            opacity: 0.85;
+            padding: 0.5rem 1rem;
+            -webkit-tap-highlight-color: transparent;
         }
-        .mobile-nav-links a:hover {
+        .mobile-nav-links a:active {
             opacity: 1;
-            transform: scale(1.02);
+            transform: scale(0.98);
         }
 
-        /* Responsive behavior */
-        @media (max-width: 768px) {
-            .glass-nav {
-                padding: 0.5rem 1.2rem;
-                width: calc(100% - 24px);
-                border-radius: 40px;
-            }
-            .nav-links {
-                display: none;
-            }
-            .mobile-menu-toggle {
-                display: flex;
-            }
-            .logo a {
-                font-size: 1.3rem;
-            }
-        }
-
-        /* Main content spacing */
-        main { padding-top: 110px; }
+        /* main spacing */
+        main { padding-top: 100px; }
 
         /* Sections reveal */
         section {
             max-width: 1440px;
             margin: 0 auto;
-            padding: 6rem 2rem;
+            padding: 5rem 1.5rem;
             opacity: 0;
             transform: translateY(32px);
             transition: opacity 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1);
@@ -228,21 +217,22 @@
             transform: translateY(0);
         }
 
-        /* Hero section */
+        /* Hero */
         .hero-banner {
             position: relative;
             width: 100%;
             height: 85vh;
-            min-height: 600px;
+            min-height: 560px;
+            max-height: 900px;
             overflow: hidden;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             border-radius: 32px;
-            background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2940&auto=format&fit=crop') center/cover no-repeat;
+            background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2940&auto=format&fit=crop') center/cover no-repeat;
         }
         .hero-overlay {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.85) 100%);
             z-index: 1;
         }
         .hero-content {
@@ -254,9 +244,10 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding: 1.5rem;
         }
         .hero-content h1 {
-            font-size: clamp(3rem, 8vw, 7rem);
+            font-size: clamp(2.8rem, 10vw, 7rem);
             font-weight: 900;
             letter-spacing: -0.04em;
             color: #ffffff;
@@ -264,42 +255,53 @@
             text-transform: uppercase;
         }
         .hero-content p {
-            font-size: clamp(1rem, 2vw, 1.5rem);
+            font-size: clamp(1rem, 3vw, 1.5rem);
             color: #d1d1d1;
             margin-top: 1rem;
             font-weight: 400;
             letter-spacing: 0.02em;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Buttons */
-        .btn-white {
-            display: inline-block;
-            margin-top: 2rem;
-            background: #ffffff;
-            color: #000000;
-            padding: 1rem 2.5rem;
+        .btn-white, .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 180px;
+            padding: 0.9rem 2rem;
             border-radius: 50px;
             font-weight: 600;
             font-size: 1rem;
             text-decoration: none;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.2);
+            -webkit-tap-highlight-color: transparent;
+            border: 1px solid transparent;
+            white-space: nowrap;
         }
-        .btn-white:hover { background: #e0e0e0; transform: scale(0.98); }
+        .btn-white {
+            background: #ffffff;
+            color: #000000;
+        }
+        .btn-white:active { background: #d0d0d0; transform: scale(0.97); }
         
         .btn-outline {
             background: transparent;
-            border: 1px solid rgba(255,255,255,0.3);
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.35);
             color: white;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-block;
             backdrop-filter: blur(10px);
         }
-        .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
+        .btn-outline:active { background: rgba(255,255,255,0.1); border-color: white; }
+
+        .hero-actions {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
 
         /* Intro section */
         .intro-section {
@@ -308,19 +310,19 @@
         .intro-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 4rem;
+            gap: 3rem;
             align-items: center;
             justify-content: space-between;
         }
         .intro-text {
             flex: 1;
-            min-width: 300px;
+            min-width: 280px;
         }
         .intro-text h2 {
-            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
             font-weight: 500;
-            line-height: 1.4;
-            color: #999;
+            line-height: 1.45;
+            color: #ccc;
         }
         .intro-text h2 strong {
             color: #fff;
@@ -328,34 +330,38 @@
         }
         .intro-image {
             flex: 0.8;
-            min-width: 300px;
+            min-width: 260px;
+            text-align: center;
         }
         .intro-image img {
-            width: 100%;
+            max-width: 100%;
+            height: auto;
             border-radius: 24px;
             filter: grayscale(100%) contrast(1.2);
+            border: 1px solid #222;
         }
 
-        /* Swiper Cards */
-        .key-blocks { padding: 4rem 0; }
+        /* Ecosystem Swiper */
+        .key-blocks { padding: 2rem 0; }
         .swiper-key-blocks { overflow: visible; }
         .swiper-slide-card {
             background: #111;
-            border-radius: 24px;
+            border-radius: 28px;
             overflow: hidden;
             position: relative;
-            height: 500px;
+            height: 460px;
             display: flex;
             align-items: flex-end;
-            padding: 2.5rem;
+            padding: 2rem;
             transition: transform 0.3s;
             background-size: cover;
             background-position: center;
             text-decoration: none;
             color: white;
             border: 1px solid rgba(255,255,255,0.05);
+            -webkit-tap-highlight-color: transparent;
         }
-        .swiper-slide-card:hover { transform: translateY(-10px); }
+        .swiper-slide-card:active { transform: scale(0.98); }
         .swiper-slide-card h2 {
             font-size: 2rem;
             font-weight: 800;
@@ -371,10 +377,10 @@
         }
         .arrow-icon {
             position: absolute;
-            top: 24px;
-            right: 24px;
-            width: 40px;
-            height: 40px;
+            top: 20px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
             display: flex;
@@ -382,20 +388,19 @@
             justify-content: center;
             backdrop-filter: blur(10px);
             z-index: 2;
-            transition: background 0.3s;
+            transition: background 0.2s;
         }
-        .swiper-slide-card:hover .arrow-icon { background: rgba(255,255,255,0.3); }
 
         /* Timeline */
-        .timeline-wrap { margin: 6rem auto; max-width: 1000px; }
+        .timeline-wrap { margin: 4rem auto; max-width: 1000px; }
         .timeline-header {
-            font-size: 3rem;
+            font-size: clamp(2.2rem, 6vw, 3.2rem);
             font-weight: 800;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             text-transform: uppercase;
             letter-spacing: -0.03em;
         }
-        .timeline { position: relative; margin: 3rem 0; }
+        .timeline { position: relative; margin: 2rem 0; }
         .timeline-line {
             position: absolute;
             left: 50%;
@@ -408,41 +413,42 @@
         .tl-block {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 6rem;
+            margin-bottom: 5rem;
             position: relative;
             width: 100%;
         }
         .tl-block::after {
             content: '';
             position: absolute;
-            width: 12px;
-            height: 12px;
+            width: 14px;
+            height: 14px;
             background: #fff;
             border-radius: 50%;
             left: 50%;
             transform: translateX(-50%);
             top: 6px;
             z-index: 2;
+            box-shadow: 0 0 0 4px rgba(255,255,255,0.1);
         }
         .tl-content {
             width: 45%;
         }
         .tl-block:nth-child(even) .tl-content { margin-left: auto; }
-        .tl-content h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #fff; }
-        .tl-content .year { color: #888; font-weight: 600; font-size: 1.2rem; display: block; margin-bottom: 0.5rem; }
-        .tl-content p { color: #aaa; line-height: 1.6; }
-        @media (max-width: 768px) {
-            .timeline-line { left: 20px; }
-            .tl-block::after { left: 20px; }
-            .tl-content { width: calc(100% - 50px); margin-left: auto !important; }
-        }
+        .tl-content h3 { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .tl-content .year { color: #aaa; font-weight: 600; font-size: 1.2rem; display: block; margin-bottom: 0.5rem; }
+        .tl-content p { color: #bbb; line-height: 1.6; }
 
         /* Books & News Section */
-        .news-section { background: #111; border-radius: 40px; padding: 6rem 2rem; margin: 2rem; }
-        .news-header { font-size: 2.5rem; font-weight: 800; margin-bottom: 3rem; text-align: center; }
+        .news-section {
+            background: #0e0e0e;
+            border-radius: 40px;
+            padding: 5rem 1.8rem;
+            margin: 1.5rem;
+        }
+        .news-header { font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 800; margin-bottom: 3rem; text-align: center; }
         .news-block {
             background: #000;
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
             border: 1px solid rgba(255,255,255,0.1);
             text-decoration: none;
@@ -450,72 +456,157 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-            transition: 0.3s;
+            transition: 0.2s;
         }
-        .news-block:hover { border-color: rgba(255,255,255,0.3); }
-        .news-thumb { height: 250px; overflow: hidden; }
-        .news-thumb img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(50%); transition: 0.5s; }
-        .news-block:hover .news-thumb img { filter: grayscale(0%); transform: scale(1.05); }
-        .news-content { padding: 2rem; }
-        .news-tag { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 1rem; display: block; }
-        .news-block h3 { font-size: 1.4rem; font-weight: 600; line-height: 1.4; margin-bottom: 1rem; }
+        .news-block:active { border-color: rgba(255,255,255,0.3); }
+        .news-thumb { height: 220px; overflow: hidden; }
+        .news-thumb img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(40%); transition: 0.4s; }
+        .news-content { padding: 1.8rem; }
+        .news-tag { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; color: #999; margin-bottom: 1rem; display: block; }
+        .news-block h3 { font-size: 1.4rem; font-weight: 600; line-height: 1.4; }
 
-        /* Stats Section */
-        .stats-wrap { padding: 6rem 2rem; text-align: center; }
+        /* Stats */
+        .stats-wrap { padding: 4rem 1.5rem; text-align: center; }
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.8rem;
             max-width: 1200px;
             margin: 0 auto;
         }
-        .stat-box { padding: 3rem; background: #0a0a0a; border-radius: 24px; border: 1px solid #1a1a1a; }
-        .stat-box h4 { font-size: 4rem; font-weight: 900; margin-bottom: 0.5rem; }
-        .stat-box p { color: #888; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
+        .stat-box { padding: 2.5rem 1.5rem; background: #0a0a0a; border-radius: 28px; border: 1px solid #1f1f1f; }
+        .stat-box h4 { font-size: 3.5rem; font-weight: 900; margin-bottom: 0.5rem; }
+        .stat-box p { color: #888; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.9rem; }
 
         /* Footer */
-        footer { background: #000; padding: 4rem 2rem 2rem; border-top: 1px solid #111; }
-        .footer-social { display: flex; justify-content: center; gap: 2rem; list-style: none; margin-bottom: 4rem; }
-        .footer-social a { color: #fff; font-size: 1.5rem; transition: 0.3s; opacity: 0.6; }
-        .footer-social a:hover { opacity: 1; transform: translateY(-3px); display: inline-block; }
-        .footer-bottom { display: flex; justify-content: space-between; align-items: center; color: #666; font-size: 0.9rem; flex-wrap: wrap; gap: 1rem; }
-        .footer-links { display: flex; gap: 2rem; list-style: none; }
-        .footer-links a { color: #666; text-decoration: none; transition: 0.2s; }
-        .footer-links a:hover { color: #fff; }
-        
+        footer { background: #000; padding: 4rem 2rem 2rem; border-top: 1px solid #181818; }
+        .footer-social { display: flex; justify-content: center; gap: 2.2rem; list-style: none; margin-bottom: 3.5rem; flex-wrap: wrap; }
+        .footer-social a {
+            color: #fff;
+            font-size: 1.8rem;
+            transition: 0.2s;
+            opacity: 0.65;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.03);
+            -webkit-tap-highlight-color: transparent;
+        }
+        .footer-social a:active { opacity: 1; background: rgba(255,255,255,0.1); transform: translateY(-3px); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; color: #777; font-size: 0.9rem; flex-wrap: wrap; gap: 1.2rem; }
+        .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+        .footer-links a { color: #888; text-decoration: none; padding: 0.4rem 0; transition: 0.2s; }
+        .footer-links a:active { color: #fff; }
+
         .text-center { text-align: center; }
         .mt-4 { margin-top: 2rem; }
+
+        /* ========== MOBILE REFINEMENTS ========== */
+        @media (max-width: 768px) {
+            .glass-nav {
+                padding: 0.5rem 1.2rem;
+                width: calc(100% - 20px);
+                border-radius: 48px;
+                top: 14px;
+            }
+            .logo a { font-size: 1.3rem; }
+            .nav-links { display: none; }
+            .mobile-menu-toggle { display: flex; }
+
+            main { padding-top: 85px; }
+
+            section { padding: 4rem 1.2rem; }
+            .hero-banner { border-radius: 24px; min-height: 520px; }
+            .hero-actions .btn-white, .hero-actions .btn-outline {
+                min-width: 160px;
+                padding: 0.8rem 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            .intro-grid { gap: 2rem; }
+            .intro-image img { max-width: 85%; }
+
+            .timeline-line { left: 18px; }
+            .tl-block::after { left: 18px; width: 12px; height: 12px; }
+            .tl-content { width: calc(100% - 50px); margin-left: auto !important; }
+            .tl-content h3 { font-size: 1.4rem; }
+            .tl-block { margin-bottom: 4rem; }
+
+            .swiper-slide-card { height: 400px; padding: 1.8rem; }
+            .swiper-slide-card h2 { font-size: 1.8rem; }
+
+            .news-section { padding: 4rem 1.2rem; margin: 1rem; border-radius: 32px; }
+            .news-thumb { height: 200px; }
+
+            .stats-grid { gap: 1.2rem; }
+            .stat-box { padding: 2rem 1rem; }
+            .stat-box h4 { font-size: 3rem; }
+
+            .footer-social { gap: 1.2rem; }
+            .footer-social a { width: 48px; height: 48px; font-size: 1.6rem; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .footer-links { justify-content: center; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 { font-size: 2.6rem; }
+            .hero-actions { flex-direction: column; align-items: stretch; width: 100%; }
+            .btn-white, .btn-outline { width: 100%; min-width: auto; }
+
+            .mobile-nav-links a { font-size: 2rem; }
+            .close-btn { width: 50px; height: 50px; font-size: 1.8rem; }
+
+            .swiper-slide-card { height: 360px; }
+            .intro-text h2 { font-size: 1.5rem; }
+            .timeline-header { font-size: 2rem; }
+            .tl-content { width: calc(100% - 40px); }
+        }
+
+        /* larger desktop fine-tuning */
+        @media (min-width: 1400px) {
+            .hero-banner { border-radius: 48px; }
+        }
+
+        /* tap highlight & active states */
+        a, button, .swiper-slide-card, .news-block {
+            -webkit-tap-highlight-color: rgba(255,255,255,0.05);
+        }
+        .footer-links a, .nav-links a {
+            padding: 0.5rem 0;
+        }
     </style>
 </head>
 <body>
 
-<!-- ===== PREMIUM GLASS NAVBAR ===== -->
+<!-- ===== GLASS NAVBAR ===== -->
 <nav class="glass-nav" id="glassNav">
     <div class="nav-container">
-        <div class="logo"><a href="#">SSaalim</a></div>
+        <div class="logo"><a href="#" aria-label="Saalim Zayed">Saalim Zayed</a></div>
         <div class="nav-links">
             <a href="#about">About</a>
-            <a href="#empire">Portfolio</a>
-            <a href="#timeline">Journey</a>
-            <a href="#news">Books & News</a>
+            <a href="#ecosystem">Ecosystem</a>
+            <a href="#journey">Journey</a>
+            <a href="#works">Book & Skills</a>
         </div>
-        <!-- Mobile Hamburger Button -->
-        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu" aria-expanded="false">
             <i class="fas fa-bars"></i>
         </button>
     </div>
 </nav>
 
-<!-- Fullscreen Glass Mobile Menu Overlay -->
-<div class="mobile-menu-overlay" id="mobileMenuOverlay">
-    <div class="close-btn" id="closeMobileMenu">
+<!-- Fullscreen Mobile Menu -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay" aria-hidden="true">
+    <div class="close-btn" id="closeMobileMenu" aria-label="Close menu">
         <i class="fas fa-times"></i>
     </div>
     <div class="mobile-nav-links">
         <a href="#about" class="mobile-link">About</a>
-        <a href="#empire" class="mobile-link">Portfolio</a>
-        <a href="#timeline" class="mobile-link">Journey</a>
-        <a href="#news" class="mobile-link">Books & News</a>
+        <a href="#ecosystem" class="mobile-link">Ecosystem</a>
+        <a href="#journey" class="mobile-link">Journey</a>
+        <a href="#works" class="mobile-link">Book & Skills</a>
     </div>
 </div>
 
@@ -523,10 +614,11 @@
     <div class="hero-banner" id="home">
         <div class="hero-overlay"></div>
         <div class="hero-content" data-aos="zoom-out" data-aos-duration="1200">
-            <h1>Steven Bartlett</h1>
-            <p>Entrepreneur, Investor, Best-Selling Author & Podcaster.</p>
-            <div style="margin-top: 1rem; display: flex; gap: 1rem;">
-                <a href="#about" class="btn-white">Discover More</a>
+            <h1>Saalim Zayed</h1>
+            <p>Young Entrepreneur · Ethical E‑commerce · Author</p>
+            <div class="hero-actions">
+                <a href="#about" class="btn-white">Discover Saalim</a>
+                <a href="#ecosystem" class="btn-outline">Explore Ecosystem</a>
             </div>
         </div>
     </div>
@@ -534,11 +626,11 @@
     <section id="about" class="intro-section">
         <div class="intro-grid">
             <div class="intro-text" data-aos="fade-up" data-aos-duration="1000">
-                <h2>Steven Bartlett is an <strong>entrepreneur</strong>, <strong>investor</strong>, best-selling <strong>author</strong>, and the host of Europe's biggest podcast, <strong>'The Diary of a CEO'</strong>. He is the founder of <strong>Flightstory</strong>, <strong>Flight Fund</strong>, and a Dragon on BBC's <strong>Dragons' Den</strong>.</h2>
-                <a href="#empire" class="btn-outline mt-4">View Portfolio</a>
+                <h2><strong>Saalim Zayed</strong> (born 2012) is a young entrepreneur and author. He founded <strong>ecom Brands</strong>, blending <strong>Islamic ethics</strong> with modern dropshipping. Author of <strong>“HUKM QALBI”</strong> and an intermediate developer.</h2>
+                <a href="#ecosystem" class="btn-outline mt-4" style="margin-top:2rem;">View Ventures</a>
             </div>
             <div class="intro-image" data-aos="fade-left" data-aos-duration="1200">
-                <img src="" alt="Steven Bartlett Portrait">
+                <img src="sz.png" alt="Saalim Zayed logo" loading="lazy">
             </div>
         </div>
     </section>
@@ -546,125 +638,116 @@
     <section class="stats-wrap" data-aos="fade-up">
         <div class="stats-grid">
             <div class="stat-box">
-                <h4>$425m</h4>
-                <p>Steven.com Valuation</p>
+                <h4>2012</h4>
+                <p>Born in Bangladesh</p>
             </div>
             <div class="stat-box">
-                <h4>40+</h4>
-                <p>Company Investments</p>
+                <h4>ecom Brands</h4>
+                <p>Founder & CEO</p>
             </div>
             <div class="stat-box">
-                <h4>#1</h4>
-                <p>Podcast in Europe</p>
+                <h4>1</h4>
+                <p>Published Book</p>
             </div>
         </div>
     </section>
 
-    <div id="empire" class="key-blocks" style="max-width: 1440px; margin: 0 auto; padding: 0 2rem;">
-        <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">The Ecosystem</h2>
+    <div id="ecosystem" class="key-blocks" style="max-width: 1440px; margin: 0 auto; padding: 0 1.5rem;">
+        <h2 style="font-size: clamp(2rem,5vw,2.8rem); font-weight: 800; margin-bottom: 2rem;">The Ecosystem</h2>
         <div class="swiper swiper-key-blocks" data-aos="fade-up">
             <div class="swiper-wrapper">
-                <a href="#" class="swiper-slide swiper-slide-card" style="background-image: url('https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=800&auto=format&fit=crop');">
+                <a href="#" class="swiper-slide swiper-slide-card" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop');">
                     <div class="overlay-card"></div>
                     <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
-                    <h2>The Diary of a CEO</h2>
+                    <h2>ecom Brands</h2>
                 </a>
-                <a href="#" class="swiper-slide swiper-slide-card" style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop');">
+                <a href="#" class="swiper-slide swiper-slide-card" style="background-image: url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=800&auto=format&fit=crop');">
                     <div class="overlay-card"></div>
                     <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
-                    <h2>Flight Fund & Flightstory</h2>
+                    <h2>HUKM QALBI</h2>
                 </a>
-                <a href="#" class="swiper-slide swiper-slide-card" style="background-image: url('https://images.unsplash.com/photo-1639762681485-074b7f4ec651?q=80&w=800&auto=format&fit=crop');">
+                <a href="#" class="swiper-slide swiper-slide-card" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop');">
                     <div class="overlay-card"></div>
                     <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
-                    <h2>thirdweb</h2>
+                    <h2>Tech & Dev</h2>
                 </a>
-                <a href="#" class="swiper-slide swiper-slide-card" style="background-image: url('https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=800&auto=format&fit=crop');">
+                <a href="#" class="swiper-slide swiper-slide-card" style="background-image: url('https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=800&auto=format&fit=crop');">
                     <div class="overlay-card"></div>
                     <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
-                    <h2>Books & Publishing</h2>
+                    <h2>Islamic Ethics</h2>
                 </a>
             </div>
         </div>
     </div>
 
-    <section id="timeline" class="timeline-wrap">
-        <h2 class="timeline-header text-center" data-aos="fade-up">Journey</h2>
+    <section id="journey" class="timeline-wrap">
+        <h2 class="timeline-header text-center" data-aos="fade-up">Journey & Milestones</h2>
         <div class="timeline">
             <div class="timeline-line"></div>
-            
             <div class="tl-block" data-aos="fade-up">
                 <div class="tl-content">
-                    <span class="year">1992</span>
-                    <h3>Born in Botswana</h3>
-                    <p>Born in Botswana and later moved to Plymouth, England in 1994, shaping an early drive for independence and entrepreneurship.</p>
+                    <span class="year">2012</span>
+                    <h3>Born in Bangladesh</h3>
+                    <p>Raised with discipline and Islamic values in Dhaka, shaping a commitment to honesty and responsibility.</p>
                 </div>
             </div>
-
             <div class="tl-block" data-aos="fade-up">
                 <div class="tl-content">
-                    <span class="year">2014</span>
-                    <h3>Co-Founds Social Chain</h3>
-                    <p>Dropped out of university to launch Social Chain, building it into one of the world's most influential social media marketing agencies before stepping down as co-CEO in 2020.</p>
+                    <span class="year">2020–Present</span>
+                    <h3>Education at BISD</h3>
+                    <p>Pursuing secondary education at Baseerah International School Dhaka, while self-learning business.</p>
                 </div>
             </div>
-
             <div class="tl-block" data-aos="fade-up">
                 <div class="tl-content">
-                    <span class="year">2017</span>
-                    <h3>Launches 'The Diary of a CEO'</h3>
-                    <p>Created the acclaimed podcast series, which has since grown into one of the largest podcasts globally, featuring deep-dive interviews with world leaders, thinkers, and entrepreneurs.</p>
+                    <span class="year">2024</span>
+                    <h3>Founds ecom Brands</h3>
+                    <p>Launched a dropshipping venture focused on ethical, halal income and customer transparency.</p>
                 </div>
             </div>
-
             <div class="tl-block" data-aos="fade-up">
                 <div class="tl-content">
-                    <span class="year">2021</span>
-                    <h3>Flightstory, Dragons' Den & Books</h3>
-                    <p>Co-founded Flightstory and thirdweb. Became the youngest-ever Dragon on BBC's Dragons' Den. Published the Sunday Times bestseller 'Happy Sexy Millionaire'.</p>
-                </div>
-            </div>
-
-            <div class="tl-block" data-aos="fade-up">
-                <div class="tl-content">
-                    <span class="year">2025/2026</span>
-                    <h3>Global Empire & Valuation</h3>
-                    <p>Named among Forbes World Top 10 Creators. Steven.com hits a $425M valuation, securing major funding to build the 'Disney of the Creator Economy'. Continues scaling an expansive investment portfolio including Huel, Zoe, and PerfectTed.</p>
+                    <span class="year">2025</span>
+                    <h3>Publishes "HUKM QALBI"</h3>
+                    <p>Released a reflective book on Prophetic discipline and navigating modern life with moral clarity.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <div id="news" class="news-section" data-aos="fade-up">
-        <h2 class="news-header">Latest & Works</h2>
+    <div id="works" class="news-section" data-aos="fade-up">
+        <h2 class="news-header">Book & Technical Focus</h2>
         <div class="swiper swiper-news">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <a href="#" class="news-block">
-                        <div class="news-thumb"><img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=800&auto=format&fit=crop" alt="The 33 Laws Book"></div>
+                    <div class="news-block">
+                        <div class="news-thumb"><img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800&auto=format&fit=crop" alt="Book HUKM QALBI" loading="lazy"></div>
                         <div class="news-content">
-                            <span class="news-tag">Book</span>
-                            <h3>The Diary of a CEO: The 33 Laws of Business & Life</h3>
+                            <span class="news-tag">Published Work</span>
+                            <h3>HUKM QALBI: Prophetic Discipline</h3>
+                            <p style="color:#aaa; margin-top:0.5rem;">A guide to discipline, decision-making, and spiritual growth for young Muslims.</p>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <div class="swiper-slide">
-                    <a href="#" class="news-block">
-                        <div class="news-thumb"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Valuation News"></div>
+                    <div class="news-block">
+                        <div class="news-thumb"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop" alt="Development" loading="lazy"></div>
                         <div class="news-content">
-                            <span class="news-tag">News</span>
-                            <h3>Steven.com Hits $425M Valuation to become the 'Disney of the Creator Economy'</h3>
+                            <span class="news-tag">Tech Skills</span>
+                            <h3>Intermediate Developer</h3>
+                            <p style="color:#aaa;">HTML, CSS, JavaScript, modern frameworks — building clean UI/UX projects.</p>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <div class="swiper-slide">
-                    <a href="#" class="news-block">
-                        <div class="news-thumb"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Forbes Creator"></div>
+                    <div class="news-block">
+                        <div class="news-thumb"><img src="https://images.unsplash.com/photo-1556761175-b413da4bafc7?q=80&w=800&auto=format&fit=crop" alt="Islamic business" loading="lazy"></div>
                         <div class="news-content">
-                            <span class="news-tag">Press</span>
-                            <h3>Steven Bartlett Named Among Forbes World Top 10 Creators</h3>
+                            <span class="news-tag">Ethical Commerce</span>
+                            <h3>Halal Dropshipping</h3>
+                            <p style="color:#aaa;">Fairness, transparency, and long-term value — ecom Brands on Islamic ethics.</p>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -672,18 +755,17 @@
 
     <footer>
         <ul class="footer-social">
-            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-            <li><a href="#"><i class="fab fa-tiktok"></i></a></li>
+            <li><a href="https://bd.linkedin.com/in/saalimzayed" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://www.tiktok.com/@saalimzayedofficial" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></li>
+            <li><a href="https://www.facebook.com/saalimzayed/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://www.instagram.com/saalimzayedofficial/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
         </ul>
         <div class="footer-bottom">
-            <p>&copy; Steven Bartlett trading as Steven Bartlett Ltd. All Rights Reserved.</p>
+            <p>&copy; Saalim Zayed. All Rights Reserved. Guided by Islamic values.</p>
             <ul class="footer-links">
-                <li><a href="#">Terms & Conditions</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Cookies Policy</a></li>
+                <li><a href="#">Ethical Pledge</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </div>
     </footer>
@@ -692,23 +774,20 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    // Initialize AOS
     AOS.init({ duration: 800, once: true, offset: 80 });
 
-    // Glass Navbar scroll effect
     const nav = document.getElementById('glassNav');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) nav.classList.add('scrolled');
-        else nav.classList.remove('scrolled');
+        nav.classList.toggle('scrolled', window.scrollY > 40);
     });
 
-    // Intersection Observer for section reveals
+    // reveal sections
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('visible');
         });
-    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+    }, { threshold: 0.1 });
     sections.forEach(section => observer.observe(section));
 
     // Swipers
@@ -716,20 +795,22 @@
         slidesPerView: 1.1,
         spaceBetween: 20,
         breakpoints: { 
+            600: { slidesPerView: 1.8 },
             768: { slidesPerView: 2.2 }, 
             1024: { slidesPerView: 3.2 } 
         }
     });
     const newsSwiper = new Swiper('.swiper-news', {
         slidesPerView: 1.1,
-        spaceBetween: 24,
+        spaceBetween: 20,
         breakpoints: { 
+            600: { slidesPerView: 1.8 },
             768: { slidesPerView: 2.2 }, 
             1024: { slidesPerView: 3 } 
         }
     });
 
-    // ---------- MOBILE GLASS MENU TOGGLE (Premium) ----------
+    // Mobile menu logic
     const mobileToggle = document.getElementById('mobileMenuToggle');
     const overlay = document.getElementById('mobileMenuOverlay');
     const closeBtn = document.getElementById('closeMobileMenu');
@@ -737,21 +818,21 @@
     
     function openMenu() {
         overlay.classList.add('active');
+        overlay.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
         mobileToggle.innerHTML = '<i class="fas fa-times"></i>';
+        mobileToggle.setAttribute('aria-expanded', 'true');
     }
     function closeMenu() {
         overlay.classList.remove('active');
+        overlay.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
         mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        mobileToggle.setAttribute('aria-expanded', 'false');
     }
     
     mobileToggle.addEventListener('click', () => {
-        if (overlay.classList.contains('active')) {
-            closeMenu();
-        } else {
-            openMenu();
-        }
+        overlay.classList.contains('active') ? closeMenu() : openMenu();
     });
     
     closeBtn.addEventListener('click', closeMenu);
@@ -764,33 +845,27 @@
                 closeMenu();
                 const target = document.querySelector(hash);
                 if(target) {
-                    setTimeout(() => {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }, 100);
+                    setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
                 }
             }
         });
     });
 
-    // Smooth anchor scrolling for all nav links (desktop + mobile)
-    document.querySelectorAll('.nav-links a, .btn-white, .btn-outline, .logo a').forEach(anchor => {
+    // Smooth scroll for all anchor links
+    document.querySelectorAll('.nav-links a, .btn-white, .btn-outline, .logo a, .footer-links a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const hash = this.getAttribute('href');
             if(hash && hash.startsWith('#')) {
                 e.preventDefault();
                 const target = document.querySelector(hash);
                 if(target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                // Close mobile menu if open
                 if(overlay.classList.contains('active')) closeMenu();
             }
         });
     });
 
-    // Close mobile menu on window resize if > 768px (optional)
     window.addEventListener('resize', () => {
-        if(window.innerWidth > 768 && overlay.classList.contains('active')) {
-            closeMenu();
-        }
+        if(window.innerWidth > 768 && overlay.classList.contains('active')) closeMenu();
     });
 </script>
 </body>
