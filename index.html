@@ -1,63 +1,111 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-    <title>Saalim Zayed · Young Entrepreneur & Author</title>
-    <meta name="description" content="Saalim Zayed is a young entrepreneur, founder of ecom Brands, author of HUKM QALBI.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Saalim Zayed — Young Entrepreneur, Author & Ethical E‑commerce Founder</title>
+    <meta name="description" content="Saalim Zayed is a young entrepreneur, founder of ecom Brands, author.">
     <meta name="author" content="Saalim Zayed">
     <link rel="canonical" href="https://saalimzayed.com/">
     
-    <!-- Premium Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
+        /* ===== BASE & RESET ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         body {
-            background-color: #000000;
+            background-color: #030303;
             font-family: 'Inter', sans-serif;
             color: #ffffff;
             overflow-x: hidden;
             scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
         }
+        
         /* Premium Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0a0a0a; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 12px; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 12px; border: 2px solid #050505; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
 
-        /* ===== ENHANCED GLASS NAVBAR ===== */
+        /* ===== AMBIENT BACKGROUND GLOW ===== */
+        .ambient-glow {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 70vw;
+            height: 70vw;
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0) 70%);
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            pointer-events: none;
+            animation: pulse 15s infinite alternate ease-in-out;
+        }
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
+            100% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+        }
+
+        /* ===== PAGE LOADER ===== */
+        .loader {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100vh;
+            background: #000;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .loader h1 {
+            font-size: 3rem;
+            letter-spacing: -0.05em;
+            background: linear-gradient(135deg, #ffffff 0%, #555555 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: breathe 2s infinite alternate;
+        }
+        @keyframes breathe {
+            0% { opacity: 0.4; filter: blur(2px); transform: scale(0.98); }
+            100% { opacity: 1; filter: blur(0px); transform: scale(1); }
+        }
+
+        /* ===== ENHANCED GLASSMORPHIC NAVBAR ===== */
         .glass-nav {
             position: fixed;
-            top: 18px;
+            top: 24px;
             left: 50%;
             transform: translateX(-50%);
-            width: calc(100% - 32px);
+            width: calc(100% - 40px);
             max-width: 1280px;
             z-index: 1200;
             backdrop-filter: blur(20px) saturate(200%);
             -webkit-backdrop-filter: blur(20px) saturate(200%);
-            background: rgba(10, 10, 10, 0.5);
+            background: rgba(10, 10, 10, 0.4);
             border-radius: 60px;
-            border: 0.8px solid rgba(255, 255, 255, 0.12);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 0 0.5px rgba(255, 255, 255, 0.05) inset;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            padding: 0.7rem 1.8rem;
+            padding: 0.8rem 2.5rem;
         }
         .glass-nav.scrolled {
-            top: 10px;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(28px);
-            box-shadow: 0 24px 48px -12px rgba(0,0,0,0.8);
-            border-color: rgba(255,255,255,0.08);
+            top: 16px;
+            background: rgba(5, 5, 5, 0.75);
+            backdrop-filter: blur(30px);
+            border-color: rgba(255,255,255,0.05);
+            padding: 0.6rem 2.5rem;
         }
         .nav-container {
             display: flex;
@@ -65,752 +113,538 @@
             align-items: center;
         }
         .logo a {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 800;
-            letter-spacing: -0.03em;
-            color: #fff;
+            letter-spacing: -0.04em;
             text-decoration: none;
             text-transform: uppercase;
-            background: linear-gradient(135deg, #ffffff 0%, #d4d4d4 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #fff;
+            transition: opacity 0.3s;
         }
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-        }
+        .logo a:hover { opacity: 0.7; }
+        
+        .nav-links { display: flex; gap: 3rem; }
         .nav-links a {
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
-            color: #e0e0e0;
-            transition: 0.2s;
-            letter-spacing: -0.01em;
+            color: #a0a0a0;
+            transition: 0.3s;
             position: relative;
-            padding: 0.5rem 0;
         }
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0%;
-            height: 1.5px;
+            bottom: -6px; left: 0;
+            width: 0%; height: 2px;
             background: #ffffff;
             transition: width 0.3s ease;
+            border-radius: 2px;
         }
-        .nav-links a:hover {
-            color: #ffffff;
-        }
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        .nav-links a:hover { color: #ffffff; }
+        .nav-links a:hover::after { width: 100%; }
 
-        /* Mobile menu toggle */
+        /* Mobile Menu Toggle */
         .mobile-menu-toggle {
             display: none;
             background: transparent;
             border: none;
             color: #fff;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             cursor: pointer;
-            width: 48px;
-            height: 48px;
-            align-items: center;
-            justify-content: center;
+            width: 44px; height: 44px;
             border-radius: 50%;
-            backdrop-filter: blur(10px);
+            align-items: center; justify-content: center;
             background: rgba(255,255,255,0.05);
-            border: 0.5px solid rgba(255,255,255,0.15);
-            transition: all 0.2s;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .mobile-menu-toggle:active {
-            background: rgba(255,255,255,0.2);
-            transform: scale(0.94);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.3s;
         }
 
-        /* Fullscreen glass mobile overlay */
+        /* Fullscreen Mobile Menu Overlay */
         .mobile-menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100dvh;
             z-index: 1150;
             backdrop-filter: blur(40px) saturate(180%);
             -webkit-backdrop-filter: blur(40px) saturate(180%);
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.4s ease, visibility 0.4s;
-            padding: 2rem;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden;
+            transition: all 0.4s ease;
         }
-        .mobile-menu-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
+        .mobile-menu-overlay.active { opacity: 1; visibility: visible; }
         .mobile-menu-overlay .close-btn {
-            position: absolute;
-            top: 24px;
-            right: 24px;
-            background: rgba(255,255,255,0.05);
-            border: 0.5px solid rgba(255,255,255,0.2);
-            color: white;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            backdrop-filter: blur(12px);
-            cursor: pointer;
-            transition: 0.2s;
-            -webkit-tap-highlight-color: transparent;
+            position: absolute; top: 24px; right: 24px;
+            width: 50px; height: 50px;
+            border-radius: 50%; background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white; font-size: 1.5rem;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: 0.3s;
         }
-        .mobile-menu-overlay .close-btn:active {
-            background: rgba(255,255,255,0.25);
-            transform: scale(0.92);
-        }
-        .mobile-nav-links {
-            display: flex;
-            flex-direction: column;
-            gap: 2.2rem;
-            text-align: center;
-        }
+        .mobile-nav-links { display: flex; flex-direction: column; gap: 2rem; text-align: center; }
         .mobile-nav-links a {
-            font-size: 2.4rem;
-            font-weight: 700;
-            color: #fff;
-            text-decoration: none;
-            letter-spacing: -0.03em;
-            transition: 0.2s;
-            opacity: 0.85;
-            padding: 0.5rem 1rem;
-            -webkit-tap-highlight-color: transparent;
+            font-size: 2.5rem; font-weight: 700; color: #fff;
+            text-decoration: none; letter-spacing: -0.04em;
+            opacity: 0; transform: translateY(20px);
+            transition: all 0.4s ease;
         }
-        .mobile-nav-links a:active {
-            opacity: 1;
-            transform: scale(0.98);
+        .mobile-menu-overlay.active .mobile-nav-links a {
+            opacity: 1; transform: translateY(0);
         }
+        /* Stagger mobile links */
+        .mobile-nav-links a:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-nav-links a:nth-child(2) { transition-delay: 0.15s; }
+        .mobile-nav-links a:nth-child(3) { transition-delay: 0.2s; }
+        .mobile-nav-links a:nth-child(4) { transition-delay: 0.25s; }
 
-        /* main spacing */
+        /* ===== HERO SECTION ===== */
         main { padding-top: 100px; }
-
-        /* Sections reveal */
-        section {
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 5rem 1.5rem;
-            opacity: 0;
-            transform: translateY(32px);
-            transition: opacity 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        }
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Hero */
         .hero-banner {
             position: relative;
-            width: 100%;
-            height: 85vh;
-            min-height: 560px;
-            max-height: 900px;
-            overflow: hidden;
-            margin-bottom: 1rem;
+            width: calc(100% - 2rem);
+            margin: 0 auto 2rem auto;
+            height: 85vh; min-height: 600px;
             border-radius: 32px;
+            overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .hero-bg {
+            position: absolute; top: -5%; left: -5%;
+            width: 110%; height: 110%;
             background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2940&auto=format&fit=crop') center/cover no-repeat;
+            animation: subtleZoom 25s infinite alternate linear;
+            z-index: 0;
+        }
+        @keyframes subtleZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
         }
         .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.85) 100%);
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.9) 100%);
             z-index: 1;
         }
         .hero-content {
-            position: relative;
-            z-index: 2;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 1.5rem;
+            position: relative; z-index: 2;
+            text-align: center; padding: 0 1.5rem;
         }
         .hero-content h1 {
-            font-size: clamp(2.8rem, 10vw, 7rem);
-            font-weight: 900;
-            letter-spacing: -0.04em;
-            color: #ffffff;
-            line-height: 1.1;
-            text-transform: uppercase;
+            font-size: clamp(3rem, 8vw, 7.5rem);
+            font-weight: 900; letter-spacing: -0.05em;
+            line-height: 1; text-transform: uppercase;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         .hero-content p {
-            font-size: clamp(1rem, 3vw, 1.5rem);
-            color: #d1d1d1;
-            margin-top: 1rem;
-            font-weight: 400;
-            letter-spacing: 0.02em;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            color: #d1d1d1; margin-top: 1.5rem;
+            font-weight: 400; letter-spacing: 0.02em;
         }
 
         /* Buttons */
-        .btn-white, .btn-outline {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 180px;
-            padding: 0.9rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            -webkit-tap-highlight-color: transparent;
-            border: 1px solid transparent;
-            white-space: nowrap;
-        }
+        .btn-wrap { margin-top: 2.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
         .btn-white {
-            background: #ffffff;
-            color: #000000;
+            background: #ffffff; color: #000000;
+            padding: 1.1rem 2.5rem; border-radius: 50px;
+            font-weight: 600; text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0 rgba(255,255,255,0);
         }
-        .btn-white:active { background: #d0d0d0; transform: scale(0.97); }
-        
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255,255,255,0.2);
+        }
         .btn-outline {
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.35);
-            color: white;
-            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 1.1rem 2.5rem; border-radius: 50px;
+            color: white; font-weight: 600; text-decoration: none;
+            backdrop-filter: blur(10px); transition: all 0.3s ease;
         }
-        .btn-outline:active { background: rgba(255,255,255,0.1); border-color: white; }
+        .btn-outline:hover { background: rgba(255,255,255,0.15); transform: translateY(-3px); }
 
-        .hero-actions {
-            margin-top: 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
+        /* ===== SECTION BASE ===== */
+        section {
+            max-width: 1440px; margin: 0 auto;
+            padding: 8rem 2rem; position: relative;
         }
 
-        /* Intro section */
-        .intro-section {
-            background: #000000;
-        }
+        /* Intro Section */
         .intro-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3rem;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .intro-text {
-            flex: 1;
-            min-width: 280px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem; align-items: center;
         }
         .intro-text h2 {
-            font-size: clamp(1.6rem, 4vw, 2.4rem);
-            font-weight: 500;
-            line-height: 1.45;
-            color: #ccc;
-        }
-        .intro-text h2 strong {
-            color: #fff;
-            font-weight: 600;
-        }
-        .intro-image {
-            flex: 0.8;
-            min-width: 260px;
-            text-align: center;
-        }
-        .intro-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 24px;
-            filter: grayscale(100%) contrast(1.2);
-            border: 1px solid #222;
-        }
-
-        /* Ecosystem Swiper */
-        .key-blocks { padding: 2rem 0; }
-        .swiper-key-blocks { overflow: visible; }
-        .swiper-slide-card {
-            background: #111;
-            border-radius: 28px;
-            overflow: hidden;
-            position: relative;
-            height: 460px;
-            display: flex;
-            align-items: flex-end;
-            padding: 2rem;
-            transition: transform 0.3s;
-            background-size: cover;
-            background-position: center;
-            text-decoration: none;
-            color: white;
-            border: 1px solid rgba(255,255,255,0.05);
-            -webkit-tap-highlight-color: transparent;
-        }
-        .swiper-slide-card:active { transform: scale(0.98); }
-        .swiper-slide-card h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            z-index: 2;
-            position: relative;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 400; line-height: 1.5; color: #a0a0a0;
             letter-spacing: -0.02em;
         }
-        .overlay-card {
-            position: absolute;
-            top:0; left:0; width:100%; height:100%;
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 100%);
-            z-index: 1;
+        .intro-text h2 strong { color: #fff; font-weight: 600; }
+        .intro-image { position: relative; }
+        .intro-image img {
+            width: 100%; border-radius: 32px;
+            filter: grayscale(100%) contrast(1.1);
+            transition: filter 0.5s ease;
         }
-        .arrow-icon {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 44px;
-            height: 44px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(10px);
-            z-index: 2;
-            transition: background 0.2s;
-        }
-
-        /* Timeline */
-        .timeline-wrap { margin: 4rem auto; max-width: 1000px; }
-        .timeline-header {
-            font-size: clamp(2.2rem, 6vw, 3.2rem);
-            font-weight: 800;
-            margin-bottom: 3rem;
-            text-transform: uppercase;
-            letter-spacing: -0.03em;
-        }
-        .timeline { position: relative; margin: 2rem 0; }
-        .timeline-line {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1px;
-            background: rgba(255,255,255,0.2);
-            height: 100%;
-            top: 0;
-        }
-        .tl-block {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5rem;
-            position: relative;
-            width: 100%;
-        }
-        .tl-block::after {
-            content: '';
-            position: absolute;
-            width: 14px;
-            height: 14px;
-            background: #fff;
-            border-radius: 50%;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 6px;
-            z-index: 2;
-            box-shadow: 0 0 0 4px rgba(255,255,255,0.1);
-        }
-        .tl-content {
-            width: 45%;
-        }
-        .tl-block:nth-child(even) .tl-content { margin-left: auto; }
-        .tl-content h3 { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.75rem; }
-        .tl-content .year { color: #aaa; font-weight: 600; font-size: 1.2rem; display: block; margin-bottom: 0.5rem; }
-        .tl-content p { color: #bbb; line-height: 1.6; }
-
-        /* Books & News Section */
-        .news-section {
-            background: #0e0e0e;
-            border-radius: 40px;
-            padding: 5rem 1.8rem;
-            margin: 1.5rem;
-        }
-        .news-header { font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 800; margin-bottom: 3rem; text-align: center; }
-        .news-block {
-            background: #000;
-            border-radius: 24px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.1);
-            text-decoration: none;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            transition: 0.2s;
-        }
-        .news-block:active { border-color: rgba(255,255,255,0.3); }
-        .news-thumb { height: 220px; overflow: hidden; }
-        .news-thumb img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(40%); transition: 0.4s; }
-        .news-content { padding: 1.8rem; }
-        .news-tag { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; color: #999; margin-bottom: 1rem; display: block; }
-        .news-block h3 { font-size: 1.4rem; font-weight: 600; line-height: 1.4; }
+        .intro-image:hover img { filter: grayscale(0%) contrast(1); }
 
         /* Stats */
-        .stats-wrap { padding: 4rem 1.5rem; text-align: center; }
         .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.8rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
-        .stat-box { padding: 2.5rem 1.5rem; background: #0a0a0a; border-radius: 28px; border: 1px solid #1f1f1f; }
-        .stat-box h4 { font-size: 3.5rem; font-weight: 900; margin-bottom: 0.5rem; }
-        .stat-box p { color: #888; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.9rem; }
+        .stat-box {
+            background: rgba(20,20,20,0.6); backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 3rem 2rem; border-radius: 32px; text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .stat-box:hover { transform: translateY(-10px); border-color: rgba(255,255,255,0.15); }
+        .stat-box h4 { font-size: 3.5rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 0.5rem; }
+        .stat-box p { color: #888; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; font-weight: 600; }
+
+        /* Ecosystem (Swiper) */
+        .section-header { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; letter-spacing: -0.04em; margin-bottom: 3rem; }
+        .swiper-key-blocks { overflow: visible !important; padding-bottom: 2rem; }
+        .swiper-slide-card {
+            display: block; height: 450px; border-radius: 32px;
+            overflow: hidden; position: relative;
+            background-size: cover; background-position: center;
+            text-decoration: none; color: white;
+            transition: all 0.4s ease;
+        }
+        .swiper-slide-card::before {
+            content: ''; position: absolute; top:0; left:0; width:100%; height:100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 70%);
+            z-index: 1; transition: opacity 0.4s;
+        }
+        .swiper-slide-card:hover { transform: translateY(-15px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .swiper-slide-card:hover::before { opacity: 0.8; }
+        .swiper-slide-card h2 {
+            position: absolute; bottom: 2rem; left: 2rem; z-index: 2;
+            font-size: 1.8rem; font-weight: 800; letter-spacing: -0.02em;
+        }
+        .arrow-icon {
+            position: absolute; top: 1.5rem; right: 1.5rem; z-index: 2;
+            width: 48px; height: 48px; border-radius: 50%;
+            background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.05);
+        }
+        .swiper-slide-card:hover .arrow-icon { background: #fff; color: #000; transform: rotate(-45deg); }
+
+        /* Timeline */
+        .timeline { position: relative; margin-top: 4rem; }
+        .timeline-line {
+            position: absolute; left: 50px; top: 0; bottom: 0;
+            width: 1px; background: linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0));
+        }
+        .tl-block {
+            position: relative; padding-left: 100px; margin-bottom: 5rem;
+        }
+        .tl-block::before {
+            content: ''; position: absolute; left: 45px; top: 8px;
+            width: 11px; height: 11px; border-radius: 50%;
+            background: #fff; box-shadow: 0 0 15px rgba(255,255,255,0.5);
+        }
+        .tl-content span.year { color: #666; font-weight: 700; font-size: 1.1rem; display: block; margin-bottom: 0.5rem; letter-spacing: 1px; }
+        .tl-content h3 { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: -0.03em; }
+        .tl-content p { color: #a0a0a0; line-height: 1.7; font-size: 1.1rem; max-width: 600px; }
+
+        /* News / Cards */
+        .news-block {
+            background: rgba(20,20,20,0.6); backdrop-filter: blur(10px);
+            border-radius: 32px; overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            display: flex; flex-direction: column; height: 100%;
+            transition: transform 0.4s;
+        }
+        .news-block:hover { transform: translateY(-10px); border-color: rgba(255,255,255,0.2); }
+        .news-thumb { height: 260px; overflow: hidden; }
+        .news-thumb img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(80%); transition: filter 0.5s, transform 0.5s; }
+        .news-block:hover .news-thumb img { filter: grayscale(0%); transform: scale(1.05); }
+        .news-content { padding: 2.5rem; }
+        .news-tag { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: #777; font-weight: 600; margin-bottom: 1rem; display: block; }
+        .news-content h3 { font-size: 1.5rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; letter-spacing: -0.02em; }
 
         /* Footer */
-        footer { background: #000; padding: 4rem 2rem 2rem; border-top: 1px solid #181818; }
-        .footer-social { display: flex; justify-content: center; gap: 2.2rem; list-style: none; margin-bottom: 3.5rem; flex-wrap: wrap; }
-        .footer-social a {
-            color: #fff;
-            font-size: 1.8rem;
-            transition: 0.2s;
-            opacity: 0.65;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.03);
-            -webkit-tap-highlight-color: transparent;
+        footer {
+            background: #050505; border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 6rem 2rem 3rem; text-align: center;
         }
-        .footer-social a:active { opacity: 1; background: rgba(255,255,255,0.1); transform: translateY(-3px); }
-        .footer-bottom { display: flex; justify-content: space-between; align-items: center; color: #777; font-size: 0.9rem; flex-wrap: wrap; gap: 1.2rem; }
-        .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
-        .footer-links a { color: #888; text-decoration: none; padding: 0.4rem 0; transition: 0.2s; }
-        .footer-links a:active { color: #fff; }
+        .footer-social { display: flex; justify-content: center; gap: 1.5rem; list-style: none; margin-bottom: 4rem; }
+        .footer-social a {
+            display: flex; align-items: center; justify-content: center;
+            width: 50px; height: 50px; border-radius: 50%;
+            background: rgba(255,255,255,0.05); color: #fff; font-size: 1.2rem;
+            transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.05);
+            text-decoration: none;
+        }
+        .footer-social a:hover { background: #fff; color: #000; transform: translateY(-5px); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; color: #666; font-size: 0.9rem; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; gap: 2rem; }
+        .footer-links { display: flex; gap: 2rem; list-style: none; }
+        .footer-links a { color: #666; text-decoration: none; transition: 0.3s; font-weight: 500; }
+        .footer-links a:hover { color: #fff; }
 
-        .text-center { text-align: center; }
-        .mt-4 { margin-top: 2rem; }
-
-        /* ========== MOBILE REFINEMENTS ========== */
+        /* ===== MOBILE OPTIMIZATION ===== */
+        @media (max-width: 992px) {
+            .intro-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .intro-image { max-width: 600px; margin: 0 auto; }
+        }
         @media (max-width: 768px) {
             .glass-nav {
-                padding: 0.5rem 1.2rem;
-                width: calc(100% - 20px);
-                border-radius: 48px;
-                top: 14px;
+                width: calc(100% - 24px); padding: 0.6rem 1.2rem;
+                border-radius: 40px; top: 16px;
             }
-            .logo a { font-size: 1.3rem; }
             .nav-links { display: none; }
             .mobile-menu-toggle { display: flex; }
-
-            main { padding-top: 85px; }
-
-            section { padding: 4rem 1.2rem; }
-            .hero-banner { border-radius: 24px; min-height: 520px; }
-            .hero-actions .btn-white, .hero-actions .btn-outline {
-                min-width: 160px;
-                padding: 0.8rem 1.5rem;
-                font-size: 0.95rem;
-            }
-
-            .intro-grid { gap: 2rem; }
-            .intro-image img { max-width: 85%; }
-
-            .timeline-line { left: 18px; }
-            .tl-block::after { left: 18px; width: 12px; height: 12px; }
-            .tl-content { width: calc(100% - 50px); margin-left: auto !important; }
-            .tl-content h3 { font-size: 1.4rem; }
-            .tl-block { margin-bottom: 4rem; }
-
-            .swiper-slide-card { height: 400px; padding: 1.8rem; }
-            .swiper-slide-card h2 { font-size: 1.8rem; }
-
-            .news-section { padding: 4rem 1.2rem; margin: 1rem; border-radius: 32px; }
-            .news-thumb { height: 200px; }
-
-            .stats-grid { gap: 1.2rem; }
-            .stat-box { padding: 2rem 1rem; }
-            .stat-box h4 { font-size: 3rem; }
-
-            .footer-social { gap: 1.2rem; }
-            .footer-social a { width: 48px; height: 48px; font-size: 1.6rem; }
+            section { padding: 5rem 1.5rem; }
+            
+            .hero-banner { height: 75vh; min-height: 500px; border-radius: 24px; width: calc(100% - 1rem); margin: 0 auto; }
+            .btn-wrap { flex-direction: column; width: 100%; padding: 0 1rem; }
+            .btn-white, .btn-outline { width: 100%; text-align: center; }
+            
+            .stat-box { padding: 2rem 1.5rem; border-radius: 24px; }
+            
+            .timeline-line { left: 20px; }
+            .tl-block { padding-left: 50px; margin-bottom: 3.5rem; }
+            .tl-block::before { left: 15px; }
+            .tl-content h3 { font-size: 1.5rem; }
+            
             .footer-bottom { flex-direction: column; text-align: center; }
-            .footer-links { justify-content: center; }
-        }
-
-        @media (max-width: 480px) {
-            .hero-content h1 { font-size: 2.6rem; }
-            .hero-actions { flex-direction: column; align-items: stretch; width: 100%; }
-            .btn-white, .btn-outline { width: 100%; min-width: auto; }
-
-            .mobile-nav-links a { font-size: 2rem; }
-            .close-btn { width: 50px; height: 50px; font-size: 1.8rem; }
-
-            .swiper-slide-card { height: 360px; }
-            .intro-text h2 { font-size: 1.5rem; }
-            .timeline-header { font-size: 2rem; }
-            .tl-content { width: calc(100% - 40px); }
-        }
-
-        /* larger desktop fine-tuning */
-        @media (min-width: 1400px) {
-            .hero-banner { border-radius: 48px; }
-        }
-
-        /* tap highlight & active states */
-        a, button, .swiper-slide-card, .news-block {
-            -webkit-tap-highlight-color: rgba(255,255,255,0.05);
-        }
-        .footer-links a, .nav-links a {
-            padding: 0.5rem 0;
+            .footer-links { justify-content: center; flex-wrap: wrap; }
         }
     </style>
 </head>
 <body>
 
-<!-- ===== GLASS NAVBAR ===== -->
+<div class="ambient-glow"></div>
+
+<div class="loader" id="loader">
+    <h1>Zayed</h1>
+</div>
+
 <nav class="glass-nav" id="glassNav">
     <div class="nav-container">
-        <div class="logo"><a href="#" aria-label="Saalim Zayed">Saalim Zayed</a></div>
+        <div class="logo"><a href="#home">Saalim Zayed</a></div>
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#ecosystem">Ecosystem</a>
             <a href="#journey">Journey</a>
-            <a href="#works">Book & Skills</a>
+            <a href="#works">Focus</a>
         </div>
-        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu" aria-expanded="false">
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open Menu">
             <i class="fas fa-bars"></i>
         </button>
     </div>
 </nav>
 
-<!-- Fullscreen Mobile Menu -->
-<div class="mobile-menu-overlay" id="mobileMenuOverlay" aria-hidden="true">
-    <div class="close-btn" id="closeMobileMenu" aria-label="Close menu">
+<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <button class="close-btn" id="closeMobileMenu" aria-label="Close Menu">
         <i class="fas fa-times"></i>
-    </div>
+    </button>
     <div class="mobile-nav-links">
         <a href="#about" class="mobile-link">About</a>
         <a href="#ecosystem" class="mobile-link">Ecosystem</a>
         <a href="#journey" class="mobile-link">Journey</a>
-        <a href="#works" class="mobile-link">Book & Skills</a>
+        <a href="#works" class="mobile-link">Focus</a>
     </div>
 </div>
 
-<main>
-    <div class="hero-banner" id="home">
+<main id="home">
+    <div class="hero-banner">
+        <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
-        <div class="hero-content" data-aos="zoom-out" data-aos-duration="1200">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="500">
             <h1>Saalim Zayed</h1>
-            <p>Young Entrepreneur · Ethical E‑commerce · Author</p>
-            <div class="hero-actions">
+            <p>Young Entrepreneur · Author · Ethical E‑commerce</p>
+            <div class="btn-wrap">
                 <a href="#about" class="btn-white">Discover Saalim</a>
-                <a href="#ecosystem" class="btn-outline">Explore Ecosystem</a>
+                <a href="#ecosystem" class="btn-outline">View Ecosystem</a>
             </div>
         </div>
     </div>
 
-    <section id="about" class="intro-section">
+    <section id="about">
         <div class="intro-grid">
-            <div class="intro-text" data-aos="fade-up" data-aos-duration="1000">
-                <h2><strong>Saalim Zayed</strong> (born 2012) is a young entrepreneur and author. He founded <strong>ecom Brands</strong>, blending <strong>Islamic ethics</strong> with modern dropshipping. Author of <strong>“HUKM QALBI”</strong> and an intermediate developer.</h2>
-                <a href="#ecosystem" class="btn-outline mt-4" style="margin-top:2rem;">View Ventures</a>
+            <div class="intro-text" data-aos="fade-up">
+                <h2><strong>Saalim Zayed</strong> (born 2012) is a young entrepreneur and author. He founded <strong>ecom Brands</strong>, blending Islamic ethics with modern dropshipping. He is the author of <em>“HUKM QALBI”</em> and an aspiring developer.</h2>
             </div>
-            <div class="intro-image" data-aos="fade-left" data-aos-duration="1200">
-                <img src="sz.png" alt="Saalim Zayed logo" loading="lazy">
+            <div class="intro-image" data-aos="fade-left" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop" alt="Abstract Representation">
             </div>
         </div>
     </section>
 
-    <section class="stats-wrap" data-aos="fade-up">
+    <section data-aos="fade-up">
         <div class="stats-grid">
             <div class="stat-box">
                 <h4>2012</h4>
                 <p>Born in Bangladesh</p>
             </div>
             <div class="stat-box">
-                <h4>ecom Brands</h4>
-                <p>Founder & CEO</p>
+                <h4>CEO</h4>
+                <p>ecom Brands</p>
             </div>
             <div class="stat-box">
-                <h4>1</h4>
-                <p>Published Book</p>
+                <h4>Author</h4>
+                <p>Hukm Qalbi</p>
             </div>
         </div>
     </section>
 
-    <div id="ecosystem" class="key-blocks" style="max-width: 1440px; margin: 0 auto; padding: 0 1.5rem;">
-        <h2 style="font-size: clamp(2rem,5vw,2.8rem); font-weight: 800; margin-bottom: 2rem;">The Ecosystem</h2>
-        <div class="swiper swiper-key-blocks" data-aos="fade-up">
+    <section id="ecosystem">
+        <h2 class="section-header" data-aos="fade-up">The Ecosystem</h2>
+        <div class="swiper swiper-key-blocks" data-aos="fade-up" data-aos-delay="100">
             <div class="swiper-wrapper">
                 <a href="#" class="swiper-slide swiper-slide-card" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop');">
-                    <div class="overlay-card"></div>
                     <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
                     <h2>ecom Brands</h2>
                 </a>
                 <a href="#" class="swiper-slide swiper-slide-card" style="background-image: url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=800&auto=format&fit=crop');">
-                    <div class="overlay-card"></div>
                     <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
                     <h2>HUKM QALBI</h2>
                 </a>
                 <a href="#" class="swiper-slide swiper-slide-card" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop');">
-                    <div class="overlay-card"></div>
                     <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
-                    <h2>Tech & Dev</h2>
+                    <h2>Tech Dev</h2>
                 </a>
                 <a href="#" class="swiper-slide swiper-slide-card" style="background-image: url('https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=800&auto=format&fit=crop');">
-                    <div class="overlay-card"></div>
                     <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
                     <h2>Islamic Ethics</h2>
                 </a>
             </div>
         </div>
-    </div>
+    </section>
 
-    <section id="journey" class="timeline-wrap">
-        <h2 class="timeline-header text-center" data-aos="fade-up">Journey & Milestones</h2>
+    <section id="journey">
+        <h2 class="section-header" data-aos="fade-up">Journey</h2>
         <div class="timeline">
             <div class="timeline-line"></div>
+            
             <div class="tl-block" data-aos="fade-up">
                 <div class="tl-content">
                     <span class="year">2012</span>
                     <h3>Born in Bangladesh</h3>
-                    <p>Raised with discipline and Islamic values in Dhaka, shaping a commitment to honesty and responsibility.</p>
+                    <p>Raised with discipline and Islamic values in Dhaka, shaping a worldview built on honesty, responsibility, and forward-thinking.</p>
                 </div>
             </div>
             <div class="tl-block" data-aos="fade-up">
                 <div class="tl-content">
                     <span class="year">2020–Present</span>
                     <h3>Education at BISD</h3>
-                    <p>Pursuing secondary education at Baseerah International School Dhaka, while self-learning business.</p>
+                    <p>Pursuing secondary education at Baseerah International School Dhaka, while independently mastering modern business mechanics.</p>
                 </div>
             </div>
             <div class="tl-block" data-aos="fade-up">
                 <div class="tl-content">
                     <span class="year">2024</span>
                     <h3>Founds ecom Brands</h3>
-                    <p>Launched a dropshipping venture focused on ethical, halal income and customer transparency.</p>
+                    <p>Launched a dropshipping venture dedicated to ethical, halal income, focusing on true customer value and supply chain transparency.</p>
                 </div>
             </div>
             <div class="tl-block" data-aos="fade-up">
                 <div class="tl-content">
                     <span class="year">2025</span>
                     <h3>Publishes "HUKM QALBI"</h3>
-                    <p>Released a reflective book on Prophetic discipline and navigating modern life with moral clarity.</p>
+                    <p>Released a deeply reflective book on navigating modern distractions through the lens of Prophetic discipline.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <div id="works" class="news-section" data-aos="fade-up">
-        <h2 class="news-header">Book & Technical Focus</h2>
-        <div class="swiper swiper-news">
+    <section id="works">
+        <h2 class="section-header" data-aos="fade-up">Focus & Works</h2>
+        <div class="swiper swiper-news" data-aos="fade-up" data-aos-delay="100">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="news-block">
-                        <div class="news-thumb"><img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800&auto=format&fit=crop" alt="Book HUKM QALBI" loading="lazy"></div>
+                        <div class="news-thumb"><img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800&auto=format&fit=crop" alt="Book"></div>
                         <div class="news-content">
-                            <span class="news-tag">Published Work</span>
-                            <h3>HUKM QALBI: Prophetic Discipline</h3>
-                            <p style="color:#aaa; margin-top:0.5rem;">A guide to discipline, decision-making, and spiritual growth for young Muslims.</p>
+                            <span class="news-tag">Published Book</span>
+                            <h3>HUKM QALBI: Navigating Modern Life</h3>
+                            <p style="color:#aaa;">A spiritual and practical guide to discipline and decision-making for young Muslims.</p>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="news-block">
-                        <div class="news-thumb"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop" alt="Development" loading="lazy"></div>
+                        <div class="news-thumb"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop" alt="Code"></div>
                         <div class="news-content">
-                            <span class="news-tag">Tech Skills</span>
-                            <h3>Intermediate Developer</h3>
-                            <p style="color:#aaa;">HTML, CSS, JavaScript, modern frameworks — building clean UI/UX projects.</p>
+                            <span class="news-tag">Technical Skills</span>
+                            <h3>Front-End Development</h3>
+                            <p style="color:#aaa;">Crafting clean UI/UX using HTML, CSS, JavaScript, and modern web frameworks.</p>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="news-block">
-                        <div class="news-thumb"><img src="https://images.unsplash.com/photo-1556761175-b413da4bafc7?q=80&w=800&auto=format&fit=crop" alt="Islamic business" loading="lazy"></div>
+                        <div class="news-thumb"><img src="https://images.unsplash.com/photo-1556761175-b413da4bafc7?q=80&w=800&auto=format&fit=crop" alt="Business"></div>
                         <div class="news-content">
-                            <span class="news-tag">Ethical Commerce</span>
+                            <span class="news-tag">E-Commerce</span>
                             <h3>Halal Dropshipping</h3>
-                            <p style="color:#aaa;">Fairness, transparency, and long-term value — ecom Brands on Islamic ethics.</p>
+                            <p style="color:#aaa;">Building profitable systems grounded strictly in fairness, transparency, and Islamic ethics.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <footer>
-        <ul class="footer-social">
-            <li><a href="https://bd.linkedin.com/in/saalimzayed" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
-            <li><a href="https://www.tiktok.com/@saalimzayedofficial" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></li>
-            <li><a href="https://www.facebook.com/saalimzayed/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="https://www.instagram.com/saalimzayedofficial/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
-        </ul>
-        <div class="footer-bottom">
-            <p>&copy; Saalim Zayed. All Rights Reserved. Guided by Islamic values.</p>
-            <ul class="footer-links">
-                <li><a href="#">Ethical Pledge</a></li>
-                <li><a href="#">Privacy</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-    </footer>
+    </section>
 </main>
+
+<footer>
+    <ul class="footer-social">
+        <li><a href="https://bd.linkedin.com/in/saalimzayed" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="https://www.tiktok.com/@saalimzayedofficial" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></li>
+        <li><a href="https://www.facebook.com/saalimzayed/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="https://www.instagram.com/saalimzayedofficial/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+    <div class="footer-bottom">
+        <p>&copy; Saalim Zayed. Guided by Islamic values.</p>
+        <ul class="footer-links">
+            <li><a href="#">Ethical Pledge</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    AOS.init({ duration: 800, once: true, offset: 80 });
+    // Remove Loader on Window Load
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            document.getElementById('loader').classList.add('hidden');
+        }, 800); // Slight delay for the branding entrance
+    });
 
+    // Initialize Scroll Animations
+    AOS.init({ duration: 900, once: true, offset: 50 });
+
+    // Navbar Scroll Effect
     const nav = document.getElementById('glassNav');
     window.addEventListener('scroll', () => {
-        nav.classList.toggle('scrolled', window.scrollY > 40);
+        if (window.scrollY > 50) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
     });
 
-    // reveal sections
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('visible');
-        });
-    }, { threshold: 0.1 });
-    sections.forEach(section => observer.observe(section));
-
-    // Swipers
-    const keySwiper = new Swiper('.swiper-key-blocks', {
+    // Initialize Swiper Carousels
+    const swiperOptions = {
         slidesPerView: 1.1,
         spaceBetween: 20,
+        grabCursor: true,
         breakpoints: { 
-            600: { slidesPerView: 1.8 },
-            768: { slidesPerView: 2.2 }, 
-            1024: { slidesPerView: 3.2 } 
+            768: { slidesPerView: 2.2, spaceBetween: 24 }, 
+            1024: { slidesPerView: 3.2, spaceBetween: 30 } 
         }
-    });
-    const newsSwiper = new Swiper('.swiper-news', {
-        slidesPerView: 1.1,
-        spaceBetween: 20,
-        breakpoints: { 
-            600: { slidesPerView: 1.8 },
-            768: { slidesPerView: 2.2 }, 
-            1024: { slidesPerView: 3 } 
-        }
-    });
+    };
+    new Swiper('.swiper-key-blocks', swiperOptions);
+    new Swiper('.swiper-news', { ...swiperOptions, breakpoints: { 768: { slidesPerView: 2.2, spaceBetween: 24 }, 1024: { slidesPerView: 3, spaceBetween: 30 } } });
 
-    // Mobile menu logic
+    // Mobile Menu Logic
     const mobileToggle = document.getElementById('mobileMenuToggle');
     const overlay = document.getElementById('mobileMenuOverlay');
     const closeBtn = document.getElementById('closeMobileMenu');
@@ -818,54 +652,30 @@
     
     function openMenu() {
         overlay.classList.add('active');
-        overlay.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-        mobileToggle.innerHTML = '<i class="fas fa-times"></i>';
-        mobileToggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
     }
     function closeMenu() {
         overlay.classList.remove('active');
-        overlay.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
-        mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        mobileToggle.setAttribute('aria-expanded', 'false');
     }
     
-    mobileToggle.addEventListener('click', () => {
-        overlay.classList.contains('active') ? closeMenu() : openMenu();
-    });
-    
+    mobileToggle.addEventListener('click', openMenu);
     closeBtn.addEventListener('click', closeMenu);
     
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            const hash = link.getAttribute('href');
-            if(hash && hash.startsWith('#')) {
-                e.preventDefault();
-                closeMenu();
-                const target = document.querySelector(hash);
-                if(target) {
-                    setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
-                }
-            }
-        });
-    });
-
-    // Smooth scroll for all anchor links
-    document.querySelectorAll('.nav-links a, .btn-white, .btn-outline, .logo a, .footer-links a').forEach(anchor => {
+    // Smooth Scroll & Close Menu on Click
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            const hash = this.getAttribute('href');
-            if(hash && hash.startsWith('#')) {
-                e.preventDefault();
-                const target = document.querySelector(hash);
-                if(target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                if(overlay.classList.contains('active')) closeMenu();
+            e.preventDefault();
+            closeMenu();
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) {
+                const navHeight = document.querySelector('.glass-nav').offsetHeight;
+                window.scrollTo({
+                    top: target.offsetTop - navHeight - 20,
+                    behavior: 'smooth'
+                });
             }
         });
-    });
-
-    window.addEventListener('resize', () => {
-        if(window.innerWidth > 768 && overlay.classList.contains('active')) closeMenu();
     });
 </script>
 </body>
