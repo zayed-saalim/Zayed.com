@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Saalim Zayed — Entrepreneur, Author &amp; Business Leader</title>
+    <title>Saalim Zayed — Entrepreneur, Author &amp; Businessman</title>
 
     <!-- SEO & Verification -->
     <meta name="description" content="Saalim Zayed is an entrepreneur, author, and CEO of Hukm Qalbi, building brands and inspiring purposeful living through writing and business." />
@@ -47,7 +47,7 @@
             "image": "http://saalimzayed.com/szprt.png",
             "sameAs": [
                 "https://instagram.com/saalimzayedofficial",
-                "https://bd.linkedin.com/in/saalimzayed",
+                "https://linkedin.com/in/saalimzayed",
                 "https://x.com/SaalimZayed",
                 "https://www.youtube.com/@saalimzayed",
                 "https://www.tiktok.com/@saalimzayedofficial",
@@ -1218,7 +1218,7 @@
         }
         .giant-name .line {
             display: block;
-            font-size: clamp(3.6rem, 13vw, 11rem);
+            font-size: clamp(4rem, 14vw, 12rem);
             background: linear-gradient(135deg, #ffffff 0%, #d9dee6 28%, #D4AF37 68%, #F0D080 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -1241,30 +1241,6 @@
             opacity: 1;
             transform: translateY(0) scale(1);
             filter: blur(0px);
-        }
-
-        /* Portrait sitting between/over the giant name, à la Lando's layered images */
-        .hero-portrait {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: clamp(150px, 19vw, 300px);
-            aspect-ratio: 3/4;
-            z-index: 4;
-            border-radius: 18px;
-            padding: 5px;
-            background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold));
-            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55), 0 0 90px rgba(212, 175, 55, 0.18);
-            will-change: transform;
-        }
-        .hero-portrait img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 14px;
-            display: block;
-            border: 3px solid var(--bg);
         }
 
         /* Small floating credential chips, like Lando's "Next Race" / team tag */
@@ -1552,9 +1528,6 @@
         }
         @media (max-width: 600px) {
             .hero { padding-top: 100px; }
-            .hero-portrait {
-                width: clamp(120px, 32vw, 190px);
-            }
             .hero-glow {
                 width: 340px;
                 height: 340px;
@@ -1602,22 +1575,19 @@
         <div class="hero-glow"></div>
 
         <div class="container hero-stage-wrap">
-            <!-- Giant name + portrait stage -->
+            <!-- Giant name stage (portrait image removed) -->
             <div class="hero-stage" id="heroParallax">
                 <h1 class="giant-name">
                     <span class="line line-1" data-reveal data-speed="0.18">SAALIM</span>
                     <span class="line line-2" data-reveal data-speed="0.28">ZAYED</span>
                 </h1>
-                <div class="hero-portrait" data-reveal data-speed="0.42">
-                    <img src="szprtm.png" alt="Saalim Zayed — Entrepreneur, Author & Business Leader" loading="lazy" />
-                </div>
             </div>
 
             <!-- Credential chips -->
             <div class="hero-chip-row">
                 <span class="hero-chip" data-reveal><span class="chip-dot"></span> Born <span class="chip-strong">2012</span></span>
                 <span class="hero-chip" data-reveal><i class="fas fa-crown" style="font-size:0.7rem;color:var(--gold);"></i> CEO — Hukm Qalbi</span>
-                <span class="hero-chip" data-reveal><i class="fas fa-map-marker-alt" style="font-size:0.7rem;color:var(--gold);"></i> Bangladesh · Worldwide</span>
+                <span class="hero-chip" data-reveal><i class="fas fa-map-marker-alt" style="font-size:0.7rem;color:var(--gold);"></i> Global · Worldwide</span>
             </div>
 
             <!-- Bottom info bar -->
@@ -1654,7 +1624,6 @@
                         <span class="pub-item">STORY</span>
                         <span class="pub-item">BRAND</span>
                         <span class="pub-item">ADWORLD</span>
-                        <span class="pub-item mother">MOTHER</span>
                         <span class="pub-item">DIGITAL MARKETER</span>
                         <span class="pub-item foundr">foundr</span>
                     </div>
@@ -2094,7 +2063,7 @@
                 });
             });
 
-            /* ── Hero: Apple-style load-in reveal + Lando-style parallax on scroll/mouse ── */
+            /* ── Hero: Apple-style load-in reveal + Lando-style parallax on scroll ── */
             const heroSection = document.querySelector('.hero');
             const heroStage = document.getElementById('heroParallax');
             const parallaxEls = heroStage ? heroStage.querySelectorAll('[data-speed]') : [];
@@ -2123,19 +2092,6 @@
             }
             window.addEventListener('scroll', updateParallax, { passive: true });
             updateParallax();
-
-            // Subtle mouse-follow tilt on the portrait, like a soft parallax layer
-            const portrait = document.querySelector('.hero-portrait');
-            if (portrait) {
-                window.addEventListener('mousemove', (e) => {
-                    const cx = window.innerWidth / 2;
-                    const cy = window.innerHeight / 2;
-                    const dx = (e.clientX - cx) / cx;
-                    const dy = (e.clientY - cy) / cy;
-                    portrait.style.transition = 'transform 0.6s cubic-bezier(0.16,1,0.3,1)';
-                    portrait.style.transform = `translate(calc(-50% + ${dx * 10}px), calc(-50% + ${dy * 8}px)) rotate(${dx * 1.2}deg)`;
-                });
-            }
 
         })();
     </script>
