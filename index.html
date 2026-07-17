@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Saalim Zayed — Entrepreneur, Author &amp; Businessman</title>
 
-    <!-- SEO & Verification -->
     <meta name="description" content="Saalim Zayed is an entrepreneur, author, and CEO of Hukm Qalbi, building brands and inspiring purposeful living through writing and business." />
     <meta name="keywords" content="Saalim Zayed, entrepreneur, author, Hukm Qalbi, The Long Game, business leader, purpose, personal growth" />
     <meta name="author" content="Saalim Zayed" />
@@ -13,7 +12,6 @@
     <link rel="canonical" href="http://saalimzayed.com/" />
     <meta name="google-site-verification" content="HrqSGUdQE6WqU_RzmQKirfwBnctvCMM7MPnmOR6fnzw" />
 
-    <!-- Open Graph -->
     <meta property="og:title" content="Saalim Zayed — Not Sorry · Always Human" />
     <meta property="og:description" content="Entrepreneur, author, and business leader building brands, creating meaningful ideas, and inspiring purposeful living." />
     <meta property="og:type" content="website" />
@@ -24,7 +22,6 @@
     <meta property="og:site_name" content="Saalim Zayed" />
     <meta property="og:locale" content="en_US" />
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Saalim Zayed — Not Sorry · Always Human" />
     <meta name="twitter:description" content="Entrepreneur, author, and business leader building brands, creating meaningful ideas, and inspiring purposeful living." />
@@ -35,7 +32,6 @@
     <link rel="icon" type="image/png" href="szprt.png" />
     <link rel="apple-touch-icon" href="szprt.png" />
 
-    <!-- Schema.org -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -56,13 +52,11 @@
         }
     </script>
 
-    <!-- Fonts & Libraries -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Space+Grotesk:wght@400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
     <style>
-        /* ─── ROOT ─── */
         :root {
             --bg: #080B0F;
             --bg-elevated: #0D121A;
@@ -90,9 +84,9 @@
             --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
             --font-display: 'Playfair Display', 'Inter', serif;
             --font-grotesk: 'Space Grotesk', 'Inter', sans-serif;
+            --apple-ease: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* ─── RESET ─── */
         * {
             margin: 0;
             padding: 0;
@@ -133,7 +127,6 @@
             min-height: 100vh;
         }
 
-        /* ─── AMBIENT MESH ─── */
         .ambient-mesh {
             position: fixed;
             inset: 0;
@@ -159,7 +152,6 @@
             }
         }
 
-        /* ─── PARTICLES ─── */
         #particle-canvas {
             position: fixed;
             top: 0;
@@ -179,7 +171,6 @@
             z-index: 2;
         }
 
-        /* ─── DASHED BORDER UTILITY ─── */
         .dash-border {
             border: 2px dashed var(--border-dash);
             border-radius: var(--radius);
@@ -659,6 +650,143 @@
             box-shadow: 0 3px 16px rgba(212, 175, 55, 0.13);
         }
 
+        /* ─── SPOTLIGHT TEXT (Flashlight Effect) ─── */
+        .spotlight-section {
+            padding: 80px 0 90px;
+            position: relative;
+            z-index: 1;
+        }
+        .spotlight-wrapper {
+            position: relative;
+            max-width: 780px;
+            margin: 0 auto;
+            cursor: none;
+            -webkit-tap-highlight-color: transparent;
+            padding: 40px 24px;
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.012);
+            border: 1.5px dashed rgba(255, 255, 255, 0.05);
+            transition: border-color 0.5s var(--apple-ease);
+            overflow: hidden;
+        }
+        .spotlight-wrapper:hover {
+            border-color: rgba(212, 175, 55, 0.30);
+        }
+        .spotlight-wrapper.is-active {
+            border-color: rgba(212, 175, 55, 0.45);
+        }
+        .spotlight-text-layer {
+            margin: 0;
+            box-sizing: border-box;
+            width: 100%;
+            font-family: 'Rubik', 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: clamp(1.2rem, 2.4vw, 2.5rem);
+            font-weight: 400;
+            line-height: 1.3em;
+            letter-spacing: 0em;
+            text-align: center;
+            white-space: pre-wrap;
+            word-break: break-word;
+            user-select: none;
+            -webkit-user-select: none;
+            transition: color 0.5s var(--apple-ease);
+        }
+        /* Base layer (dim) */
+        .spotlight-base {
+            position: relative;
+            color: #3E4550;
+            z-index: 1;
+        }
+        /* Overlay layer (bright) — sits pixel-perfect on top, masked */
+        .spotlight-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: #F0D080;
+            pointer-events: none;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 24px;
+            box-sizing: border-box;
+            -webkit-mask-image: radial-gradient(circle var(--sl-mask-size, 0px) at var(--sl-mask-x, 50%) var(--sl-mask-y, 50%), black var(--sl-core, 35%), transparent 100%);
+            mask-image: radial-gradient(circle var(--sl-mask-size, 0px) at var(--sl-mask-x, 50%) var(--sl-mask-y, 50%), black var(--sl-core, 35%), transparent 100%);
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            transition: -webkit-mask-image 0.05s linear;
+            transition: mask-image 0.05s linear;
+            will-change: mask-image, -webkit-mask-image;
+        }
+        .spotlight-overlay .spotlight-text-layer {
+            color: #F0D080;
+            text-shadow: 0 0 40px rgba(212, 175, 55, 0.35), 0 0 80px rgba(212, 175, 55, 0.15);
+        }
+        .spotlight-cursor-glow {
+            position: fixed;
+            pointer-events: none;
+            z-index: 100;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(240, 208, 128, 0.7), transparent 70%);
+            box-shadow: 0 0 24px rgba(212, 175, 55, 0.5), 0 0 60px rgba(212, 175, 55, 0.25);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease, width 0.35s var(--apple-ease), height 0.35s var(--apple-ease);
+        }
+        .spotlight-cursor-glow.visible {
+            opacity: 1;
+        }
+        .spotlight-cursor-glow.expanded {
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, rgba(240, 208, 128, 0.35), transparent 70%);
+            box-shadow: 0 0 50px rgba(212, 175, 55, 0.35), 0 0 100px rgba(212, 175, 55, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .spotlight-section {
+                padding: 50px 0 60px;
+            }
+            .spotlight-wrapper {
+                padding: 28px 16px;
+                cursor: auto;
+            }
+            .spotlight-text-layer {
+                font-size: clamp(1rem, 4.5vw, 1.5rem);
+            }
+            .spotlight-overlay {
+                padding: 28px 16px;
+            }
+            .spotlight-cursor-glow {
+                display: none;
+            }
+            .spotlight-base {
+                color: #5C6678;
+            }
+        }
+        @media (max-width: 480px) {
+            .spotlight-section {
+                padding: 36px 0 44px;
+            }
+            .spotlight-wrapper {
+                padding: 20px 12px;
+                border-radius: var(--radius-sm);
+            }
+            .spotlight-text-layer {
+                font-size: 0.95rem;
+                line-height: 1.45em;
+            }
+            .spotlight-overlay {
+                padding: 20px 12px;
+            }
+        }
+
         /* ─── BOOKS ─── */
         .books-grid {
             display: grid;
@@ -749,88 +877,6 @@
             border-bottom-color: var(--gold);
             border-bottom-style: solid;
             color: #fff;
-        }
-
-        /* ─── IMAGE ARCHIVE ─── */
-        .archive-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-        }
-        .archive-item {
-            position: relative;
-            border-radius: var(--radius-sm);
-            overflow: hidden;
-            aspect-ratio: 1/1;
-            border: 1.5px dashed rgba(255, 255, 255, 0.08);
-            transition: var(--transition);
-            cursor: pointer;
-            background: var(--bg-elevated);
-        }
-        .archive-item:hover {
-            border-color: var(--gold);
-            border-style: solid;
-            transform: scale(1.03);
-            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4), 0 0 40px rgba(212, 175, 55, 0.06);
-            z-index: 5;
-        }
-        .archive-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: var(--transition);
-        }
-        .archive-item:hover img {
-            filter: brightness(1.08) contrast(1.02);
-        }
-        .archive-item .archive-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, transparent 60%);
-            opacity: 0;
-            transition: var(--transition);
-            display: flex;
-            align-items: flex-end;
-            padding: 14px;
-        }
-        .archive-item:hover .archive-overlay {
-            opacity: 1;
-        }
-        .archive-item .archive-overlay span {
-            font-size: 0.7rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 4px 12px;
-            border-radius: 20px;
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-        }
-        .archive-item:nth-child(1) { grid-column: 1 / 3; grid-row: 1 / 3; aspect-ratio: auto; }
-        .archive-item:nth-child(2) { grid-column: 3 / 4; grid-row: 1 / 2; }
-        .archive-item:nth-child(3) { grid-column: 4 / 5; grid-row: 1 / 2; }
-        .archive-item:nth-child(4) { grid-column: 3 / 4; grid-row: 2 / 3; }
-        .archive-item:nth-child(5) { grid-column: 4 / 5; grid-row: 2 / 3; }
-        .archive-item:nth-child(6) { grid-column: 1 / 2; grid-row: 3 / 4; }
-        .archive-item:nth-child(7) { grid-column: 2 / 3; grid-row: 3 / 4; }
-        .archive-item:nth-child(8) { grid-column: 3 / 5; grid-row: 3 / 4; aspect-ratio: auto; }
-        @media (max-width: 760px) {
-            .archive-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-            .archive-item:nth-child(1) { grid-column: 1 / 3; grid-row: 1 / 2; aspect-ratio: auto; }
-            .archive-item:nth-child(2) { grid-column: 1 / 2; grid-row: 2 / 3; }
-            .archive-item:nth-child(3) { grid-column: 2 / 3; grid-row: 2 / 3; }
-            .archive-item:nth-child(4) { grid-column: 1 / 2; grid-row: 3 / 4; }
-            .archive-item:nth-child(5) { grid-column: 2 / 3; grid-row: 3 / 4; }
-            .archive-item:nth-child(6) { grid-column: 1 / 2; grid-row: 4 / 5; }
-            .archive-item:nth-child(7) { grid-column: 2 / 3; grid-row: 4 / 5; }
-            .archive-item:nth-child(8) { grid-column: 1 / 3; grid-row: 5 / 6; aspect-ratio: auto; }
-        }
-        @media (max-width: 500px) {
-            .archive-grid { gap: 8px; grid-template-columns: repeat(2, 1fr); }
-            .archive-item .archive-overlay span { font-size: 0.6rem; padding: 3px 8px; }
         }
 
         /* ─── LEADERSHIP ─── */
@@ -1091,7 +1137,6 @@
             border-bottom-style: solid;
         }
 
-        /* ─── RESPONSIVE (shared sections) ─── */
         @media (max-width: 900px) {
             .container {
                 width: 92%;
@@ -1157,13 +1202,8 @@
         }
 
         /* ══════════════════════════════════════════════════
-           HERO — Lando Norris–inspired giant-name layout
-           Apple-style easing throughout: cubic-bezier(0.16,1,0.3,1)
+           HERO
            ══════════════════════════════════════════════════ */
-        :root {
-            --apple-ease: cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
         .hero {
             position: relative;
             min-height: 100vh;
@@ -1199,11 +1239,15 @@
             z-index: 0;
         }
         @keyframes floatGlow {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(45px); }
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(45px);
+            }
         }
 
-        /* Giant name typography, split into two stacked lines like "LANDO / NORRIS" */
         .giant-name {
             position: relative;
             z-index: 3;
@@ -1230,7 +1274,6 @@
             margin-top: clamp(-6px, -0.6vw, 0px);
         }
 
-        /* Reveal-on-load: Apple-style blur/scale settle */
         [data-reveal] {
             opacity: 0;
             transform: translateY(28px) scale(0.985);
@@ -1243,7 +1286,6 @@
             filter: blur(0px);
         }
 
-        /* Small floating credential chips, like Lando's "Next Race" / team tag */
         .hero-chip-row {
             position: relative;
             z-index: 3;
@@ -1286,7 +1328,6 @@
             font-weight: 800;
         }
 
-        /* Bottom info bar: role / description / CTAs / socials, anchored like Lando's footer strip */
         .hero-bottombar {
             position: relative;
             z-index: 3;
@@ -1337,8 +1378,13 @@
             letter-spacing: 0.02em;
         }
         @keyframes cursorBlink {
-            0%, 100% { border-color: transparent; }
-            50% { border-color: var(--gold); }
+            0%,
+            100% {
+                border-color: transparent;
+            }
+            50% {
+                border-color: var(--gold);
+            }
         }
         .hero-socials-inline {
             display: flex;
@@ -1418,7 +1464,9 @@
             color: #EDF0F5;
             box-shadow: none;
         }
-        .btn-outline::before { display: none; }
+        .btn-outline::before {
+            display: none;
+        }
         .btn-outline:hover {
             border-color: var(--gold);
             border-style: solid;
@@ -1427,7 +1475,6 @@
             background: transparent;
         }
 
-        /* Publication strip (kept, restyled thinner) */
         .publication-strip {
             margin-top: 30px;
             padding-top: 20px;
@@ -1487,7 +1534,6 @@
             font-size: 0.8rem;
         }
 
-        /* Scroll cue, Apple/Lando style thin line + label */
         .hero-scroll-cue {
             position: absolute;
             left: 50%;
@@ -1511,10 +1557,26 @@
             animation: scrollLineMove 1.8s var(--apple-ease) infinite;
         }
         @keyframes scrollLineMove {
-            0% { transform: scaleY(0); transform-origin: top; opacity: 0; }
-            40% { transform: scaleY(1); transform-origin: top; opacity: 1; }
-            60% { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
-            100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+            0% {
+                transform: scaleY(0);
+                transform-origin: top;
+                opacity: 0;
+            }
+            40% {
+                transform: scaleY(1);
+                transform-origin: top;
+                opacity: 1;
+            }
+            60% {
+                transform: scaleY(1);
+                transform-origin: bottom;
+                opacity: 1;
+            }
+            100% {
+                transform: scaleY(0);
+                transform-origin: bottom;
+                opacity: 0;
+            }
         }
 
         @media (max-width: 900px) {
@@ -1523,39 +1585,216 @@
                 text-align: center;
                 justify-items: center;
             }
-            .hero-tagline { max-width: 100%; }
-            .hero-socials-inline { justify-content: center; }
+            .hero-tagline {
+                max-width: 100%;
+            }
+            .hero-socials-inline {
+                justify-content: center;
+            }
         }
         @media (max-width: 600px) {
-            .hero { padding-top: 100px; }
+            .hero {
+                padding-top: 100px;
+            }
             .hero-glow {
                 width: 340px;
                 height: 340px;
                 top: -140px;
                 right: -140px;
             }
-            .hero-bottombar-grid { gap: 18px; }
+            .hero-bottombar-grid {
+                gap: 18px;
+            }
+        }
+
+        /* ══════════════════════════════════════════════════
+           3D COVERFLOW — Moments & Milestones
+           ══════════════════════════════════════════════════ */
+        .coverflow-section {
+            padding-top: 90px;
+            padding-bottom: 120px;
+        }
+        .coverflow-outer {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1600px;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .coverflow-stage {
+            position: relative;
+            transform-style: preserve-3d;
+            transition: width 0.4s ease, height 0.4s ease;
+        }
+        .coverflow-card {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            border-radius: 16px;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transform-origin: center center;
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+            background-color: #1a1a1a;
+            box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 12px 40px rgba(0, 0, 0, 0.45);
+            will-change: transform, opacity;
+            cursor: pointer;
+        }
+        .coverflow-card.is-active {
+            cursor: default;
+            box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 20px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(212, 175, 55, 0.12);
+        }
+        .coverflow-card img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            user-select: none;
+            -webkit-user-drag: none;
+            pointer-events: none;
+        }
+        .coverflow-card .coverflow-dim {
+            position: absolute;
+            inset: 0;
+            background: #000000;
+            pointer-events: none;
+            transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .coverflow-card.is-active .coverflow-dim {
+            opacity: 0 !important;
+        }
+
+        /* Navigation arrows */
+        .coverflow-nav {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            margin-top: 30px;
+            position: relative;
+            z-index: 5;
+        }
+        .coverflow-nav-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1.5px dashed rgba(255, 255, 255, 0.12);
+            color: var(--text-secondary);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.4s var(--apple-ease);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .coverflow-nav-btn:hover {
+            border-color: var(--gold);
+            border-style: solid;
+            color: var(--gold-light);
+            background: rgba(212, 175, 55, 0.06);
+            box-shadow: 0 8px 28px rgba(212, 175, 55, 0.15);
+            transform: translateY(-2px);
+        }
+        .coverflow-nav-btn:active {
+            transform: scale(0.94);
+            transition: transform 0.15s ease;
+        }
+        .coverflow-dots {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 18px;
+            flex-wrap: wrap;
+        }
+        .coverflow-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s var(--apple-ease);
+            padding: 0;
+        }
+        .coverflow-dot.active {
+            background: var(--gold);
+            box-shadow: 0 0 10px var(--gold-glow);
+            width: 22px;
+            border-radius: 10px;
+        }
+        .coverflow-dot:hover {
+            background: rgba(212, 175, 55, 0.5);
+        }
+
+        /* Responsive coverflow */
+        @media (max-width: 900px) {
+            .coverflow-section {
+                padding-top: 50px;
+                padding-bottom: 80px;
+            }
+            .coverflow-card {
+                border-radius: 12px;
+            }
+            .coverflow-nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 0.85rem;
+            }
+            .coverflow-nav {
+                gap: 16px;
+                margin-top: 22px;
+            }
+        }
+        @media (max-width: 600px) {
+            .coverflow-section {
+                padding-top: 30px;
+                padding-bottom: 60px;
+            }
+            .coverflow-card {
+                border-radius: 10px;
+            }
+            .coverflow-nav-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 0.75rem;
+            }
+            .coverflow-nav {
+                gap: 12px;
+                margin-top: 16px;
+            }
+            .coverflow-dot {
+                width: 5px;
+                height: 5px;
+            }
+            .coverflow-dot.active {
+                width: 16px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Ambient Mesh -->
     <div class="ambient-mesh"></div>
-
-    <!-- Particle Canvas -->
     <canvas id="particle-canvas"></canvas>
 
     <!-- ═══ NAVIGATION ═══ -->
     <div class="nav-wrapper" id="navWrapper">
         <div class="nav-inner">
             <a href="#" class="nav-logo" aria-label="Saalim Zayed Home">Saalim Zayed<span class="nav-logo-dot"></span></a>
-
             <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle menu">☰</button>
-
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#verse-spotlight">Reflection</a></li>
                 <li><a href="#books">Books</a></li>
                 <li><a href="#archive">Archive</a></li>
                 <li><a href="#leadership">Leadership</a></li>
@@ -1563,7 +1802,6 @@
                 <li><a href="#social">Social</a></li>
                 <li><a href="#contact" class="nav-cta">Connect</a></li>
             </ul>
-
             <a href="mailto:saalim@saalimzayed.com" class="nav-contact-pill">
                 <span class="live-dot"></span> contact@saalimzayed.com
             </a>
@@ -1573,30 +1811,23 @@
     <!-- ═══ HERO ═══ -->
     <section class="hero" id="home">
         <div class="hero-glow"></div>
-
         <div class="container hero-stage-wrap">
-            <!-- Giant name stage (portrait image removed) -->
             <div class="hero-stage" id="heroParallax">
                 <h1 class="giant-name">
                     <span class="line line-1" data-reveal data-speed="0.18">SAALIM</span>
                     <span class="line line-2" data-reveal data-speed="0.28">ZAYED</span>
                 </h1>
             </div>
-
-            <!-- Credential chips -->
             <div class="hero-chip-row">
                 <span class="hero-chip" data-reveal><span class="chip-dot"></span> Born <span class="chip-strong">2012</span></span>
                 <span class="hero-chip" data-reveal><i class="fas fa-crown" style="font-size:0.7rem;color:var(--gold);"></i> CEO — Hukm Qalbi</span>
                 <span class="hero-chip" data-reveal><i class="fas fa-map-marker-alt" style="font-size:0.7rem;color:var(--gold);"></i> Global · Worldwide</span>
             </div>
-
-            <!-- Bottom info bar -->
             <div class="hero-bottombar">
                 <div class="hero-bottombar-grid">
                     <p class="hero-tagline" data-reveal>
                         <b>Redefining</b> purpose, building brands, and writing ideas meant to <b>outlast</b> a moment.
                     </p>
-
                     <div class="hero-center-meta">
                         <span class="hero-role-type" data-reveal>currently</span>
                         <div data-reveal><span id="typewriter"></span></div>
@@ -1605,7 +1836,6 @@
                             <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Get in Touch</a>
                         </div>
                     </div>
-
                     <div class="hero-socials-inline" data-reveal>
                         <a href="https://www.instagram.com/saalimzayedofficial/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                         <a href="https://bd.linkedin.com/in/saalimzayed" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
@@ -1615,8 +1845,6 @@
                         <a href="https://www.facebook.com/saalimzayedofficial" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
-
-                <!-- Publication Logos -->
                 <div class="publication-strip" data-reveal>
                     <div class="strip-label">As featured in</div>
                     <div class="publication-grid">
@@ -1630,7 +1858,6 @@
                 </div>
             </div>
         </div>
-
         <div class="hero-scroll-cue">
             <span>Scroll</span>
             <div class="scroll-line"></div>
@@ -1677,6 +1904,30 @@
         </div>
     </section>
 
+    <!-- ═══ VERSE SPOTLIGHT — Flashlight Text Effect ═══ -->
+    <section id="verse-spotlight" class="spotlight-section">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-eyebrow" data-aos="fade-up">Reflection</span>
+                <h2 class="section-heading" data-aos="fade-up" style="margin-bottom:28px;">A Verse to Ponder</h2>
+            </div>
+            <div class="spotlight-wrapper" id="spotlightWrapper" data-aos="fade-up">
+                <!-- BASE layer (dim text, always visible) -->
+                <div class="spotlight-text-layer spotlight-base" aria-label="Indeed, We have destined many jinn and humans for Hell. They have hearts they do not understand with, eyes they do not see with, and ears they do not hear with. They are like cattle. In fact, they are even less guided! Such people are entirely heedless. [7:179]">
+                    Indeed, We have destined many jinn and humans for Hell. They have hearts they do not understand with, eyes they do not see with, and ears they do not hear with. They are like cattle. In fact, they are even less guided! Such ˹people˺ are ˹entirely˺ heedless. <span style="font-size:0.7em;opacity:0.6;">[7:179]</span>
+                </div>
+                <!-- OVERLAY layer (bright text, revealed by radial mask) -->
+                <div class="spotlight-overlay" id="spotlightOverlay" aria-hidden="true">
+                    <div class="spotlight-text-layer">
+                        Indeed, We have destined many jinn and humans for Hell. They have hearts they do not understand with, eyes they do not see with, and ears they do not hear with. They are like cattle. In fact, they are even less guided! Such ˹people˺ are ˹entirely˺ heedless. <span style="font-size:0.7em;opacity:0.7;">[7:179]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Custom cursor glow (desktop only) -->
+        <div class="spotlight-cursor-glow" id="spotlightCursorGlow"></div>
+    </section>
+
     <!-- ═══ BOOKS ═══ -->
     <section id="books">
         <div class="container">
@@ -1712,388 +1963,763 @@
         </div>
     </section>
 
-    <!-- ═══ IMAGE ARCHIVE ═══ -->
-    <section id="archive">
+    <!-- ═══ IMAGE ARCHIVE — 3D Coverflow ═══ -->
+    <section id="archive" class="coverflow-section">
         <div class="container">
             <div class="text-center">
                 <span class="section-eyebrow" data-aos="fade-up">Visual Archive</span>
                 <h2 class="section-heading" data-aos="fade-up">Moments &amp; Milestones</h2>
-                <p class="section-subheading" data-aos="fade-up">A curated collection of images from the journey</p>
+                <p class="section-subheading" data-aos="fade-up">A curated collection of images from the journey — click any card to explore</p>
             </div>
-            <div class="archive-grid" data-aos="fade-up">
-                <div class="archive-item">
-                    <img src="sz1.png" alt="Archive 1" loading="lazy" />
-                    <div class="archive-overlay"><span>01</span></div>
-                </div>
-                <div class="archive-item">
-                    <img src="sz2.png" alt="Archive 2" loading="lazy" />
-                    <div class="archive-overlay"><span>02</span></div>
-                </div>
-                <div class="archive-item">
-                    <img src="sz3.png" alt="Archive 3" loading="lazy" />
-                    <div class="archive-overlay"><span>03</span></div>
-                </div>
-                <div class="archive-item">
-                    <img src="sz4.png" alt="Archive 4" loading="lazy" />
-                    <div class="archive-overlay"><span>04</span></div>
-                </div>
-                <div class="archive-item">
-                    <img src="sz5.png" alt="Archive 5" loading="lazy" />
-                    <div class="archive-overlay"><span>05</span></div>
-                </div>
-                <div class="archive-item">
-                    <img src="sz6.png" alt="Archive 6" loading="lazy" />
-                    <div class="archive-overlay"><span>06</span></div>
-                </div>
-                <div class="archive-item">
-                    <img src="sz7.png" alt="Archive 7" loading="lazy" />
-                    <div class="archive-overlay"><span>07</span></div>
-                </div>
-                <div class="archive-item">
-                    <img src="sz8.png" alt="Archive 8" loading="lazy" />
-                    <div class="archive-overlay"><span>08</span></div>
-                </div>
+
+            <!-- 3D Coverflow -->
+            <div class="coverflow-outer"
+            id="coverflowOuter"
+            tabindex="0"
+            role="group"
+            aria-roledescription="carousel"
+            aria-label="Moments and Milestones image carousel">
+            <div class="coverflow-stage" id="coverflowStage">
+                <!-- Cards injected by JS -->
             </div>
         </div>
-    </section>
 
-    <!-- ═══ LEADERSHIP ═══ -->
-    <section id="leadership">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-eyebrow" data-aos="fade-up">Leadership</span>
-                <h2 class="section-heading" data-aos="fade-up">Roles &amp; Ventures</h2>
-                <p class="section-subheading" data-aos="fade-up">Building with purpose, discipline, and long-term vision</p>
+        <!-- Navigation arrows -->
+        <div class="coverflow-nav">
+            <button class="coverflow-nav-btn" id="cfPrevBtn" aria-label="Previous image">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <button class="coverflow-nav-btn" id="cfNextBtn" aria-label="Next image">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+
+        <!-- Dot indicators -->
+        <div class="coverflow-dots" id="coverflowDots">
+            <!-- Dots injected by JS -->
+        </div>
+    </div>
+</section>
+
+<!-- ═══ LEADERSHIP ═══ -->
+<section id="leadership">
+    <div class="container">
+        <div class="text-center">
+            <span class="section-eyebrow" data-aos="fade-up">Leadership</span>
+            <h2 class="section-heading" data-aos="fade-up">Roles &amp; Ventures</h2>
+            <p class="section-subheading" data-aos="fade-up">Building with purpose, discipline, and long-term vision</p>
+        </div>
+        <div class="leadership-grid">
+            <div class="leadership-card" data-aos="zoom-in">
+                <div class="leadership-icon"><i class="fas fa-crown"></i></div>
+                <h4>CEO — Hukm Qalbi</h4>
+                <p>Leading an initiative dedicated to publishing thought-provoking works on purpose, discipline, and personal growth.</p>
             </div>
-            <div class="leadership-grid">
-                <div class="leadership-card" data-aos="zoom-in">
-                    <div class="leadership-icon"><i class="fas fa-crown"></i></div>
-                    <h4>CEO — Hukm Qalbi</h4>
-                    <p>Leading an initiative dedicated to publishing thought-provoking works on purpose, discipline, and personal growth.</p>
-                </div>
-                <div class="leadership-card" data-aos="zoom-in" data-aos-delay="60">
-                    <div class="leadership-icon"><i class="fas fa-store"></i></div>
-                    <h4>Founder, CEO &amp; Manager</h4>
-                    <p>Building a U.S.-based modern pet accessories brand — leading brand strategy, operations, and business development.</p>
-                </div>
-                <div class="leadership-card" data-aos="zoom-in" data-aos-delay="120">
-                    <div class="leadership-icon"><i class="fas fa-pen-fancy"></i></div>
-                    <h4>Author</h4>
-                    <p>Writing books that encourage readers to think beyond conventional success and build lives driven by meaning and long-term vision.</p>
-                </div>
-                <div class="leadership-card" data-aos="zoom-in" data-aos-delay="180">
-                    <div class="leadership-icon"><i class="fas fa-rocket"></i></div>
-                    <h4>Entrepreneur</h4>
-                    <p>Focused on digital business, branding, and long-term value creation across multiple ventures.</p>
-                </div>
+            <div class="leadership-card" data-aos="zoom-in" data-aos-delay="60">
+                <div class="leadership-icon"><i class="fas fa-store"></i></div>
+                <h4>Founder, CEO &amp; Manager</h4>
+                <p>Building a U.S.-based modern pet accessories brand — leading brand strategy, operations, and business development.</p>
+            </div>
+            <div class="leadership-card" data-aos="zoom-in" data-aos-delay="120">
+                <div class="leadership-icon"><i class="fas fa-pen-fancy"></i></div>
+                <h4>Author</h4>
+                <p>Writing books that encourage readers to think beyond conventional success and build lives driven by meaning and long-term vision.</p>
+            </div>
+            <div class="leadership-card" data-aos="zoom-in" data-aos-delay="180">
+                <div class="leadership-icon"><i class="fas fa-rocket"></i></div>
+                <h4>Entrepreneur</h4>
+                <p>Focused on digital business, branding, and long-term value creation across multiple ventures.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ═══ PRESS ═══ -->
-    <section id="press">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-eyebrow" data-aos="fade-up">Press &amp; Media</span>
-                <h2 class="section-heading" data-aos="fade-up">Featured In</h2>
-                <p class="section-subheading" data-aos="fade-up">Media mentions, features, and publications — more being added regularly</p>
+<!-- ═══ PRESS ═══ -->
+<section id="press">
+    <div class="container">
+        <div class="text-center">
+            <span class="section-eyebrow" data-aos="fade-up">Press &amp; Media</span>
+            <h2 class="section-heading" data-aos="fade-up">Featured In</h2>
+            <p class="section-subheading" data-aos="fade-up">Media mentions, features, and publications — more being added regularly</p>
+        </div>
+        <div class="press-grid">
+            <div class="press-card featured" data-aos="fade-up">
+                <div class="press-outlet">Medium</div>
+                <div class="press-type">Business &amp; Entrepreneurship</div>
+                <div class="press-status">● Featured Contributor</div>
             </div>
-            <div class="press-grid">
-                <div class="press-card featured" data-aos="fade-up">
-                    <div class="press-outlet">Medium</div>
-                    <div class="press-type">Business &amp; Entrepreneurship</div>
-                    <div class="press-status">● Featured Contributor</div>
-                </div>
-                <div class="press-card" data-aos="fade-up" data-aos-delay="60">
-                    <div class="press-outlet">Startup Directories</div>
-                    <div class="press-type">Entrepreneur Profile</div>
-                    <div class="press-status">● Listed</div>
-                </div>
-                <div class="press-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="press-outlet">Industry Blogs</div>
-                    <div class="press-type">Guest Features</div>
-                    <div class="press-status">○ In Progress</div>
-                </div>
-                <div class="press-card" data-aos="fade-up" data-aos-delay="140">
-                    <div class="press-outlet">Podcasts</div>
-                    <div class="press-type">Interview Appearances</div>
-                    <div class="press-status">○ Upcoming</div>
-                </div>
+            <div class="press-card" data-aos="fade-up" data-aos-delay="60">
+                <div class="press-outlet">Startup Directories</div>
+                <div class="press-type">Entrepreneur Profile</div>
+                <div class="press-status">● Listed</div>
             </div>
-            <div class="press-cta" data-aos="fade-up">
-                <a href="#contact">📩 For press inquiries or feature requests — get in touch</a>
+            <div class="press-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="press-outlet">Industry Blogs</div>
+                <div class="press-type">Guest Features</div>
+                <div class="press-status">○ In Progress</div>
+            </div>
+            <div class="press-card" data-aos="fade-up" data-aos-delay="140">
+                <div class="press-outlet">Podcasts</div>
+                <div class="press-type">Interview Appearances</div>
+                <div class="press-status">○ Upcoming</div>
             </div>
         </div>
-    </section>
-
-    <!-- ═══ SOCIAL HUB ═══ -->
-    <section id="social">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-eyebrow" data-aos="fade-up">Connect</span>
-                <h2 class="section-heading" data-aos="fade-up">Social Identity</h2>
-                <p class="section-subheading" data-aos="fade-up">Consistent presence across all major platforms — same name, same identity</p>
-            </div>
-            <div class="social-hub-grid">
-                <a href="https://www.instagram.com/saalimzayedofficial/" class="social-hub-card" target="_blank" rel="noopener noreferrer" data-aos="zoom-in">
-                    <i class="fab fa-instagram"></i><span>Instagram</span>
-                </a>
-                <a href="https://bd.linkedin.com/in/saalimzayed" class="social-hub-card" target="_blank" rel="noopener noreferrer" data-aos="zoom-in" data-aos-delay="50">
-                    <i class="fab fa-linkedin-in"></i><span>LinkedIn</span>
-                </a>
-                <a href="https://x.com/SaalimZayed" class="social-hub-card" target="_blank" rel="noopener noreferrer" data-aos="zoom-in" data-aos-delay="100">
-                    <i class="fab fa-x-twitter"></i><span>X / Twitter</span>
-                </a>
-                <a href="https://www.youtube.com/@saalimzayed" class="social-hub-card" target="_blank" rel="noopener noreferrer" data-aos="zoom-in" data-aos-delay="150">
-                    <i class="fab fa-youtube"></i><span>YouTube</span>
-                </a>
-                <a href="https://www.tiktok.com/@saalimzayedofficial" class="social-hub-card" target="_blank" rel="noopener noreferrer" data-aos="zoom-in" data-aos-delay="200">
-                    <i class="fab fa-tiktok"></i><span>TikTok</span>
-                </a>
-                <a href="https://www.facebook.com/saalimzayedofficial" class="social-hub-card" target="_blank" rel="noopener noreferrer" data-aos="zoom-in" data-aos-delay="250">
-                    <i class="fab fa-facebook-f"></i><span>Facebook Page</span>
-                </a>
-            </div>
+        <div class="press-cta" data-aos="fade-up">
+            <a href="#contact">📩 For press inquiries or feature requests — get in touch</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ═══ CONTACT ═══ -->
-    <section id="contact">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-eyebrow" data-aos="fade-up">Get In Touch</span>
-                <h2 class="section-heading" data-aos="fade-up">Start a Conversation</h2>
-                <p class="section-subheading" data-aos="fade-up">For collaborations, press inquiries, or strategic partnerships</p>
-            </div>
-            <div class="contact-wrapper" data-aos="fade-up">
-                <form class="contact-form" action="https://tally.so/r/rjpprl" method="POST" target="_blank">
-                    <input type="text" name="name" placeholder="Your Full Name" required />
-                    <input type="email" name="email" placeholder="Email Address" required />
-                    <select name="inquiry_type" required>
-                        <option value="" disabled selected>Inquiry Type</option>
-                        <option value="collaboration">Collaboration</option>
-                        <option value="press">Press / Media Inquiry</option>
-                        <option value="partnership">Strategic Partnership</option>
-                        <option value="general">General Inquiry</option>
-                    </select>
-                    <textarea name="message" placeholder="Your message..." required></textarea>
-                    <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send via Tally</button>
-                </form>
-            </div>
+<!-- ═══ SOCIAL HUB ═══ -->
+<section id="social">
+    <div class="container">
+        <div class="text-center">
+            <span class="section-eyebrow" data-aos="fade-up">Connect</span>
+            <h2 class="section-heading" data-aos="fade-up">Social Identity</h2>
+            <p class="section-subheading" data-aos="fade-up">Consistent presence across all major platforms — same name, same identity</p>
         </div>
-    </section>
-
-    <!-- ═══ FOOTER ═══ -->
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2025 <strong>Saalim Zayed</strong>. All rights reserved. Built with purpose &amp; discipline.</p>
-            <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#books">Books</a>
-                <a href="#archive">Archive</a>
-                <a href="#press">Press</a>
-                <a href="#contact">Contact</a>
-                <a href="http://saalimzayed.com/sitemap.xml">Sitemap</a>
-            </div>
+        <div class="social-hub-grid">
+            <a href="https://www.instagram.com/saalimzayedofficial/" class="social-hub-card" target="_blank" rel="noopener noreferrer" data-aos="zoom-in">
+                <i class="fab fa-instagram"></i><span>Instagram</span>
+            </a>
+            <a href="https://bd.linkedin.com/in/saalimzayed" class="social-hub-card" target="_blank" rel="noopener noreferrer" data-aos="zoom-in" data-aos-delay="50">
+                <i class="fab fa-linkedin-in"></i><span>LinkedIn</span>
+            </a>
+            <a href="https://x.com/SaalimZayed" class="social-hub-card" target="_blank" rel="noopener noreferrer" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fab fa-x-twitter"></i><span>X / Twitter</span>
+            </a>
+            <a href="https://www.youtube.com/@saalimzayed" class="social-hub-card" target="_blank" rel="noopener noreferrer" data-aos="zoom-in" data-aos-delay="150">
+                <i class="fab fa-youtube"></i><span>YouTube</span>
+            </a>
+            <a href="https://www.tiktok.com/@saalimzayedofficial" class="social-hub-card" target="_blank" rel="noopener noreferrer" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fab fa-tiktok"></i><span>TikTok</span>
+            </a>
+            <a href="https://www.facebook.com/saalimzayedofficial" class="social-hub-card" target="_blank" rel="noopener noreferrer" data-aos="zoom-in" data-aos-delay="250">
+                <i class="fab fa-facebook-f"></i><span>Facebook Page</span>
+            </a>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <!-- ═══ SCRIPTS ═══ -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
-    </script>
-    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js">
-    </script>
-    <script>
-        (function() {
-            AOS.init({
-                duration: 750,
-                once: true,
-                offset: 50,
-                easing: 'ease-out-cubic'
-            });
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+    <div class="container">
+        <div class="text-center">
+            <span class="section-eyebrow" data-aos="fade-up">Get In Touch</span>
+            <h2 class="section-heading" data-aos="fade-up">Start a Conversation</h2>
+            <p class="section-subheading" data-aos="fade-up">For collaborations, press inquiries, or strategic partnerships</p>
+        </div>
+        <div class="contact-wrapper" data-aos="fade-up">
+            <form class="contact-form" action="https://tally.so/r/rjpprl" method="POST" target="_blank">
+                <input type="text" name="name" placeholder="Your Full Name" required />
+                <input type="email" name="email" placeholder="Email Address" required />
+                <select name="inquiry_type" required>
+                    <option value="" disabled selected>Inquiry Type</option>
+                    <option value="collaboration">Collaboration</option>
+                    <option value="press">Press / Media Inquiry</option>
+                    <option value="partnership">Strategic Partnership</option>
+                    <option value="general">General Inquiry</option>
+                </select>
+                <textarea name="message" placeholder="Your message..." required></textarea>
+                <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send via Tally</button>
+            </form>
+        </div>
+    </div>
+</section>
 
-            const lenis = new Lenis({
-                duration: 1.1,
-                smoothWheel: true,
-                smoothTouch: false,
-                lerp: 0.08
-            });
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy; 2025 <strong>Saalim Zayed</strong>. All rights reserved. Built with purpose &amp; discipline.</p>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#verse-spotlight">Reflection</a>
+            <a href="#books">Books</a>
+            <a href="#archive">Archive</a>
+            <a href="#press">Press</a>
+            <a href="#contact">Contact</a>
+            <a href="http://saalimzayed.com/sitemap.xml">Sitemap</a>
+        </div>
+    </div>
+</footer>
 
-            function raf(time) {
-                lenis.raf(time);
-                requestAnimationFrame(raf);
+<!-- ═══ SCRIPTS ═══ -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+</script>
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js">
+</script>
+<script>
+(function() {
+    AOS.init({
+        duration: 750,
+        once: true,
+        offset: 50,
+        easing: 'ease-out-cubic'
+    });
+
+    const lenis = new Lenis({
+        duration: 1.1,
+        smoothWheel: true,
+        smoothTouch: false,
+        lerp: 0.08
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    const hamburger = document.getElementById('hamburgerBtn');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+
+    const navWrapper = document.getElementById('navWrapper');
+    window.addEventListener('scroll', () => {
+        navWrapper.classList.toggle('scrolled', window.scrollY > 45);
+    });
+
+    // Particles
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let mouseX = -600,
+        mouseY = -600,
+        targetX = -600,
+        targetY = -600;
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('mousemove', e => {
+        targetX = e.clientX;
+        targetY = e.clientY;
+    });
+
+    class Particle {
+        constructor() {
+            this.reset();
+            this.y = Math.random() * canvas.height;
+        }
+        reset() {
+            this.x = Math.random() * canvas.width;
+            this.y = -16;
+            this.size = Math.random() * 2 + 0.35;
+            this.vx = (Math.random() - 0.5) * 0.2;
+            this.vy = Math.random() * 0.28 + 0.06;
+            this.opacity = Math.random() * 0.28 + 0.05;
+            this.life = Math.random() * 300 + 140;
+            this.maxLife = this.life;
+        }
+        update() {
+            mouseX += (targetX - mouseX) * 0.04;
+            mouseY += (targetY - mouseY) * 0.04;
+            const dx = mouseX - this.x;
+            const dy = mouseY - this.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 170 && dist > 1) {
+                const force = 0.012;
+                this.vx += (dx / dist) * force;
+                this.vy += (dy / dist) * force;
             }
-            requestAnimationFrame(raf);
-
-            const hamburger = document.getElementById('hamburgerBtn');
-            const navLinks = document.getElementById('navLinks');
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                });
-            });
-
-            const navWrapper = document.getElementById('navWrapper');
-            window.addEventListener('scroll', () => {
-                navWrapper.classList.toggle('scrolled', window.scrollY > 45);
-            });
-
-            // Particles
-            const canvas = document.getElementById('particle-canvas');
-            const ctx = canvas.getContext('2d');
-            let particles = [];
-            let mouseX = -600,
-                mouseY = -600,
-                targetX = -600,
-                targetY = -600;
-
-            function resizeCanvas() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
+            this.vx *= 0.997;
+            this.vy *= 0.997;
+            this.x += this.vx;
+            this.y += this.vy;
+            this.life--;
+            if (this.life <= 0 || this.y > canvas.height + 35 || this.x < -35 || this.x > canvas.width +
+                35) {
+                this.reset();
+                this.y = -16;
+                this.life = this.maxLife;
             }
-            resizeCanvas();
-            window.addEventListener('resize', resizeCanvas);
-            window.addEventListener('mousemove', e => {
-                targetX = e.clientX;
-                targetY = e.clientY;
+        }
+        draw() {
+            const ratio = Math.min(this.life / this.maxLife, 1);
+            const alpha = this.opacity * Math.min(ratio * 2, 1);
+            ctx.fillStyle = `rgba(212,175,55,${alpha})`;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+    for (let i = 0; i < 40; i++) particles.push(new Particle());
+
+    function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+        requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    // Typewriter
+    const typeEl = document.getElementById('typewriter');
+    const roles = [
+        'Entrepreneur',
+        'Author',
+        'Business Leader',
+        'Purpose-Driven',
+        'Brand Builder'
+    ];
+    let roleIdx = 0,
+        charIdx = 0,
+        deleting = false;
+
+    function typeLoop() {
+        const current = roles[roleIdx];
+        typeEl.textContent = deleting ?
+            current.substring(0, charIdx - 1) :
+            current.substring(0, charIdx + 1);
+        charIdx += deleting ? -1 : 1;
+        let speed = deleting ? 30 : 75;
+        if (!deleting && charIdx === current.length) {
+            speed = 2400;
+            deleting = true;
+        } else if (deleting && charIdx === 0) {
+            deleting = false;
+            roleIdx = (roleIdx + 1) % roles.length;
+            speed = 320;
+        }
+        setTimeout(typeLoop, speed);
+    }
+    typeLoop();
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                lenis.scrollTo(target);
+            }
+        });
+    });
+
+    /* ── Hero: Apple-style load-in reveal + parallax on scroll ── */
+    const heroSection = document.querySelector('.hero');
+    const heroStage = document.getElementById('heroParallax');
+    const parallaxEls = heroStage ? heroStage.querySelectorAll('[data-speed]') : [];
+
+    requestAnimationFrame(() => {
+        setTimeout(() => heroSection.classList.add('is-loaded'), 120);
+    });
+    document.querySelectorAll('[data-reveal]').forEach((el, i) => {
+        el.style.transitionDelay = (i * 70) + 'ms';
+    });
+
+    function updateParallax() {
+        const scrollY = window.scrollY || window.pageYOffset;
+        const heroHeight = heroSection.offsetHeight || 1;
+        const progress = Math.min(scrollY / heroHeight, 1);
+        parallaxEls.forEach(el => {
+            const speed = parseFloat(el.getAttribute('data-speed')) || 0.2;
+            el.style.transform = `translateY(${progress * -120 * speed}px)`;
+        });
+        if (heroStage) {
+            heroStage.style.opacity = String(1 - progress * 0.6);
+        }
+    }
+    window.addEventListener('scroll', updateParallax, { passive: true });
+    updateParallax();
+
+    /* ═══════════════════════════════════════════════════
+       FLASHLIGHT TEXT — Spotlight Effect
+       ═══════════════════════════════════════════════════ */
+    (function initFlashlightText() {
+        const wrapper = document.getElementById('spotlightWrapper');
+        const overlay = document.getElementById('spotlightOverlay');
+        const cursorGlow = document.getElementById('spotlightCursorGlow');
+        if (!wrapper || !overlay) return;
+
+        // ── Configuration ──
+        const TARGET_MASK_SIZE = 350;
+        const INTENSITY = 35; // core solid %
+        const LERP_SPEED = 0.12;
+        const LERP_SPEED_FAST = 0.22;
+
+        // ── State ──
+        let maskX = 0;
+        let maskY = 0;
+        let currentMaskSize = 0;
+        let targetMaskSize = 0;
+        let isHovering = false;
+        let rafId = null;
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+        // ── Set initial custom properties ──
+        overlay.style.setProperty('--sl-core', INTENSITY + '%');
+        overlay.style.setProperty('--sl-mask-size', '0px');
+        overlay.style.setProperty('--sl-mask-x', '50%');
+        overlay.style.setProperty('--sl-mask-y', '50%');
+
+        // ── If reduced motion or touch-only, show text dim but visible (no flashlight) ──
+        if (prefersReducedMotion) {
+            // Show a subtle ambient glow instead
+            overlay.style.setProperty('--sl-mask-size', '120px');
+            overlay.style.setProperty('--sl-mask-x', '50%');
+            overlay.style.setProperty('--sl-mask-y', '50%');
+            wrapper.style.cursor = 'default';
+            return;
+        }
+
+        // On touch devices, use touch events instead of hover
+        if (isTouchDevice) {
+            wrapper.style.cursor = 'auto';
+            wrapper.addEventListener('touchmove', function(e) {
+                if (e.touches.length === 1) {
+                    const rect = wrapper.getBoundingClientRect();
+                    maskX = e.touches[0].clientX - rect.left;
+                    maskY = e.touches[0].clientY - rect.top;
+                    targetMaskSize = TARGET_MASK_SIZE;
+                    wrapper.classList.add('is-active');
+                }
+            }, { passive: true });
+            wrapper.addEventListener('touchend', function() {
+                targetMaskSize = 0;
+                wrapper.classList.remove('is-active');
+            });
+            wrapper.addEventListener('touchstart', function(e) {
+                if (e.touches.length === 1) {
+                    const rect = wrapper.getBoundingClientRect();
+                    maskX = e.touches[0].clientX - rect.left;
+                    maskY = e.touches[0].clientY - rect.top;
+                    targetMaskSize = TARGET_MASK_SIZE;
+                    wrapper.classList.add('is-active');
+                }
+            }, { passive: true });
+        } else {
+            // ── Desktop: pointer events ──
+            wrapper.addEventListener('pointermove', function(e) {
+                const rect = wrapper.getBoundingClientRect();
+                maskX = e.clientX - rect.left;
+                maskY = e.clientY - rect.top;
+
+                // Update custom cursor glow
+                if (cursorGlow) {
+                    cursorGlow.style.left = e.clientX + 'px';
+                    cursorGlow.style.top = e.clientY + 'px';
+                }
             });
 
-            class Particle {
-                constructor() {
-                    this.reset();
-                    this.y = Math.random() * canvas.height;
+            wrapper.addEventListener('pointerenter', function() {
+                isHovering = true;
+                targetMaskSize = TARGET_MASK_SIZE;
+                wrapper.classList.add('is-active');
+                if (cursorGlow) {
+                    cursorGlow.classList.add('visible');
+                    setTimeout(() => cursorGlow.classList.add('expanded'), 150);
                 }
-                reset() {
-                    this.x = Math.random() * canvas.width;
-                    this.y = -16;
-                    this.size = Math.random() * 2 + 0.35;
-                    this.vx = (Math.random() - 0.5) * 0.2;
-                    this.vy = Math.random() * 0.28 + 0.06;
-                    this.opacity = Math.random() * 0.28 + 0.05;
-                    this.life = Math.random() * 300 + 140;
-                    this.maxLife = this.life;
+            });
+
+            wrapper.addEventListener('pointerleave', function() {
+                isHovering = false;
+                targetMaskSize = 0;
+                wrapper.classList.remove('is-active');
+                if (cursorGlow) {
+                    cursorGlow.classList.remove('expanded');
+                    setTimeout(() => cursorGlow.classList.remove('visible'), 350);
                 }
-                update() {
-                    mouseX += (targetX - mouseX) * 0.04;
-                    mouseY += (targetY - mouseY) * 0.04;
-                    const dx = mouseX - this.x;
-                    const dy = mouseY - this.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 170 && dist > 1) {
-                        const force = 0.012;
-                        this.vx += (dx / dist) * force;
-                        this.vy += (dy / dist) * force;
+            });
+
+            // Track global mouse for cursor glow
+            document.addEventListener('mousemove', function(e) {
+                if (cursorGlow && !isHovering) {
+                    cursorGlow.style.left = e.clientX + 'px';
+                    cursorGlow.style.top = e.clientY + 'px';
+                }
+            });
+        }
+
+        // ── Animation loop ──
+        function animate() {
+            // Smooth lerp toward target
+            const speed = Math.abs(targetMaskSize - currentMaskSize) > 100 ? LERP_SPEED_FAST : LERP_SPEED;
+            currentMaskSize += (targetMaskSize - currentMaskSize) * speed;
+
+            // Snap when very close
+            if (Math.abs(targetMaskSize - currentMaskSize) < 0.5) {
+                currentMaskSize = targetMaskSize;
+            }
+
+            // Update CSS custom properties
+            overlay.style.setProperty('--sl-mask-size', Math.round(currentMaskSize) + 'px');
+            overlay.style.setProperty('--sl-mask-x', Math.round(maskX) + 'px');
+            overlay.style.setProperty('--sl-mask-y', Math.round(maskY) + 'px');
+
+            rafId = requestAnimationFrame(animate);
+        }
+
+        // ── Start animation loop ──
+        rafId = requestAnimationFrame(animate);
+
+        // ── Cleanup on page unload ──
+        window.addEventListener('beforeunload', function() {
+            if (rafId) cancelAnimationFrame(rafId);
+        });
+    })();
+
+    /* ═══════════════════════════════════════════════
+       3D COVERFLOW — Vanilla JS Implementation
+       Based on Smooth3DSlideshow by Originkit
+       ═══════════════════════════════════════════════ */
+    (function initCoverflow() {
+        // ── Slide data (using existing archive images) ──
+        const slides = [
+            { src: 'sz1.png', alt: 'Archive image 1' },
+            { src: 'sz2.png', alt: 'Archive image 2' },
+            { src: 'sz3.png', alt: 'Archive image 3' },
+            { src: 'sz4.png', alt: 'Archive image 4' },
+            { src: 'sz5.png', alt: 'Archive image 5' },
+            { src: 'sz6.png', alt: 'Archive image 6' },
+            { src: 'sz7.png', alt: 'Archive image 7' },
+            { src: 'sz8.png', alt: 'Archive image 8' },
+        ];
+
+        const n = slides.length;
+
+        // ── Configuration ──
+        const PERSPECTIVE = 1600;
+        const SCALE_STEP = 0.16;
+        const MAX_VISIBLE = 2;
+        const DEPTH = 240;
+        const TILT = 12;
+        const SIDE_TILT = 8;
+        const GAP_MULTIPLIER = 30;
+        const GAP = 8;
+        const DIM_OPACITY = 0.6;
+        const TRANSITION_DUR = 0.6;
+        const TRANSITION_EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';
+        const RADIUS_SCALE = 3;
+
+        // ── State ──
+        let activeIndex = 0;
+        let isLocked = false;
+
+        // ── DOM refs ──
+        const outerEl = document.getElementById('coverflowOuter');
+        const stageEl = document.getElementById('coverflowStage');
+        const dotsContainer = document.getElementById('coverflowDots');
+        const prevBtn = document.getElementById('cfPrevBtn');
+        const nextBtn = document.getElementById('cfNextBtn');
+        const cardEls = [];
+
+        function getCardSize() {
+            const w = window.innerWidth;
+            if (w >= 1100) return { width: 380, height: 380 };
+            if (w >= 750) return { width: 280, height: 280 };
+            if (w >= 480) return { width: 220, height: 220 };
+            return { width: 170, height: 170 };
+        }
+
+        function getEffectiveRadius(cardWidth, cardHeight) {
+            const r = Math.max(0, Math.min(20, RADIUS_SCALE)) / 20;
+            return r * (Math.min(cardWidth, cardHeight) / 2);
+        }
+
+        function buildCards() {
+            stageEl.innerHTML = '';
+            cardEls.length = 0;
+            dotsContainer.innerHTML = '';
+
+            const { width, height } = getCardSize();
+            const radius = getEffectiveRadius(width, height);
+
+            stageEl.style.width = width + 'px';
+            stageEl.style.height = height + 'px';
+
+            slides.forEach((slide, i) => {
+                const card = document.createElement('div');
+                card.className = 'coverflow-card';
+                card.style.width = width + 'px';
+                card.style.height = height + 'px';
+                card.style.borderRadius = radius + 'px';
+                card.setAttribute('data-index', i);
+                card.setAttribute('aria-label', slide.alt || `Image ${i + 1}`);
+
+                const img = document.createElement('img');
+                img.src = slide.src;
+                img.alt = slide.alt || '';
+                img.loading = 'lazy';
+                img.draggable = false;
+                card.appendChild(img);
+
+                const dim = document.createElement('div');
+                dim.className = 'coverflow-dim';
+                card.appendChild(dim);
+
+                card.addEventListener('click', () => handleCardClick(i));
+
+                stageEl.appendChild(card);
+                cardEls.push(card);
+
+                const dot = document.createElement('button');
+                dot.className = 'coverflow-dot';
+                dot.setAttribute('aria-label', `Go to image ${i + 1}`);
+                dot.addEventListener('click', () => {
+                    if (!isLocked && i !== activeIndex) {
+                        goTo(i);
                     }
-                    this.vx *= 0.997;
-                    this.vy *= 0.997;
-                    this.x += this.vx;
-                    this.y += this.vy;
-                    this.life--;
-                    if (this.life <= 0 || this.y > canvas.height + 35 || this.x < -35 || this.x > canvas.width +
-                        35) {
-                        this.reset();
-                        this.y = -16;
-                        this.life = this.maxLife;
-                    }
-                }
-                draw() {
-                    const ratio = Math.min(this.life / this.maxLife, 1);
-                    const alpha = this.opacity * Math.min(ratio * 2, 1);
-                    ctx.fillStyle = `rgba(212,175,55,${alpha})`;
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-            }
-            for (let i = 0; i < 40; i++) particles.push(new Particle());
-
-            function animateParticles() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                particles.forEach(p => {
-                    p.update();
-                    p.draw();
                 });
-                requestAnimationFrame(animateParticles);
-            }
-            animateParticles();
-
-            // Typewriter
-            const typeEl = document.getElementById('typewriter');
-            const roles = [
-                'Entrepreneur',
-                'Author',
-                'Business Leader',
-                'Purpose-Driven',
-                'Brand Builder'
-            ];
-            let roleIdx = 0,
-                charIdx = 0,
-                deleting = false;
-
-            function typeLoop() {
-                const current = roles[roleIdx];
-                typeEl.textContent = deleting ?
-                    current.substring(0, charIdx - 1) :
-                    current.substring(0, charIdx + 1);
-                charIdx += deleting ? -1 : 1;
-                let speed = deleting ? 30 : 75;
-                if (!deleting && charIdx === current.length) {
-                    speed = 2400;
-                    deleting = true;
-                } else if (deleting && charIdx === 0) {
-                    deleting = false;
-                    roleIdx = (roleIdx + 1) % roles.length;
-                    speed = 320;
-                }
-                setTimeout(typeLoop, speed);
-            }
-            typeLoop();
-
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        e.preventDefault();
-                        lenis.scrollTo(target);
-                    }
-                });
+                dotsContainer.appendChild(dot);
             });
 
-            /* ── Hero: Apple-style load-in reveal + Lando-style parallax on scroll ── */
-            const heroSection = document.querySelector('.hero');
-            const heroStage = document.getElementById('heroParallax');
-            const parallaxEls = heroStage ? heroStage.querySelectorAll('[data-speed]') : [];
+            updateCards();
+            updateDots();
+        }
 
-            // Staggered reveal shortly after paint (Apple-style settle-in)
-            requestAnimationFrame(() => {
-                setTimeout(() => heroSection.classList.add('is-loaded'), 120);
-            });
-            document.querySelectorAll('[data-reveal]').forEach((el, i) => {
-                el.style.transitionDelay = (i * 70) + 'ms';
-            });
+        function getRelativeIndex(i) {
+            let rel = i - activeIndex;
+            if (rel > n / 2) rel -= n;
+            if (rel < -n / 2) rel += n;
+            return rel;
+        }
 
-            // Gentle scroll parallax
-            function updateParallax() {
-                const scrollY = window.scrollY || window.pageYOffset;
-                const heroHeight = heroSection.offsetHeight || 1;
-                const progress = Math.min(scrollY / heroHeight, 1);
-                parallaxEls.forEach(el => {
-                    const speed = parseFloat(el.getAttribute('data-speed')) || 0.2;
-                    el.style.transform = `translateY(${progress * -120 * speed}px)`;
-                });
-                // fade the whole stage slightly as user scrolls away, Apple-style
-                if (heroStage) {
-                    heroStage.style.opacity = String(1 - progress * 0.6);
+        function updateCards() {
+            const { width, height } = getCardSize();
+            const radius = getEffectiveRadius(width, height);
+
+            stageEl.style.width = width + 'px';
+            stageEl.style.height = height + 'px';
+
+            cardEls.forEach((card, i) => {
+                card.style.width = width + 'px';
+                card.style.height = height + 'px';
+                card.style.borderRadius = radius + 'px';
+
+                const rel = getRelativeIndex(i);
+                const ax = Math.abs(rel);
+                const visible = ax <= MAX_VISIBLE;
+                const isActive = rel === 0;
+                const sc = Math.max(0.4, 1 - ax * SCALE_STEP);
+                const tx = rel * (GAP * GAP_MULTIPLIER);
+                const tz = -ax * DEPTH;
+                const ry = -rel * TILT;
+                const rz = rel * SIDE_TILT;
+
+                card.style.transform =
+                    `translate(-50%, -50%) translateX(${tx}px) translateZ(${tz}px) rotateY(${ry}deg) rotateZ(${rz}deg) scale(${sc})`;
+                card.style.opacity = visible ? '1' : '0';
+                card.style.pointerEvents = visible && !isLocked ? 'auto' : 'none';
+                card.style.cursor = isActive ? 'default' : 'pointer';
+                card.setAttribute('aria-hidden', visible ? 'false' : 'true');
+
+                if (isActive) {
+                    card.classList.add('is-active');
+                } else {
+                    card.classList.remove('is-active');
                 }
-            }
-            window.addEventListener('scroll', updateParallax, { passive: true });
-            updateParallax();
 
-        })();
-    </script>
+                const dimEl = card.querySelector('.coverflow-dim');
+                if (dimEl) {
+                    dimEl.style.opacity = isActive ? '0' : String(DIM_OPACITY);
+                }
+            });
+        }
+
+        function updateDots() {
+            const dots = dotsContainer.querySelectorAll('.coverflow-dot');
+            dots.forEach((dot, i) => {
+                if (i === activeIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function goTo(index) {
+            if (isLocked || index === activeIndex) return;
+            isLocked = true;
+            activeIndex = ((index % n) + n) % n;
+            updateCards();
+            updateDots();
+            setTimeout(() => {
+                isLocked = false;
+                updateCards();
+            }, Math.max(50, TRANSITION_DUR * 1000));
+        }
+
+        function step(dir) {
+            if (isLocked) return;
+            const newIndex = (((activeIndex + dir) % n) + n) % n;
+            goTo(newIndex);
+        }
+
+        function handleCardClick(i) {
+            if (isLocked) return;
+            if (i === activeIndex) {
+                step(1);
+            } else {
+                goTo(i);
+            }
+        }
+
+        prevBtn.addEventListener('click', () => step(-1));
+        nextBtn.addEventListener('click', () => step(1));
+
+        outerEl.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                step(1);
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                step(-1);
+            }
+        });
+
+        let touchStartX = 0;
+        let touchStartY = 0;
+        outerEl.addEventListener('touchstart', (e) => {
+            if (e.touches.length === 1) {
+                touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
+            }
+        }, { passive: true });
+        outerEl.addEventListener('touchend', (e) => {
+            if (isLocked) return;
+            const dx = (e.changedTouches[0]?.clientX || touchStartX) - touchStartX;
+            const dy = (e.changedTouches[0]?.clientY || touchStartY) - touchStartY;
+            const absDx = Math.abs(dx);
+            const absDy = Math.abs(dy);
+            if (absDx > absDy && absDx > 40) {
+                step(dx < 0 ? 1 : -1);
+            }
+        });
+
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                updateCards();
+                updateDots();
+            }, 180);
+        });
+
+        buildCards();
+
+        window.coverflowAPI = {
+            goTo,
+            step,
+            getActiveIndex: () => activeIndex,
+            getSlideCount: () => n,
+        };
+    })();
+
+})();
+</script>
 </body>
 </html>
