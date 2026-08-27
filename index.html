@@ -32,7 +32,7 @@
     <link rel="icon" type="image/png" href="szprt.png" />
     <link rel="apple-touch-icon" href="szprt.png" />
 
-    <!-- Structured Data (unchanged) -->
+    <!-- Structured Data -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -51,8 +51,25 @@
                 "knowsAbout": [
                     "E-commerce", "Brand Building", "Business Strategy", "Middleman Business",
                     "Purpose-Driven Leadership", "Personal Development", "Discipline",
-                    "Long-Term Vision", "Entrepreneurship"
+                    "Long-Term Vision", "Entrepreneurship", "AI Foundations", "Applied AI",
+                    "Agents & Workflows"
                 ],
+                "hasCredential": [{
+                    "@type": "EducationalOccupationalCredential",
+                    "name": "Agents and Workflows",
+                    "credentialCategory": "Professional Certificate",
+                    "recognizedBy": { "@type": "Organization", "name": "OpenAI" }
+                }, {
+                    "@type": "EducationalOccupationalCredential",
+                    "name": "Applied AI Foundations",
+                    "credentialCategory": "Professional Certificate",
+                    "recognizedBy": { "@type": "Organization", "name": "OpenAI" }
+                }, {
+                    "@type": "EducationalOccupationalCredential",
+                    "name": "AI Foundations",
+                    "credentialCategory": "Professional Certificate",
+                    "recognizedBy": { "@type": "Organization", "name": "OpenAI" }
+                }],
                 "url": "https://saalimzayed.com/",
                 "image": {
                     "@type": "ImageObject",
@@ -147,7 +164,7 @@
                 "@id": "https://saalimzayed.com/#webpage",
                 "url": "https://saalimzayed.com/",
                 "name": "Saalim Zayed — Entrepreneur, Author & Business Activist",
-                "description": "Official website of Saalim Zayed — entrepreneur, author, e-commerce & middleman business activist. Learn about his books, leadership, and ventures.",
+                "description": "Official website of Saalim Zayed — entrepreneur, author, e-commerce & middleman business activist. Learn about his books, leadership, ventures, and professional certificates.",
                 "isPartOf": { "@id": "https://saalimzayed.com/#website" },
                 "about": { "@id": "https://saalimzayed.com/#person" },
                 "primaryImageOfPage": {
@@ -174,8 +191,8 @@
 
     <style>
         /* ============================================================
-               PRELOADER
-               ============================================================ */
+           PRELOADER
+           ============================================================ */
         #loader {
             position: fixed;
             inset: 0;
@@ -232,7 +249,6 @@
             z-index: 1;
         }
 
-        /* Outline text — visible at all times */
         .loader-outline {
             display: block;
             color: transparent;
@@ -242,7 +258,6 @@
             white-space: nowrap;
         }
 
-        /* Fill text — overlays the outline, clipped by overflow */
         .loader-fill-wrap {
             position: absolute;
             top: 0;
@@ -266,7 +281,6 @@
             white-space: nowrap;
         }
 
-        /* subtle shimmer on the fill */
         .loader-fill::after {
             content: '';
             position: absolute;
@@ -295,7 +309,6 @@
             }
         }
 
-        /* small loading indicator */
         .loader-dots {
             margin-top: 32px;
             display: flex;
@@ -333,7 +346,6 @@
             }
         }
 
-        /* Mobile adjustments */
         @media (max-width: 600px) {
             .loader-wrapper {
                 font-size: clamp(2.2rem, 10vw, 3.8rem);
@@ -363,8 +375,8 @@
         }
 
         /* ============================================================
-               ORIGINAL SITE STYLES (unchanged)
-               ============================================================ */
+           ORIGINAL SITE STYLES
+           ============================================================ */
         :root {
             --bg: #080B0F;
             --bg-elevated: #0D121A;
@@ -1253,6 +1265,155 @@
             line-height: 1.6;
         }
 
+        /* ─── CERTIFICATES ─── */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .certificate-card {
+            padding: 28px 20px 24px;
+            text-align: center;
+            cursor: default;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            border: 1.5px dashed rgba(255, 255, 255, 0.06);
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.025);
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+            box-shadow: var(--shadow-card);
+            transition: var(--transition);
+        }
+        .certificate-card:hover {
+            border-color: var(--gold);
+            border-style: solid;
+            box-shadow: 0 0 48px rgba(212, 175, 55, 0.09), 0 8px 34px rgba(0, 0, 0, 0.28);
+            transform: translateY(-4px);
+        }
+        .certificate-img-wrap {
+            width: 100%;
+            max-width: 200px;
+            aspect-ratio: 4/3;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            background: var(--bg-elevated);
+            position: relative;
+            flex-shrink: 0;
+        }
+        .certificate-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+        .certificate-card:hover .certificate-img-wrap {
+            border-color: var(--gold);
+            box-shadow: 0 10px 32px rgba(212, 175, 55, 0.18);
+        }
+        .certificate-card:hover .certificate-img-wrap img {
+            filter: brightness(1.06);
+            transform: scale(1.03);
+        }
+        .certificate-card .cert-icon {
+            font-size: 1.6rem;
+            color: var(--gold-light);
+            opacity: 0.8;
+            transition: var(--transition);
+            margin-bottom: -2px;
+        }
+        .certificate-card:hover .cert-icon {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        .certificate-card h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+            font-family: var(--font-display);
+            color: var(--text);
+        }
+        .certificate-card .cert-issuer {
+            color: var(--gold-light);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .certificate-card .cert-type {
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 3px 12px;
+            border-radius: 50px;
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.015);
+            transition: var(--transition);
+        }
+        .certificate-card:hover .cert-type {
+            border-color: rgba(212, 175, 55, 0.35);
+            color: var(--text-secondary);
+        }
+        .certificate-card .cert-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            opacity: 0.6;
+            transition: var(--transition);
+        }
+        .certificate-card:hover .cert-badge {
+            opacity: 1;
+            color: var(--text-secondary);
+        }
+        .certificate-card .cert-badge i {
+            color: var(--gold);
+            font-size: 0.6rem;
+        }
+
+        @media (max-width: 900px) {
+            .certificates-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 14px;
+            }
+            .certificate-card {
+                padding: 20px 16px 18px;
+            }
+            .certificate-img-wrap {
+                max-width: 160px;
+            }
+        }
+        @media (max-width: 600px) {
+            .certificates-grid {
+                grid-template-columns: 1fr;
+                max-width: 380px;
+            }
+            .certificate-card {
+                padding: 22px 16px 20px;
+                gap: 10px;
+            }
+            .certificate-img-wrap {
+                max-width: 170px;
+            }
+            .certificate-card h4 {
+                font-size: 0.95rem;
+            }
+        }
+
         /* ─── PRESS ─── */
         .press-grid {
             display: grid;
@@ -1534,8 +1695,8 @@
         }
 
         /* ══════════════════════════════════════════════════
-               HERO
-               ══════════════════════════════════════════════════ */
+           HERO
+           ══════════════════════════════════════════════════ */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -2138,6 +2299,7 @@
                 <li><a href="#books">Books</a></li>
                 <li><a href="#archive">Archive</a></li>
                 <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#press">Press</a></li>
                 <li><a href="#social">Social</a></li>
                 <li><a href="#contact" class="nav-cta">Connect</a></li>
@@ -2214,11 +2376,11 @@
                 <div class="about-img-wrap" data-aos="fade-right">
                     <div class="about-img-accent"></div>
                     <figure style="margin:0;width:100%;height:100%;">
-                        <img 
-                            src="saalim-zayed-entrepreneur-author.jpg" 
+                        <img
+                            src="saalim-zayed-entrepreneur-author.jpg"
                             alt="Saalim Zayed — Entrepreneur, Author, and E-Commerce Business Builder"
                             title="Saalim Zayed — Official Portrait"
-                            loading="lazy" 
+                            loading="lazy"
                             style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);transition:var(--transition);"
                         />
                         <figcaption style="position:absolute;bottom:16px;left:20px;right:20px;z-index:2;color:#EDF0F5;font-size:0.75rem;font-weight:500;letter-spacing:0.02em;opacity:0.75;pointer-events:none;">Saalim Zayed, entrepreneur, author, and e-commerce business builder.</figcaption>
@@ -2254,6 +2416,9 @@
                         <span class="skill-chip">Discipline</span>
                         <span class="skill-chip">Long-Term Vision</span>
                         <span class="skill-chip">Personal Growth</span>
+                        <span class="skill-chip">AI Foundations</span>
+                        <span class="skill-chip">Applied AI</span>
+                        <span class="skill-chip">Agents &amp; Workflows</span>
                     </div>
                 </div>
             </div>
@@ -2386,6 +2551,49 @@
         </div>
     </section>
 
+    <!-- ═══ CERTIFICATES ═══ -->
+    <section id="certificates">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-eyebrow" data-aos="fade-up">Credentials</span>
+                <h2 class="section-heading" data-aos="fade-up">Professional Certificates</h2>
+                <p class="section-subheading" data-aos="fade-up">Certified by OpenAI — demonstrating applied expertise in artificial intelligence foundations, agent systems, and workflow design</p>
+            </div>
+            <div class="certificates-grid">
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="certificate-img-wrap">
+                        <img src="unnamed(3).png" alt="Agents and Workflows — OpenAI Certificate" loading="lazy" />
+                    </div>
+                    <div class="cert-icon"><i class="fas fa-robot"></i></div>
+                    <h4>Agents and Workflows</h4>
+                    <span class="cert-issuer">OpenAI</span>
+                    <span class="cert-type">Professional Certificate</span>
+                    <span class="cert-badge"><i class="fas fa-circle"></i> Verified</span>
+                </div>
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="80">
+                    <div class="certificate-img-wrap">
+                        <img src="unnamed(1).png" alt="Applied AI Foundations — OpenAI Certificate" loading="lazy" />
+                    </div>
+                    <div class="cert-icon"><i class="fas fa-cogs"></i></div>
+                    <h4>Applied AI Foundations</h4>
+                    <span class="cert-issuer">OpenAI</span>
+                    <span class="cert-type">Professional Certificate</span>
+                    <span class="cert-badge"><i class="fas fa-circle"></i> Verified</span>
+                </div>
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="160">
+                    <div class="certificate-img-wrap">
+                        <img src="unnamed.png" alt="AI Foundations — OpenAI Certificate" loading="lazy" />
+                    </div>
+                    <div class="cert-icon"><i class="fas fa-brain"></i></div>
+                    <h4>AI Foundations</h4>
+                    <span class="cert-issuer">OpenAI</span>
+                    <span class="cert-type">Professional Certificate</span>
+                    <span class="cert-badge"><i class="fas fa-circle"></i> Verified</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ═══ PRESS ═══ -->
     <section id="press">
         <div class="container">
@@ -2491,6 +2699,8 @@
                 <a href="#verse-spotlight">Reflection</a>
                 <a href="#books">Books</a>
                 <a href="#archive">Archive</a>
+                <a href="#leadership">Leadership</a>
+                <a href="#certificates">Certificates</a>
                 <a href="#press">Press</a>
                 <a href="#contact">Contact</a>
                 <a href="https://www.wikidata.org/wiki/Q140694374" target="_blank" rel="noopener noreferrer" title="Saalim Zayed on Wikidata">Wikidata</a>
@@ -2673,7 +2883,8 @@
                 'Middleman Business Activist',
                 'Business Leader',
                 'Purpose-Driven',
-                'Brand Builder'
+                'Brand Builder',
+                'AI-Certified Professional'
             ];
             let roleIdx = 0,
                 charIdx = 0,
