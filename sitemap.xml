@@ -1,1 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Sitemap for https://saalimzayed.com/
+  Update <lastmod> whenever the page content changes.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
+  <url>
+    <loc>https://saalimzayed.com/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+
+    <!-- Primary images on the page -->
+    <image:image>
+      <image:loc>https://saalimzayed.com/szprt.png</image:loc>
+      <image:title>Saalim Zayed — Entrepreneur, Author &amp; Business Activist</image:title>
+      <image:caption>Official portrait of Saalim Zayed</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://saalimzayed.com/saalim-zayed-entrepreneur-author.jpg</image:loc>
+      <image:title>Saalim Zayed — Official Portrait</image:title>
+      <image:caption>Saalim Zayed, entrepreneur, author, and e-commerce business builder.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://saalimzayed.com/og-image.jpg</image:loc>
+      <image:title>Saalim Zayed — Entrepreneur, Author &amp; Business Expert</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://saalimzayed.com/hqb.png</image:loc>
+      <image:title>Hukm Qalbi — Book Cover</image:title>
+      <image:caption>Hukm Qalbi by Saalim Zayed — purpose and self-development.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://saalimzayed.com/tlg.png</image:loc>
+      <image:title>The Long Game — Book Cover</image:title>
+      <image:caption>The Long Game: Moving Beyond the Checkpoint Mindset by Saalim Zayed.</image:caption>
+    </image:image>
+  </url>
+
+</urlset>
