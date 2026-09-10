@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zayed-saalim.github.io/Zayed.com/sitemap.xml
