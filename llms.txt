@@ -1,0 +1,50 @@
+# Saalim Zayed
+
+> Official website of Saalim Zayed — entrepreneur, author, e-commerce and middleman business activist, and CEO of Hukm Qalbi.
+
+Saalim Zayed, born in 2012, is an entrepreneur, author, e-commerce and middleman business activist. He is the CEO of Hukm Qalbi, founder/CEO/manager of a U.S.-based modern pet accessories brand, and author of *Hukm Qalbi* and *The Long Game: Moving Beyond the Checkpoint Mindset*. He holds OpenAI professional certificates in Agents and Workflows, Applied AI Foundations, and AI Foundations.
+
+## Main Page
+
+- [Saalim Zayed — Official Website](https://zayed-saalim.github.io/Zayed.com/): Single-page official website containing biography, books, image archive, leadership roles, certificates, press, social links, and contact form.
+
+## Sections
+
+- [Home / Hero](https://zayed-saalim.github.io/Zayed.com/#home): Introduction, roles, social links, featured-in strip.
+- [About](https://zayed-saalim.github.io/Zayed.com/#about): Biography, ventures, skills.
+- [Reflection](https://zayed-saalim.github.io/Zayed.com/#verse-spotlight): Quran verse reflection [7:179].
+- [Books](https://zayed-saalim.github.io/Zayed.com/#books): *Hukm Qalbi* and *The Long Game*.
+- [Archive](https://zayed-saalim.github.io/Zayed.com/#archive): Moments & Milestones image carousel.
+- [Leadership](https://zayed-saalim.github.io/Zayed.com/#leadership): Roles and ventures.
+- [Certificates](https://zayed-saalim.github.io/Zayed.com/#certificates): OpenAI certificates.
+- [Press](https://zayed-saalim.github.io/Zayed.com/#press): Press and media features.
+- [Social](https://zayed-saalim.github.io/Zayed.com/#social): Social profiles.
+- [Contact](https://zayed-saalim.github.io/Zayed.com/#contact): Contact form and inquiry types.
+
+## Books
+
+- [Hukm Qalbi](https://saalimzayed.github.io/HUKMQALBI/): Book on purpose, self-development, and living with intention. Publisher: Hukm Qalbi. Published 2024.
+- [The Long Game: Moving Beyond the Checkpoint Mindset](https://zayed-saalim.github.io/the-long-game/): Book on patience, strategic thinking, and long-term meaning. Published 2024. Also on [Wikidata](https://www.wikidata.org/wiki/Q140693199) and [Wikibooks](https://en.wikibooks.org/wiki/The_Long_Game:_Moving_Beyond_the_Checkpoint_Mindset).
+
+## Organization
+
+- [Hukm Qalbi](https://saalimzayed.github.io/HUKMQALBI/): Initiative founded by Saalim Zayed in 2024, publishing works on purpose, discipline, and personal growth.
+
+## Contact
+
+- Email: contact@saalimzayed.com
+- Press/business inquiries: via contact form.
+
+## Social
+
+- Instagram: https://www.instagram.com/saalimzayedofficial/
+- LinkedIn: https://bd.linkedin.com/in/saalimzayed
+- X: https://x.com/SaalimZayed
+- YouTube: https://www.youtube.com/@saalimzayed
+- TikTok: https://www.tiktok.com/@saalimzayed
+- Facebook: https://www.facebook.com/saalimzayed
+
+## Optional
+
+- [Sitemap](https://zayed-saalim.github.io/Zayed.com/sitemap.xml)
+- [Wikidata entry](https://www.wikidata.org/wiki/Q140694374)
