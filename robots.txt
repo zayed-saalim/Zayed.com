@@ -1,3 +1,6 @@
+# Robots.txt for the official Saalim Zayed website
+# https://zayed-saalim.github.io/Zayed.com/
+
 User-agent: *
 Allow: /
 
