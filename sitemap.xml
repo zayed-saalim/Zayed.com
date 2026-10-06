@@ -1,42 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Sitemap for https://saalimzayed.com/
+  Sitemap for the official Saalim Zayed website.
   Update <lastmod> whenever the page content changes.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
-    <loc>https://saalimzayed.com/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://zayed-saalim.github.io/Zayed.com/</loc>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 
-    <!-- Primary images on the page -->
+    <!-- Primary portrait / brand image -->
     <image:image>
-      <image:loc>https://saalimzayed.com/szprt.png</image:loc>
-      <image:title>Saalim Zayed — Entrepreneur, Author &amp; Business Activist</image:title>
-      <image:caption>Official portrait of Saalim Zayed</image:caption>
+      <image:loc>https://zayed-saalim.github.io/Zayed.com/saalim-zayed-entrepreneur-author.jpg</image:loc>
+      <image:title>Saalim Zayed — Entrepreneur and Author</image:title>
+      <image:caption>Official portrait of Saalim Zayed, entrepreneur, author, and e-commerce businessman.</image:caption>
     </image:image>
+
+    <!-- Apple touch icon / brand image -->
     <image:image>
-      <image:loc>https://saalimzayed.com/saalim-zayed-entrepreneur-author.jpg</image:loc>
-      <image:title>Saalim Zayed — Official Portrait</image:title>
-      <image:caption>Saalim Zayed, entrepreneur, author, and e-commerce business builder.</image:caption>
+      <image:loc>https://zayed-saalim.github.io/Zayed.com/szprt.png</image:loc>
+      <image:title>Saalim Zayed — Official Brand Image</image:title>
+      <image:caption>Official Saalim Zayed brand image used by the website.</image:caption>
     </image:image>
+
+    <!-- Books -->
     <image:image>
-      <image:loc>https://saalimzayed.com/og-image.jpg</image:loc>
-      <image:title>Saalim Zayed — Entrepreneur, Author &amp; Business Expert</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://saalimzayed.com/hqb.png</image:loc>
+      <image:loc>https://zayed-saalim.github.io/Zayed.com/hqb.png</image:loc>
       <image:title>Hukm Qalbi — Book Cover</image:title>
-      <image:caption>Hukm Qalbi by Saalim Zayed — purpose and self-development.</image:caption>
+      <image:caption>Hukm Qalbi by Saalim Zayed — a work exploring purpose, self-development, and intentional living.</image:caption>
     </image:image>
+
     <image:image>
-      <image:loc>https://saalimzayed.com/tlg.png</image:loc>
+      <image:loc>https://zayed-saalim.github.io/Zayed.com/tlg.png</image:loc>
       <image:title>The Long Game — Book Cover</image:title>
       <image:caption>The Long Game: Moving Beyond the Checkpoint Mindset by Saalim Zayed.</image:caption>
     </image:image>
+
+    <!-- Professional certificates -->
+    <image:image>
+      <image:loc>https://zayed-saalim.github.io/Zayed.com/unnamed%283%29.png</image:loc>
+      <image:title>Agents and Workflows — OpenAI Certificate</image:title>
+      <image:caption>Saalim Zayed's professional certificate in Agents and Workflows.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://zayed-saalim.github.io/Zayed.com/unnamed%281%29.png</image:loc>
+      <image:title>Applied AI Foundations — OpenAI Certificate</image:title>
+      <image:caption>Saalim Zayed's professional certificate in Applied AI Foundations.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://zayed-saalim.github.io/Zayed.com/unnamed.png</image:loc>
+      <image:title>AI Foundations — OpenAI Certificate</image:title>
+      <image:caption>Saalim Zayed's professional certificate in AI Foundations.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://zayed-saalim.github.io/Zayed.com/claude101.png</image:loc>
+      <image:title>Claude 101 — Anthropic Certificate</image:title>
+      <image:caption>Saalim Zayed's certificate on Claude 101 from Claude Academy and Anthropic.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://zayed-saalim.github.io/Zayed.com/aicapl.png</image:loc>
+      <image:title>AI Capabilities and Limitations — Anthropic Certificate</image:title>
+      <image:caption>Saalim Zayed's certificate on AI Capabilities and Limitations from Claude Academy and Anthropic.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://zayed-saalim.github.io/Zayed.com/aiflbld.png</image:loc>
+      <image:title>AI Fluency for Builders — Anthropic Certificate</image:title>
+      <image:caption>Saalim Zayed's certificate on AI Fluency for Builders from Claude Academy and Anthropic.</image:caption>
+    </image:image>
+
   </url>
 
 </urlset>
