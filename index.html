@@ -68,6 +68,17 @@
           "about": { "@id": "https://zayed-saalim.github.io/Zayed.com/#person" },
           "mainEntity": { "@id": "https://zayed-saalim.github.io/Zayed.com/#person" },
           "primaryImageOfPage": { "@id": "https://zayed-saalim.github.io/Zayed.com/#portrait" },
+          "hasPart": [
+            { "@id": "https://zayed-saalim.github.io/Zayed.com/#about" },
+            { "@id": "https://zayed-saalim.github.io/Zayed.com/#verse-spotlight" },
+            { "@id": "https://zayed-saalim.github.io/Zayed.com/#books" },
+            { "@id": "https://zayed-saalim.github.io/Zayed.com/#archive" },
+            { "@id": "https://zayed-saalim.github.io/Zayed.com/#leadership" },
+            { "@id": "https://zayed-saalim.github.io/Zayed.com/#certificates" },
+            { "@id": "https://zayed-saalim.github.io/Zayed.com/#press" },
+            { "@id": "https://zayed-saalim.github.io/Zayed.com/#social" },
+            { "@id": "https://zayed-saalim.github.io/Zayed.com/#contact" }
+          ],
           "inLanguage": "en"
         },
         {
@@ -191,6 +202,69 @@
           "description": "A book exploring purpose, self-development, and living with intention.",
           "url": "https://saalimzayed.github.io/HUKMQALBI/",
           "inLanguage": "en"
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://zayed-saalim.github.io/Zayed.com/#about",
+          "name": "About Saalim Zayed",
+          "url": "https://zayed-saalim.github.io/Zayed.com/#about",
+          "isPartOf": { "@id": "https://zayed-saalim.github.io/Zayed.com/#webpage" }
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://zayed-saalim.github.io/Zayed.com/#verse-spotlight",
+          "name": "Reflection — A Verse to Ponder",
+          "url": "https://zayed-saalim.github.io/Zayed.com/#verse-spotlight",
+          "isPartOf": { "@id": "https://zayed-saalim.github.io/Zayed.com/#webpage" }
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://zayed-saalim.github.io/Zayed.com/#books",
+          "name": "Books by Saalim Zayed",
+          "url": "https://zayed-saalim.github.io/Zayed.com/#books",
+          "isPartOf": { "@id": "https://zayed-saalim.github.io/Zayed.com/#webpage" }
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://zayed-saalim.github.io/Zayed.com/#archive",
+          "name": "Moments & Milestones — Visual Archive",
+          "url": "https://zayed-saalim.github.io/Zayed.com/#archive",
+          "isPartOf": { "@id": "https://zayed-saalim.github.io/Zayed.com/#webpage" }
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://zayed-saalim.github.io/Zayed.com/#leadership",
+          "name": "Roles & Ventures",
+          "url": "https://zayed-saalim.github.io/Zayed.com/#leadership",
+          "isPartOf": { "@id": "https://zayed-saalim.github.io/Zayed.com/#webpage" }
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://zayed-saalim.github.io/Zayed.com/#certificates",
+          "name": "Professional Certificates",
+          "url": "https://zayed-saalim.github.io/Zayed.com/#certificates",
+          "isPartOf": { "@id": "https://zayed-saalim.github.io/Zayed.com/#webpage" }
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://zayed-saalim.github.io/Zayed.com/#press",
+          "name": "Press & Media — Featured In",
+          "url": "https://zayed-saalim.github.io/Zayed.com/#press",
+          "isPartOf": { "@id": "https://zayed-saalim.github.io/Zayed.com/#webpage" }
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://zayed-saalim.github.io/Zayed.com/#social",
+          "name": "Social Identity",
+          "url": "https://zayed-saalim.github.io/Zayed.com/#social",
+          "isPartOf": { "@id": "https://zayed-saalim.github.io/Zayed.com/#webpage" }
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://zayed-saalim.github.io/Zayed.com/#contact",
+          "name": "Contact Saalim Zayed",
+          "url": "https://zayed-saalim.github.io/Zayed.com/#contact",
+          "isPartOf": { "@id": "https://zayed-saalim.github.io/Zayed.com/#webpage" }
         }
       ]
     }
@@ -498,6 +572,52 @@
             z-index: 2;
         }
 
+        /* ─── ACCESSIBILITY UTILITIES ─── */
+        .visually-hidden {
+            position: absolute !important;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            clip-path: inset(50%);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .skip-link {
+            position: fixed;
+            top: 12px;
+            left: 50%;
+            transform: translate(-50%, -160%);
+            z-index: 2000;
+            background: var(--gold);
+            color: #0A0E13;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.01em;
+            padding: 11px 22px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 8px 28px rgba(212, 175, 55, 0.32);
+            transition: transform 0.35s var(--apple-ease);
+        }
+        .skip-link:focus {
+            transform: translate(-50%, 0);
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        select:focus-visible,
+        [tabindex]:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
         .dash-border {
             border: 2px dashed var(--border-dash);
             border-radius: var(--radius);
@@ -802,6 +922,25 @@
             position: relative;
             z-index: 1;
         }
+
+        /* Offset for the fixed navigation so headings are never obscured */
+        section[id],
+        main[id] {
+            scroll-margin-top: 100px;
+        }
+        @media (max-width: 900px) {
+            section[id],
+            main[id] {
+                scroll-margin-top: 90px;
+            }
+        }
+        @media (max-width: 600px) {
+            section[id],
+            main[id] {
+                scroll-margin-top: 84px;
+            }
+        }
+
         .section-eyebrow {
             display: inline-flex;
             align-items: center;
@@ -2319,9 +2458,39 @@
                 width: 16px;
             }
         }
+
+        /* ══════════════════════════════════════════════════
+           REDUCED MOTION
+           ══════════════════════════════════════════════════ */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+                scroll-behavior: auto !important;
+            }
+            .ambient-mesh,
+            .hero-glow,
+            .about-img-accent,
+            .hero-scroll-cue .scroll-line {
+                animation: none !important;
+            }
+            [data-reveal] {
+                opacity: 1 !important;
+                transform: none !important;
+                filter: none !important;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
 
     <!-- ═══ PRELOADER ═══ -->
     <div id="loader" role="status" aria-label="Loading">
@@ -2345,7 +2514,7 @@
     <header class="nav-wrapper" id="navWrapper">
         <nav class="nav-inner" aria-label="Primary">
             <a href="#home" class="nav-logo" aria-label="Saalim Zayed — Home">Saalim Zayed<span class="nav-logo-dot" aria-hidden="true"></span></a>
-            <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+            <button class="nav-hamburger" id="hamburgerBtn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">☰</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -2358,13 +2527,13 @@
                 <li><a href="#social">Social</a></li>
                 <li><a href="#contact" class="nav-cta">Connect</a></li>
             </ul>
-            <a href="mailto:saalim@saalimzayed.com" class="nav-contact-pill">
+            <a href="mailto:contact@saalimzayed.com" class="nav-contact-pill">
                 <span class="live-dot" aria-hidden="true"></span> contact@saalimzayed.com
             </a>
         </nav>
     </header>
 
-    <main id="main">
+    <main id="main" tabindex="-1">
 
         <!-- ═══ HERO ═══ -->
         <section class="hero" id="home" aria-labelledby="hero-name">
@@ -2562,8 +2731,8 @@
                     <div class="coverflow-stage" id="coverflowStage"></div>
                 </div>
                 <div class="coverflow-nav">
-                    <button class="coverflow-nav-btn" id="cfPrevBtn" aria-label="Previous image"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>
-                    <button class="coverflow-nav-btn" id="cfNextBtn" aria-label="Next image"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                    <button class="coverflow-nav-btn" id="cfPrevBtn" type="button" aria-label="Previous image"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>
+                    <button class="coverflow-nav-btn" id="cfNextBtn" type="button" aria-label="Next image"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>
                 </div>
                 <div class="coverflow-dots" id="coverflowDots"></div>
             </div>
@@ -2781,11 +2950,11 @@
                 </div>
                 <div class="contact-wrapper" data-aos="fade-up">
                     <form class="contact-form" action="https://tally.so/r/rjpprl" method="POST" target="_blank">
-                        <label class="visually-hidden" for="contact-name" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Your Full Name</label>
+                        <label class="visually-hidden" for="contact-name">Your Full Name</label>
                         <input id="contact-name" type="text" name="name" placeholder="Your Full Name" required autocomplete="name" />
-                        <label class="visually-hidden" for="contact-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Email Address</label>
+                        <label class="visually-hidden" for="contact-email">Email Address</label>
                         <input id="contact-email" type="email" name="email" placeholder="Email Address" required autocomplete="email" />
-                        <label class="visually-hidden" for="contact-inquiry" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Inquiry Type</label>
+                        <label class="visually-hidden" for="contact-inquiry">Inquiry Type</label>
                         <select id="contact-inquiry" name="inquiry_type" required>
                             <option value="" disabled selected>Inquiry Type</option>
                             <option value="collaboration">Collaboration</option>
@@ -2796,7 +2965,7 @@
                             <option value="catofy">Catofy / Brand Inquiry</option>
                             <option value="general">General Inquiry</option>
                         </select>
-                        <label class="visually-hidden" for="contact-message" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Your message</label>
+                        <label class="visually-hidden" for="contact-message">Your message</label>
                         <textarea id="contact-message" name="message" placeholder="Your message..." required></textarea>
                         <button type="submit" class="btn"><i class="fas fa-paper-plane" aria-hidden="true"></i> Send via Tally</button>
                     </form>
@@ -2809,7 +2978,7 @@
     <!-- ═══ FOOTER ═══ -->
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 <strong>Saalim Zayed</strong>. All rights reserved. Built with purpose &amp; discipline.</p>
+            <p>&copy; 2026 <strong>Saalim Zayed</strong>. All rights reserved. Built with purpose &amp; discipline.</p>
             <nav class="footer-links" aria-label="Footer">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
@@ -2833,6 +3002,8 @@
     <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
     <script>
         (function() {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
             /* ═══════════════════════════════════════════════
                PRELOADER
                ═══════════════════════════════════════════════ */
@@ -2853,7 +3024,7 @@
                 fillWrap.style.width = '100%';
 
                 // Wait for fill to complete (1.6s transition + small buffer) then slide up
-                setTimeout(dismissLoader, 1900);
+                setTimeout(dismissLoader, prefersReducedMotion ? 200 : 1900);
             });
 
             // Fallback: if load takes too long, force dismiss after 6s
@@ -2872,42 +3043,146 @@
                 duration: 750,
                 once: true,
                 offset: 50,
-                easing: 'ease-out-cubic'
+                easing: 'ease-out-cubic',
+                disable: prefersReducedMotion
             });
 
-            const lenis = new Lenis({
-                duration: 1.1,
-                smoothWheel: true,
-                smoothTouch: false,
-                lerp: 0.08
-            });
+            let lenis = null;
+            if (!prefersReducedMotion && typeof Lenis !== 'undefined') {
+                lenis = new Lenis({
+                    duration: 1.1,
+                    smoothWheel: true,
+                    smoothTouch: false,
+                    lerp: 0.08
+                });
 
-            function raf(time) {
-                lenis.raf(time);
+                const raf = function(time) {
+                    lenis.raf(time);
+                    requestAnimationFrame(raf);
+                };
                 requestAnimationFrame(raf);
             }
-            requestAnimationFrame(raf);
 
             /* ═══════════════════════════════════════════════
                NAV
                ═══════════════════════════════════════════════ */
             const hamburger = document.getElementById('hamburgerBtn');
             const navLinks = document.getElementById('navLinks');
+
+            function closeMenu(restoreFocus) {
+                navLinks.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                if (restoreFocus) hamburger.focus();
+            }
+
             hamburger.addEventListener('click', () => {
                 const isOpen = navLinks.classList.toggle('active');
                 hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
             });
+
             document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    hamburger.setAttribute('aria-expanded', 'false');
-                });
+                link.addEventListener('click', () => closeMenu(false));
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                    closeMenu(true);
+                }
             });
 
             const navWrapper = document.getElementById('navWrapper');
             window.addEventListener('scroll', () => {
                 navWrapper.classList.toggle('scrolled', window.scrollY > 45);
+            }, { passive: true });
+
+            /* ═══════════════════════════════════════════════
+               DEEP LINKS & SMOOTH SCROLL
+               ═══════════════════════════════════════════════ */
+            function getScrollOffset() {
+                const nav = document.getElementById('navWrapper');
+                if (!nav) return 96;
+                const rect = nav.getBoundingClientRect();
+                return Math.max(72, Math.round(rect.bottom + 24));
+            }
+
+            function scrollToTarget(target, immediate) {
+                if (!target) return;
+                const offset = getScrollOffset();
+                const instant = immediate === true || prefersReducedMotion;
+                if (lenis) {
+                    lenis.scrollTo(target, { offset: -offset, immediate: instant });
+                } else {
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: Math.max(0, top),
+                        behavior: instant ? 'auto' : 'smooth'
+                    });
+                }
+            }
+
+            function currentHashId() {
+                const raw = window.location.hash.replace(/^#/, '');
+                try {
+                    return decodeURIComponent(raw);
+                } catch (err) {
+                    return raw;
+                }
+            }
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    // The skip link should keep its native focus-moving behaviour.
+                    if (this.classList.contains('skip-link')) return;
+
+                    const href = this.getAttribute('href');
+                    if (!href || href === '#') return;
+
+                    const target = document.getElementById(href.slice(1));
+                    if (!target) return;
+
+                    e.preventDefault();
+                    scrollToTarget(target, false);
+
+                    if (window.location.hash !== href) {
+                        try {
+                            history.pushState(null, '', href);
+                        } catch (err) {
+                            window.location.hash = href;
+                        }
+                    }
+                });
             });
+
+            function handleHistoryNav() {
+                const id = currentHashId();
+                if (!id) return;
+                const target = document.getElementById(id);
+                if (!target) return;
+                scrollToTarget(target, false);
+            }
+            window.addEventListener('popstate', handleHistoryNav);
+            window.addEventListener('hashchange', handleHistoryNav);
+
+            // Direct links / refresh with a fragment: land on the right section,
+            // past the fixed header, once layout is stable.
+            function scrollToInitialHash() {
+                const id = currentHashId();
+                if (!id) return;
+                const target = document.getElementById(id);
+                if (!target) return;
+                scrollToTarget(target, true);
+                setTimeout(function() {
+                    if (currentHashId() === id) scrollToTarget(target, true);
+                }, 600);
+            }
+
+            if (document.readyState === 'complete') {
+                setTimeout(scrollToInitialHash, 150);
+            } else {
+                window.addEventListener('load', function() {
+                    setTimeout(scrollToInitialHash, 150);
+                });
+            }
 
             /* ═══════════════════════════════════════════════
                PARTICLES
@@ -2978,7 +3253,6 @@
                     ctx.fill();
                 }
             }
-            for (let i = 0; i < 40; i++) particles.push(new Particle());
 
             function animateParticles() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -2988,7 +3262,13 @@
                 });
                 requestAnimationFrame(animateParticles);
             }
-            animateParticles();
+
+            if (prefersReducedMotion) {
+                canvas.style.display = 'none';
+            } else {
+                for (let i = 0; i < 40; i++) particles.push(new Particle());
+                animateParticles();
+            }
 
             /* ═══════════════════════════════════════════════
                TYPEWRITER
@@ -3026,22 +3306,12 @@
                 }
                 setTimeout(typeLoop, speed);
             }
-            typeLoop();
 
-            /* ═══════════════════════════════════════════════
-               SMOOTH SCROLL ANCHOR
-               ═══════════════════════════════════════════════ */
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    if (!href || href === '#') return;
-                    const target = document.querySelector(href);
-                    if (target) {
-                        e.preventDefault();
-                        lenis.scrollTo(target);
-                    }
-                });
-            });
+            if (prefersReducedMotion) {
+                typeEl.textContent = 'Entrepreneur · Author · Founder';
+            } else {
+                typeLoop();
+            }
 
             /* ═══════════════════════════════════════════════
                HERO: LOAD-IN + PARALLAX
@@ -3058,6 +3328,7 @@
             });
 
             function updateParallax() {
+                if (prefersReducedMotion) return;
                 const scrollY = window.scrollY || window.pageYOffset;
                 const heroHeight = heroSection.offsetHeight || 1;
                 const progress = Math.min(scrollY / heroHeight, 1);
@@ -3092,7 +3363,7 @@
                 let targetMaskSize = 0;
                 let isHovering = false;
                 let rafId = null;
-                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
                 const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
                 overlay.style.setProperty('--sl-core', INTENSITY + '%');
@@ -3100,7 +3371,7 @@
                 overlay.style.setProperty('--sl-mask-x', '50%');
                 overlay.style.setProperty('--sl-mask-y', '50%');
 
-                if (prefersReducedMotion) {
+                if (reducedMotion) {
                     overlay.style.setProperty('--sl-mask-size', '120px');
                     overlay.style.setProperty('--sl-mask-x', '50%');
                     overlay.style.setProperty('--sl-mask-y', '50%');
@@ -3202,7 +3473,6 @@
                 ];
 
                 const n = slides.length;
-                const PERSPECTIVE = 1600;
                 const SCALE_STEP = 0.16;
                 const MAX_VISIBLE = 2;
                 const DEPTH = 240;
@@ -3272,6 +3542,7 @@
 
                         const dot = document.createElement('button');
                         dot.className = 'coverflow-dot';
+                        dot.type = 'button';
                         dot.setAttribute('aria-label', `Go to image ${i + 1}`);
                         dot.addEventListener('click', () => {
                             if (!isLocked && i !== activeIndex) goTo(i);
