@@ -72,6 +72,7 @@
             { "@id": "https://zayed-saalim.github.io/Zayed.com/#about" },
             { "@id": "https://zayed-saalim.github.io/Zayed.com/#verse-spotlight" },
             { "@id": "https://zayed-saalim.github.io/Zayed.com/#books" },
+            { "@id": "https://zayed-saalim.github.io/Zayed.com/#upcoming-books" },
             { "@id": "https://zayed-saalim.github.io/Zayed.com/#archive" },
             { "@id": "https://zayed-saalim.github.io/Zayed.com/#leadership" },
             { "@id": "https://zayed-saalim.github.io/Zayed.com/#certificates" },
@@ -204,6 +205,20 @@
           "inLanguage": "en"
         },
         {
+          "@type": "Book",
+          "@id": "https://zayed-saalim.github.io/Zayed.com/#learn-and-earn",
+          "name": "Learn & Earn",
+          "alternativeHeadline": "Learn How to Learn. Earn Halal Rizq.",
+          "author": { "@id": "https://zayed-saalim.github.io/Zayed.com/#person" },
+          "description": "A practical exploration of how to learn effectively, develop valuable skills, and pursue halal rizq through purposeful work.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://zayed-saalim.github.io/Zayed.com/learandearn.webp",
+            "caption": "Cover of Learn & Earn by Saalim Zayed."
+          },
+          "inLanguage": "en"
+        },
+        {
           "@type": "WebPageElement",
           "@id": "https://zayed-saalim.github.io/Zayed.com/#about",
           "name": "About Saalim Zayed",
@@ -222,6 +237,14 @@
           "@id": "https://zayed-saalim.github.io/Zayed.com/#books",
           "name": "Books by Saalim Zayed",
           "url": "https://zayed-saalim.github.io/Zayed.com/#books",
+          "isPartOf": { "@id": "https://zayed-saalim.github.io/Zayed.com/#webpage" }
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://zayed-saalim.github.io/Zayed.com/#upcoming-books",
+          "name": "Upcoming Books",
+          "url": "https://zayed-saalim.github.io/Zayed.com/#upcoming-books",
+          "description": "Upcoming literary projects by Saalim Zayed — Being Yourself and Character Undercover — currently taking shape.",
           "isPartOf": { "@id": "https://zayed-saalim.github.io/Zayed.com/#webpage" }
         },
         {
@@ -758,7 +781,7 @@
 
         .nav-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 1.15rem;
             list-style: none;
             align-items: center;
             transition: all 0.4s ease;
@@ -767,7 +790,7 @@
             color: var(--text-secondary);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.86rem;
+            font-size: 0.83rem;
             position: relative;
             transition: all 0.35s ease;
             padding: 4px 0;
@@ -800,7 +823,7 @@
             transition: all 0.45s cubic-bezier(0.19, 1, 0.22, 1) !important;
             box-shadow: 0 4px 20px rgba(212, 175, 55, 0.22);
             letter-spacing: 0.01em !important;
-            font-size: 0.84rem !important;
+            font-size: 0.82rem !important;
         }
         .nav-links .nav-cta:hover {
             transform: translateY(-2px);
@@ -841,6 +864,20 @@
             animation: dotPulse 2.4s ease-in-out infinite;
             box-shadow: 0 0 6px var(--gold-glow);
             flex-shrink: 0;
+        }
+
+        /* Safety compression for the widened nav (11 items) at mid-desktop widths */
+        @media (min-width: 881px) and (max-width: 1280px) {
+            .nav-links {
+                gap: 0.9rem;
+            }
+            .nav-links a {
+                font-size: 0.78rem;
+            }
+            .nav-contact-pill {
+                padding: 6px 12px;
+                font-size: 0.78rem;
+            }
         }
 
         @media (max-width: 880px) {
@@ -1258,6 +1295,7 @@
             gap: 20px;
         }
         .book-card {
+            position: relative;
             padding: 32px 24px;
             text-align: center;
             cursor: default;
@@ -1367,6 +1405,234 @@
             border-color: var(--gold);
             color: var(--gold-light);
             background: rgba(212, 175, 55, 0.05);
+        }
+
+        /* ─── NEW BOOK accents (Learn & Earn) ─── */
+        .book-badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            z-index: 4;
+            font-size: 0.56rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #0A0E13;
+            background: linear-gradient(135deg, #D4AF37, #F0D080);
+            padding: 4px 10px;
+            border-radius: 50px;
+            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.35);
+            pointer-events: none;
+        }
+        .book-card-new {
+            perspective: 1000px;
+        }
+        .book-card-new .book-cover {
+            transform-style: preserve-3d;
+        }
+        .book-card-new:hover .book-cover {
+            transform: translateY(-8px) scale(1.03) rotateX(4deg);
+            border-color: var(--gold);
+            box-shadow: 0 18px 48px rgba(212, 175, 55, 0.22), 0 10px 24px rgba(0, 0, 0, 0.4);
+        }
+        .book-card .book-subtitle {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 0.86rem;
+            line-height: 1.5;
+            color: var(--gold-light);
+            opacity: 0.88;
+            margin-top: -6px;
+            max-width: 280px;
+        }
+        .book-card .book-distributor {
+            display: inline-block;
+            width: 100%;
+            max-width: 220px;
+            margin-top: 2px;
+            padding-top: 10px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.09);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+        .book-card:hover .book-distributor {
+            color: var(--text-secondary);
+            border-top-color: rgba(212, 175, 55, 0.28);
+        }
+
+        /* ─── UPCOMING BOOKS ─── */
+        .upcoming-books-section {
+            padding-top: 40px;
+            padding-bottom: 120px;
+        }
+        .upcoming-books-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 32px;
+            max-width: 940px;
+            margin: 0 auto;
+            perspective: 1400px;
+        }
+        .upcoming-book-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 22px;
+            padding: 40px 32px 34px;
+            border: 1.5px dashed rgba(212, 175, 55, 0.22);
+            border-radius: var(--radius);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012));
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+            box-shadow: var(--shadow-card);
+            transition: var(--transition);
+            transform-style: preserve-3d;
+            overflow: hidden;
+        }
+        .upcoming-book-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.12), transparent 55%);
+            pointer-events: none;
+            opacity: 0.55;
+            transition: opacity 0.6s var(--apple-ease);
+        }
+        .upcoming-book-card:hover {
+            border-color: var(--gold);
+            border-style: solid;
+            box-shadow: 0 0 60px rgba(212, 175, 55, 0.12), 0 12px 44px rgba(0, 0, 0, 0.45);
+            transform: translateY(-6px);
+        }
+        .upcoming-book-card:hover::before {
+            opacity: 1;
+        }
+
+        .upcoming-book-cover-wrap {
+            position: relative;
+            margin: 0;
+            width: 100%;
+            max-width: 280px;
+            aspect-ratio: 2/3;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition: transform 0.7s var(--apple-ease), box-shadow 0.7s var(--apple-ease);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+            background: var(--bg-elevated);
+        }
+        .upcoming-book-cover-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(8, 11, 15, 0.4));
+            pointer-events: none;
+        }
+        .upcoming-book-card:hover .upcoming-book-cover-wrap {
+            transform: translateY(-8px) rotateX(6deg) rotateY(-2deg) scale(1.02);
+            box-shadow: 0 32px 70px rgba(0, 0, 0, 0.55), 0 0 60px rgba(212, 175, 55, 0.18), 0 0 0 1px rgba(212, 175, 55, 0.3) inset;
+        }
+        .upcoming-book-cover-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.9s var(--apple-ease), filter 0.7s var(--apple-ease);
+        }
+        .upcoming-book-card:hover .upcoming-book-cover-wrap img {
+            transform: scale(1.05);
+            filter: brightness(1.08);
+        }
+
+        .upcoming-book-info {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            z-index: 1;
+        }
+        .upcoming-book-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text);
+            line-height: 1.2;
+        }
+        .upcoming-book-author {
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            opacity: 0.85;
+        }
+        .upcoming-book-status {
+            display: inline-block;
+            margin-top: 6px;
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            padding: 6px 15px;
+            border-radius: 50px;
+            border: 1px dashed rgba(212, 175, 55, 0.45);
+            background: rgba(212, 175, 55, 0.06);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.08);
+            transition: var(--transition);
+        }
+        .upcoming-book-card:hover .upcoming-book-status {
+            border-style: solid;
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.1);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.16);
+            color: #fff;
+        }
+
+        @media (max-width: 900px) {
+            .upcoming-books-section {
+                padding-top: 20px;
+                padding-bottom: 80px;
+            }
+            .upcoming-books-grid {
+                gap: 24px;
+            }
+            .upcoming-book-card {
+                padding: 32px 24px 28px;
+            }
+        }
+        @media (max-width: 768px) {
+            .upcoming-books-grid {
+                grid-template-columns: 1fr;
+                gap: 26px;
+                max-width: 440px;
+            }
+            .upcoming-book-card {
+                padding: 30px 22px 26px;
+            }
+            .upcoming-book-cover-wrap {
+                max-width: 220px;
+            }
+        }
+        @media (max-width: 480px) {
+            .upcoming-book-cover-wrap {
+                max-width: 180px;
+            }
+            .upcoming-book-title {
+                font-size: 1.15rem;
+            }
+            .upcoming-book-status {
+                font-size: 0.58rem;
+                padding: 5px 12px;
+                letter-spacing: 0.18em;
+            }
         }
 
         /* ─── LEADERSHIP ─── */
@@ -2352,6 +2618,25 @@
             opacity: 0 !important;
         }
 
+        /* Upcoming milestone — restrained gold sheen when active */
+        .coverflow-card.is-milestone::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            pointer-events: none;
+            background: radial-gradient(130% 90% at 50% 0%, rgba(212, 175, 55, 0.28), transparent 62%);
+            opacity: 0;
+            transition: opacity 0.9s var(--apple-ease);
+            z-index: 2;
+        }
+        .coverflow-card.is-milestone.is-active::after {
+            opacity: 1;
+        }
+        .coverflow-card.is-milestone.is-active {
+            box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 20px 60px rgba(0, 0, 0, 0.55), 0 0 0 1.5px rgba(212, 175, 55, 0.35), 0 0 60px rgba(212, 175, 55, 0.14);
+        }
+
         .coverflow-nav {
             display: flex;
             justify-content: center;
@@ -2415,6 +2700,86 @@
             background: rgba(212, 175, 55, 0.5);
         }
 
+        /* Caption for the active slide (used for the upcoming milestone) */
+        .coverflow-caption {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 9px;
+            margin: 26px auto 0;
+            min-height: 58px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.55s var(--apple-ease), transform 0.55s var(--apple-ease);
+            pointer-events: none;
+        }
+        .coverflow-caption.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .coverflow-caption-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.05rem, 2vw, 1.35rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text);
+        }
+        .coverflow-caption-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            padding: 5px 13px;
+            border-radius: 50px;
+            border: 1px dashed rgba(212, 175, 55, 0.4);
+            background: rgba(212, 175, 55, 0.05);
+            box-shadow: 0 0 22px rgba(212, 175, 55, 0.08);
+        }
+        .coverflow-caption-status::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 0 8px var(--gold-glow);
+            flex-shrink: 0;
+        }
+        .coverflow-caption.is-revealing .coverflow-caption-title {
+            animation: milestoneCaptionReveal 1s var(--apple-ease) both;
+        }
+        .coverflow-caption.is-revealing .coverflow-caption-status {
+            animation: milestoneStatusReveal 0.9s var(--apple-ease) 0.15s both;
+        }
+        @keyframes milestoneCaptionReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(12px);
+                filter: blur(8px);
+                letter-spacing: 0.1em;
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+                letter-spacing: -0.02em;
+            }
+        }
+        @keyframes milestoneStatusReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(6px) scale(0.92);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
         @media (max-width: 900px) {
             .coverflow-section {
                 padding-top: 50px;
@@ -2431,6 +2796,9 @@
             .coverflow-nav {
                 gap: 16px;
                 margin-top: 22px;
+            }
+            .coverflow-caption {
+                margin-top: 20px;
             }
         }
         @media (max-width: 600px) {
@@ -2456,6 +2824,19 @@
             }
             .coverflow-dot.active {
                 width: 16px;
+            }
+            .coverflow-caption {
+                margin-top: 14px;
+                min-height: 52px;
+                gap: 7px;
+            }
+            .coverflow-caption-title {
+                font-size: 0.98rem;
+            }
+            .coverflow-caption-status {
+                font-size: 0.58rem;
+                padding: 4px 10px;
+                letter-spacing: 0.15em;
             }
         }
 
@@ -2520,6 +2901,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#verse-spotlight">Reflection</a></li>
                 <li><a href="#books">Books</a></li>
+                <li><a href="#upcoming-books">Upcoming Books</a></li>
                 <li><a href="#archive">Archive</a></li>
                 <li><a href="#leadership">Leadership</a></li>
                 <li><a href="#certificates">Certificates</a></li>
@@ -2679,10 +3061,21 @@
                 <div class="text-center">
                     <span class="section-eyebrow" data-aos="fade-up">Works</span>
                     <h2 class="section-heading" id="books-heading" data-aos="fade-up">Books by Saalim Zayed</h2>
-                    <p class="section-subheading" data-aos="fade-up">Thought-provoking works on purpose, discipline, and building a meaningful life — cataloged on Wikidata &amp; Wikibooks</p>
+                    <p class="section-subheading" data-aos="fade-up">Thought-provoking works on purpose, discipline, and building a meaningful life. Selected titles are catalogued on Wikidata &amp; Wikibooks.</p>
                 </div>
                 <div class="books-grid">
-                    <article class="book-card" data-aos="fade-up" data-aos-delay="0">
+                    <article class="book-card book-card-new" data-aos="fade-up" data-aos-delay="0">
+                        <span class="book-badge">New Book</span>
+                        <div class="book-cover">
+                            <img src="learandearn.webp" alt="Learn &amp; Earn — book cover by Saalim Zayed, distributed by Hukm Qalbi" loading="lazy" />
+                        </div>
+                        <h4>Learn &amp; Earn</h4>
+                        <div class="book-subtitle">Learn How to Learn. Earn Halal Rizq.</div>
+                        <div class="book-meta">Learning &amp; Halal Entrepreneurship</div>
+                        <p>A practical exploration of how to learn effectively, develop valuable skills, and pursue halal rizq through purposeful work.</p>
+                        <span class="book-distributor">Distributed by Hukm Qalbi</span>
+                    </article>
+                    <article class="book-card" data-aos="fade-up" data-aos-delay="80">
                         <div class="book-cover">
                             <img src="hqb.png" alt="Hukm Qalbi book cover" loading="lazy" />
                         </div>
@@ -2693,7 +3086,7 @@
                             Read <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </a>
                     </article>
-                    <article class="book-card" data-aos="fade-up" data-aos-delay="80">
+                    <article class="book-card" data-aos="fade-up" data-aos-delay="160">
                         <div class="book-cover">
                             <img src="tlg.png" alt="The Long Game book cover by Saalim Zayed" loading="lazy" />
                         </div>
@@ -2719,6 +3112,47 @@
             </div>
         </section>
 
+        <!-- ═══ UPCOMING BOOKS ═══ -->
+        <section id="upcoming-books" class="upcoming-books-section" aria-labelledby="upcoming-books-heading">
+            <div class="container">
+                <div class="text-center">
+                    <span class="section-eyebrow" data-aos="fade-up">The Next Chapter</span>
+                    <h2 class="section-heading" id="upcoming-books-heading" data-aos="fade-up">Upcoming Books</h2>
+                    <p class="section-subheading" data-aos="fade-up">New ideas. New perspectives. Stories and lessons currently taking shape.</p>
+                </div>
+                <div class="upcoming-books-grid">
+                    <article class="upcoming-book-card" data-aos="fade-up" data-aos-delay="0">
+                        <figure class="upcoming-book-cover-wrap">
+                            <img
+                                src="biengyourself.webp"
+                                alt="Being Yourself — upcoming book cover by Saalim Zayed"
+                                loading="lazy"
+                            />
+                        </figure>
+                        <div class="upcoming-book-info">
+                            <h3 class="upcoming-book-title">Being Yourself</h3>
+                            <span class="upcoming-book-author">Saalim Zayed</span>
+                            <span class="upcoming-book-status">Coming Soon</span>
+                        </div>
+                    </article>
+                    <article class="upcoming-book-card" data-aos="fade-up" data-aos-delay="120">
+                        <figure class="upcoming-book-cover-wrap">
+                            <img
+                                src="characterundercover.webp"
+                                alt="Character Undercover — upcoming book cover by Saalim Zayed"
+                                loading="lazy"
+                            />
+                        </figure>
+                        <div class="upcoming-book-info">
+                            <h3 class="upcoming-book-title">Character Undercover</h3>
+                            <span class="upcoming-book-author">Saalim Zayed</span>
+                            <span class="upcoming-book-status">Coming Soon</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <!-- ═══ IMAGE ARCHIVE — 3D Coverflow ═══ -->
         <section id="archive" class="coverflow-section" aria-labelledby="archive-heading">
             <div class="container">
@@ -2729,6 +3163,10 @@
                 </div>
                 <div class="coverflow-outer" id="coverflowOuter" tabindex="0" role="group" aria-roledescription="carousel" aria-label="Moments and Milestones image carousel">
                     <div class="coverflow-stage" id="coverflowStage"></div>
+                </div>
+                <div class="coverflow-caption" id="coverflowCaption" aria-live="polite" aria-atomic="true">
+                    <span class="coverflow-caption-title" id="coverflowCaptionTitle"></span>
+                    <span class="coverflow-caption-status" id="coverflowCaptionStatus"></span>
                 </div>
                 <div class="coverflow-nav">
                     <button class="coverflow-nav-btn" id="cfPrevBtn" type="button" aria-label="Previous image"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>
@@ -2984,6 +3422,7 @@
                 <a href="#about">About</a>
                 <a href="#verse-spotlight">Reflection</a>
                 <a href="#books">Books</a>
+                <a href="#upcoming-books">Upcoming Books</a>
                 <a href="#archive">Archive</a>
                 <a href="#leadership">Leadership</a>
                 <a href="#certificates">Certificates</a>
@@ -3470,6 +3909,13 @@
                     { src: 'sz6.png', alt: 'Archive image 6' },
                     { src: 'sz7.png', alt: 'Archive image 7' },
                     { src: 'sz8.png', alt: 'Archive image 8' },
+                    {
+                        src: 'characterundercover.webp',
+                        alt: 'Character Undercover — upcoming milestone artwork by Saalim Zayed',
+                        title: 'Character Undercover',
+                        status: 'Upcoming Milestone',
+                        upcoming: true
+                    },
                 ];
 
                 const n = slides.length;
@@ -3524,6 +3970,9 @@
                         card.style.borderRadius = radius + 'px';
                         card.setAttribute('data-index', i);
                         card.setAttribute('aria-label', slide.alt || `Image ${i + 1}`);
+                        if (slide.upcoming) {
+                            card.classList.add('is-milestone');
+                        }
 
                         const img = document.createElement('img');
                         img.src = slide.src;
@@ -3551,6 +4000,7 @@
                     });
                     updateCards();
                     updateDots();
+                    updateCaption();
                 }
 
                 function getRelativeIndex(i) {
@@ -3608,12 +4058,35 @@
                     });
                 }
 
+                function updateCaption() {
+                    const captionEl = document.getElementById('coverflowCaption');
+                    const titleEl = document.getElementById('coverflowCaptionTitle');
+                    const statusEl = document.getElementById('coverflowCaptionStatus');
+                    if (!captionEl || !titleEl || !statusEl) return;
+
+                    const slide = slides[activeIndex];
+                    if (!slide || !slide.title) {
+                        captionEl.classList.remove('is-visible', 'is-revealing');
+                        titleEl.textContent = '';
+                        statusEl.textContent = '';
+                        return;
+                    }
+
+                    titleEl.textContent = slide.title;
+                    statusEl.textContent = slide.status || '';
+                    captionEl.classList.add('is-visible');
+                    captionEl.classList.remove('is-revealing');
+                    void captionEl.offsetWidth;
+                    captionEl.classList.add('is-revealing');
+                }
+
                 function goTo(index) {
                     if (isLocked || index === activeIndex) return;
                     isLocked = true;
                     activeIndex = ((index % n) + n) % n;
                     updateCards();
                     updateDots();
+                    updateCaption();
                     setTimeout(() => {
                         isLocked = false;
                         updateCards();
